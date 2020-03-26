@@ -1,0 +1,74 @@
+:root {
+    --dark-grey: rgb(44, 40, 40);
+    --pink: rgb(228, 81, 130);
+}
+
+body {
+    background-color: var(--dark-grey);
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    
+}
+
+#logo {
+    margin: auto;
+    width: 120px;
+}
+
+#logo img {
+    width: 100px;
+    height: auto;
+    
+}
+
+#profilePic {
+    width: 100px;
+    height: auto;
+    
+}
+
+h1 {
+    color: white;
+}
+
+.form {
+    width: 100%;
+    margin: auto;
+}
+
+form {
+
+}
+
+label {
+    color: white;
+}
+
+input {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 72px;
+}
+
+button {
+    border: none;
+    height: 100px;
+    width: 100%;
+    font-size: 72px;
+    background-color: var(--pink);
+    color: var(--dark-grey);
+}
+
+button:hover {
+    color: white;
+}
+
+.profileDetails {
+    color: white;
+}
