@@ -27,8 +27,9 @@ body {
 }
 
 #profilePic {
-    width: 100px;
-    height: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
     
 }
 
@@ -72,3 +73,13 @@ button:hover {
 .profileDetails {
     color: white;
 }
+
+#uploadProfilePic {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    background: white;
+    font-size: 16px;
+    margin: auto;
+}
+

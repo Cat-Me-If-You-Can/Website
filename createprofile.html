@@ -12,10 +12,15 @@
             <img src="static/images/logo.png" alt="">
             </div>
             <h1>Create Profile</h1>
+        
+        <!-- If no profile pic, load this HTML: -->
+        <!-- Adapted from https://stackoverflow.com/posts/36248168/revisions -->
+        <input type="button" id="uploadProfilePic" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
+        <input type="file" style="display:none;" id="file" name="file">
+        <!-- If profile pic, load this: -->
         <!-- On page load, PHP needs to do a GET to retrieve user's profile pic, store in a variable, and then the variable goes in the src below -->
-        <img id="profilePic" src="static/images/logo.png" alt="">
+        <!-- <img id="profilePic" src="" alt=""> -->
         <form action="" method="post">
-        <input type="file">
         <label for="">Personality</label>
         <input type="text">
         <input type="text">

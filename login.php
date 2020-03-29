@@ -1,6 +1,6 @@
 <?php 
  
-require_once 'core/init.php';
+
  
 if(logged_in() === TRUE) {
     header('location: dashboard.php');
