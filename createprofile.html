@@ -15,18 +15,29 @@
         
         <!-- If no profile pic, load this HTML: -->
         <!-- Adapted from https://stackoverflow.com/posts/36248168/revisions -->
+        <div class="profilePic">
         <input type="button" id="uploadProfilePic" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
         <input type="file" style="display:none;" id="file" name="file">
+        </div>
         <!-- If profile pic, load this: -->
         <!-- On page load, PHP needs to do a GET to retrieve user's profile pic, store in a variable, and then the variable goes in the src below -->
         <!-- <img id="profilePic" src="" alt=""> -->
         <form action="" method="post">
+        <label for="gender">Gender</label><br>
+        <select name="gender" id="genderSelection">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
         <label for="">Personality</label>
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <label for="">Appearance</label>
-        <input type="text">
+        <input type="text" name="personality1">
+        <input type="text" name="personality2">
+        <input type="text" name="personality3">
+        <label for="">Likes</label>
+        <input type="text" name="likes">
+        <label for="">Dislikes</label>
+        <input type="text" name="dislikes">
+        <label for="">Location</label>
+        <input type="text" name="location">
         <button>Update</button>
     </form>
 </div>

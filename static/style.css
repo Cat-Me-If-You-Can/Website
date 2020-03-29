@@ -42,15 +42,19 @@ h1 {
     margin: auto;
 }
 
-form {
-
-}
 
 label {
     color: white;
 }
 
 input {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 72px;
+}
+
+select {
     height: 100px;
     width: 100%;
     margin-bottom: 20px;
@@ -74,6 +78,12 @@ button:hover {
     color: white;
 }
 
+.profilePic {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
 #uploadProfilePic {
     width: 150px;
     height: 150px;
@@ -82,5 +92,6 @@ button:hover {
     font-size: 16px;
     margin: auto;
     margin-bottom: 20px;
+    
 }
 
