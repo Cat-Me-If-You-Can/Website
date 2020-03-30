@@ -1,10 +1,7 @@
 <?php 
  
-
+require_once 'init.php';
  
-if(logged_in() === TRUE) {
-    header('location: dashboard.php');
-}
  
 // form submiited
 if($_POST) {

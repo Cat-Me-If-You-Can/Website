@@ -2,9 +2,6 @@
  
 require_once 'init.php';
  
-if(logged_in() === TRUE) {
-    header('location: dashboard.php');
-}
  
 // form is submitted
 if($_POST) {
