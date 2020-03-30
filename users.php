@@ -32,7 +32,7 @@ function registerUser() {
         $query = $connect->query($sql);
         // $stmt = $connect->prepare("INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')");
         // $stmt->bind_param("sss", $email, $newPassword, $salt);
-        $query = $connect->query($stmt);
+        //$query = $connect->query($stmt);
         if($query === TRUE) {
             return true;
         } else {
