@@ -26,7 +26,7 @@ function registerUser() {
     $salt = salt(32);
     $newPassword = makePassword($password, $salt);
     if($newPassword) {
-        $sql = "INSERT INTO users (email, password, salt, active) VALUES ('$email', '$newPassword', '$salt' , 1)";
+        $sql = "INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')";
         $query = $connect->query($sql);
         if($query === TRUE) {
             return true;
