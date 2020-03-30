@@ -19,6 +19,8 @@ function userExists($email) {
 function registerUser() {
  
     global $connect;
+
+    // prepare and bind
  
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -26,8 +28,9 @@ function registerUser() {
     $salt = salt(32);
     $newPassword = makePassword($password, $salt);
     if($newPassword) {
-        $sql = "INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')";
-        $query = $connect->query($sql);
+        $stmt = $conn->prepare("INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')";
+        $stmt->bind_param("sss", $email, $newPassword, $salt);
+        $query = $connect->query($stmt);
         if($query === TRUE) {
             return true;
         } else {
