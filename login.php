@@ -24,7 +24,7 @@ if($_POST) {
  
                 $_SESSION['id'] = $userdata['id'];
  
-                header('location: dashboard.php');
+                header('location: admin-dashboard.html');
                 exit();
                      
             } else {

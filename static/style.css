@@ -95,3 +95,40 @@ button:hover {
     
 }
 
+/* Taskbar boxes that take 20% of the space each. */
+.navbarContainer {
+    background-color: var(--dark-grey);
+    overflow: hidden;
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    margin: 10px;
+            
+}
+
+.navbar{
+    border: 5px solid var(--dark-grey);
+    text-align: center;
+    height: 100px;
+    width: 300px;
+    padding: 10px;
+    font-size: 30px;
+    background-color: var(--pink);
+    color: var(--dark-grey);
+
+}
+
+.navbar:hover {
+    color: white;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: var(--dark-grey);
+}
+
+a:hover {
+    color: white;
+}
+
+
