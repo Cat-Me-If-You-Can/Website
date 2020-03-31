@@ -25,10 +25,10 @@ function registerUser() {
     $email = $_POST['email'];
     $password = $_POST['password'];
      
-    $salt = salt(32);
-    $newPassword = makePassword($password, $salt);
+    
+    $newPassword = makePassword($password);
     if($newPassword) {
-        $sql = "INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')";
+        $sql = "INSERT INTO users (email, password) VALUES ('$email', '$newPassword')";
         $query = $connect->query($sql);
         // $stmt = $connect->prepare("INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')");
         // $stmt->bind_param("sss", $email, $newPassword, $salt);
@@ -44,12 +44,12 @@ function registerUser() {
     // close the database connection
 } // register user funtion
  
-function salt($length) {
-    return mcrypt_create_iv($length);
-}
+// function salt($length) {
+//     return mcrypt_create_iv($length);
+// }
  
-function makePassword($password, $salt) {
-    return hash('sha256', $password.$salt);
+function makePassword($password) {
+    return hash('sha256', $password);
 }
 
 function login($email, $password) {
@@ -57,7 +57,7 @@ function login($email, $password) {
     $userdata = userdata($email);
  
     if($userdata) {
-        $makePassword = makePassword($password, $userdata['salt']);
+        $makePassword = makePassword($password);
         $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$makePassword'";
         $query = $connect->query($sql);
  
