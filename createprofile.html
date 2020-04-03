@@ -15,16 +15,17 @@
         
         <!-- If no profile pic, load this HTML: -->
         <!-- Adapted from https://stackoverflow.com/posts/36248168/revisions -->
-        <div class="profilePic">
-        <input type="button" id="uploadProfilePic" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
-        <input type="file" style="display:none;" id="file" name="file">
-        </div>
+       
         <!-- If profile pic, load this: -->
         <!-- On page load, PHP needs to do a GET to retrieve user's profile pic, store in a variable, and then the variable goes in the src below -->
         <!-- <img id="profilePic" src="" alt=""> -->
 
-        <form action="profile.html" method="post">
-
+        <form action="createprofile.php" method="post" enctype="multipart/form-data">
+            <div class="profilePic">
+                <!-- <input type="button" id="uploadProfilePic" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
+                <input type="file" style="display:none;" id="file" name="file"> -->
+                <input type="file" name="uploadfile" />
+                </div>
          <label for="name">Your Cat's Name</label>
         <input type="text" name="name">
         <label for="gender">Gender</label><br>
@@ -42,7 +43,7 @@
         <input type="text" name="dislikes">
         <label for="">Location</label>
         <input type="text" name="location">
-        <button>Update</button>
+        <input type="submit" name="upload" value="upload" />
     </form>
 </div>
 </body>

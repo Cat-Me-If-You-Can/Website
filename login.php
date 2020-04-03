@@ -1,5 +1,5 @@
 <?php 
- 
+session_start();
 require_once 'init.php';
  
  
@@ -23,8 +23,8 @@ if($_POST) {
                 $userdata = userdata($email);
  
                 $_SESSION['id'] = $userdata['id'];
- 
-                header('location: dashboard.php');
+            
+                header('location: settings.html');
                 exit();
                      
             } else {
