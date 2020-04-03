@@ -2,6 +2,10 @@
  
 require_once 'init.php';
  
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> ffdc04a0ba4abb662f41aabd46cc63f7b0569c31
 // form is submitted
 if($_POST) {
  

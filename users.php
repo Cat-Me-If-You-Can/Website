@@ -15,6 +15,7 @@ function userExists($email) {
     $connect->close();
     // close the database connection
 }
+
  
 function registerUser() {
  
@@ -43,10 +44,6 @@ function registerUser() {
     $connect->close();
     // close the database connection
 } // register user funtion
- 
-// function salt($length) {
-//     return mcrypt_create_iv($length);
-// }
  
 function makePassword($password) {
     return hash('sha256', $password);
