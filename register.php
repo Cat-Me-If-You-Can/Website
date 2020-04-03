@@ -2,10 +2,6 @@
  
 require_once 'init.php';
  
-<<<<<<< HEAD
-=======
- 
->>>>>>> ffdc04a0ba4abb662f41aabd46cc63f7b0569c31
 // form is submitted
 if($_POST) {
  
@@ -34,7 +30,8 @@ if($_POST) {
                 echo $_POST['email'] . " already exists !!";
             } else {
                 if(registerUser() === TRUE) {
-                    echo "Successfully Registered, you can now login!<a href='login.html'>Login</a>";
+                    header('location: login.html');
+                exit();
                 } else {
                     echo "Error";
                 }
