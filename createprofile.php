@@ -1,5 +1,4 @@
 <?php 
-session_start();
 require_once 'init.php';
 echo $_SESSION['id']; 
  
@@ -26,16 +25,25 @@ if(isset($_POST['upload'])) {
         $dislikes = $_POST['dislikes'];
         $location = $_POST['location'];
         $userid = $_SESSION["id"];
-         
+
+
+            if(profileExists($_SESSION["id"]) === TRUE) {
+                $sql = "UPDATE profile SET picture='$filename', name='$name', gender='$gender', personality1='$personality1', personality2='$personality2', personality3='$personality3', likes='$likes', dislikes='$dislikes', location='$location', userid='$userid' WHERE userid='".$_SESSION['id']."'";
+                $query = $connect->query($sql);
+                header('location: profile.php');
+            exit();
+            } else {
+                
             $sql = "INSERT INTO profile (picture, name, gender, personality1, personality2, personality3, likes, dislikes, location, userid) VALUES ('$filename', '$name', '$gender', '$personality1', '$personality2', '$personality3', '$likes', '$dislikes', '$location', '$userid')";
             $query = $connect->query($sql);
             // $stmt = $connect->prepare("INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')");
             // $stmt->bind_param("sss", $email, $newPassword, $salt);
             //$query = $connect->query($stmt);
            
-        echo "Successfully uploaded, you can now login!<a href='login.html'>Login</a>";
+            header('location: profile.php');
+            exit();
   
   
 }
-
+}
 ?>

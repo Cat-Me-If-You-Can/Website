@@ -16,6 +16,21 @@ function userExists($email) {
     // close the database connection
 }
 
+function profileExists($userid) {
+    // global keyword is used to access a global variable from within a function
+    global $connect;
+ 
+    $sql = "SELECT * FROM profile WHERE userid = '$userid'";
+    $query = $connect->query($sql);
+    if($query->num_rows == 1) {
+        return true;
+    } else {
+        return false;
+    }
+ 
+    $connect->close();
+    // close the database connection
+}
  
 function registerUser() {
  
