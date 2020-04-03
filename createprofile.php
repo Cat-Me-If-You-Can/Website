@@ -1,6 +1,5 @@
 <?php 
 require_once 'init.php';
-echo $_SESSION['id']; 
  
 // form submiited
 if(isset($_POST['upload'])) {

@@ -2,7 +2,6 @@
 require_once 'init.php';
 global $connect;
 
-echo $_SESSION['id'];
  $sql="select * from profile where userid='".$_SESSION['id']."'";
  $query = $connect->query($sql);
  $row = $query->fetch_assoc();
@@ -14,9 +13,6 @@ echo $_SESSION['id'];
  $likes=$row["likes"];
  $dislikes=$row["dislikes"];
  $location=$row["location"];
-
-echo '<img src="data:image/jpeg;base64,' . base64_encode( $row["picture"] ) . '" />';
-
 
 ?>
 
