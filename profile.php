@@ -33,8 +33,10 @@ global $connect;
 
             <!-- If no profile pic, load blank white circle -->
             <div id="uploadProfilePic"></div>
-            <img src="images/<?php echo $picture;?>" alt="Profile Pic" width="100" height="100">
-            <!-- If profile pic, load into src below -->
+			<div id="ppcontainer">
+            <img id="profilepic" src="images/<?php echo $picture;?>" alt="Profile Pic">
+            </div>
+			<!-- If profile pic, load into src below -->
             <!-- <img id="profilePic" src="static/images/logo.png" alt=""> -->
             
             <p>Personality</p>
@@ -51,6 +53,6 @@ global $connect;
             <button onclick="window.location.href = 'createprofile.html';">edit profile</button>
         </div>
     </div>
-    
+    <?php include 'navbar.php';?>
 </body>
 </html>

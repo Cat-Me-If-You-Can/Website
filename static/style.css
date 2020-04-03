@@ -26,11 +26,19 @@ body {
     
 }
 
-#profilePic {
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
-    
+#ppcontainer {
+	height:100px;
+	
+	width:100px;
+	overflow: hidden;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+#profilepic {
+	width: auto;
+	height: 100%;
+	
 }
 
 h1 {
@@ -48,10 +56,10 @@ label {
 }
 
 input {
-    height: 100px;
+    height: 40px;
     width: 100%;
     margin-bottom: 20px;
-    font-size: 72px;
+    font-size: 30px;
 }
 
 select {
@@ -63,9 +71,9 @@ select {
 
 button {
     border: none;
-    height: 100px;
+    height: 40px;
     width: 100%;
-    font-size: 72px;
+    font-size: 30px;
     background-color: var(--pink);
     color: var(--dark-grey);
 }
@@ -97,29 +105,28 @@ button:hover {
 
 /* Taskbar boxes that take 20% of the space each. */
 .navbarContainer {
-    background-color: var(--dark-grey);
+    background-color: var(--pink);
     overflow: hidden;
     position: fixed;
-    display: inline-block;
     width: 100%;
     margin: 10px;
-            
+	bottom: 0;
 }
 
-.navbar{
-    border: 5px solid var(--dark-grey);
+.navbutton{
+    
     text-align: center;
-    height: 100px;
-    width: 300px;
-    padding: 10px;
+    height: 40px;
+	float: left;
     font-size: 30px;
     background-color: var(--pink);
     color: var(--dark-grey);
-
+	width: 25%;
 }
 
-.navbar:hover {
-    color: white;
+.navbutton:hover {
+    color: black;
+	background-color: white;
 }
 
 a:link, a:visited {

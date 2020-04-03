@@ -5,7 +5,7 @@
 $servername = "127.0.0.1";
 $email = "root";
 $password = "";
-$dbname = "login_registration";
+$dbname = "users";
  
 // crearte connection
 $connect = new Mysqli($servername, $email, $password, $dbname);
