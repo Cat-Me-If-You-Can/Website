@@ -1,6 +1,18 @@
-	<div class="navbarContainer">
-        <a class="navbutton" href="settings.html">Home</a>
-		<a class="navbutton" href="#Chat">Chat</a>
-        <a class="navbutton" href="profile.php">Profile</a>
-        <a class="navbutton" href="logout.php">Logout</a>
-    </div> 
+<div class="navContainer">
+        <div class="navItem">
+            <img src="images/icons/toyger-cat.png" alt=""><br>
+            Home
+        </div>
+        <div class="navItem">
+            <img src="images/icons/bengal-cat.png" alt=""><br>
+            Chat
+        </div>
+        <div class="navItem">
+            <img src="images/icons/siamese-cat.png" alt=""><br>
+            Profile
+        </div>
+        <div class="navItem">
+            <img src="images/icons/ragdoll-cat.png" alt=""><br>
+            Logout
+        </div>
+    </div>

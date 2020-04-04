@@ -58,7 +58,7 @@ global $connect;
             <p><?php echo $dislikes;?></p>
             <h2>Location</h2>
             <p><?php echo $location;?></p>
-            <button onclick="window.location.href = 'createprofile.html';">Edit Profile</button>
+            <button class="bottomButton" onclick="window.location.href = 'createprofile.html';">Edit Profile</button>
             
         </div>
     </div>

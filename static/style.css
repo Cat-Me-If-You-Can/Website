@@ -148,4 +148,8 @@ a:hover {
     color: white;
 }
 
+/* Add this class to any button at the bottom of a page to scroll past the navbar. */
+.bottomButton {
+    margin-bottom: 90px;
+}
 
