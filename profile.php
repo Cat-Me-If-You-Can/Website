@@ -7,6 +7,8 @@ global $connect;
  $row = $query->fetch_assoc();
 
  $picture=$row["picture"];
+ $name=$row["name"];
+ $gender=$row["gender"];
  $personality1=$row["personality1"];
  $personality2=$row["personality2"];
  $personality3=$row["personality3"];
@@ -30,27 +32,36 @@ global $connect;
             <img src="static/images/logo.png" alt="">
             </div>
         <div class="profileDetails">
-
-            <!-- If no profile pic, load blank white circle -->
-            <div id="uploadProfilePic"></div>
-            <img src="images/<?php echo $picture;?>" alt="Profile Pic" width="100" height="100">
-            <!-- If profile pic, load into src below -->
-            <!-- <img id="profilePic" src="static/images/logo.png" alt=""> -->
             
-            <p>Personality</p>
+            <!-- If profile picture, load into src below -->
+            <!-- If no profile picture, display white circle -->
+            <?php
+            if($picture == true){
+                ?><div id="ppcontainer">
+                <img id="profilepic" src="images/<?php echo $picture;?>" alt="Profile Picture">
+                </div> <?php
+            } else {
+                ?><div id="uploadProfilePic"></div><?php
+            }
+            ?>		
+            
+            <h2>Name</h2>
+            <p><?php echo $name;?></p>
+            <h2>Personality</h2>
             <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
             <p><?php echo $personality1;?></p>
             <p><?php echo $personality2;?></p>
             <p><?php echo $personality3;?></p>
-            <p>Likes</p>
+            <h2>Likes</h2>
             <p><?php echo $likes;?></p>
-            <p>Dislikes</p>
+            <h2>Dislikes</h2>
             <p><?php echo $dislikes;?></p>
-            <p>Location</p>
+            <h2>Location</h2>
             <p><?php echo $location;?></p>
-            <button onclick="window.location.href = 'createprofile.html';">edit profile</button>
+            <button onclick="window.location.href = 'createprofile.html';">Edit Profile</button>
+            
         </div>
     </div>
-    
+    <?php include 'navbar.php';?>
 </body>
 </html>
