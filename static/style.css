@@ -1,6 +1,9 @@
 :root {
     --dark-grey: rgb(44, 40, 40);
     --pink: rgb(228, 81, 130);
+    --logo-grey: rgb(65,65,65);
+    --negative: rgb(105,186,165);
+    
 }
 
 body {
@@ -106,6 +109,27 @@ button:hover {
     margin: auto;
     margin-bottom: 20px;
     
+}
+
+.navC {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.navI {
+    background-color: var(--pink);
+    text-align: center;
+    padding: 10px
+}
+
+.navI img {
+    width: 40px;
+    height: auto;
+    margin: auto;
+}
+
+.navI:hover {
+    background: var(--pink)
 }
 
 /* Taskbar boxes that take 20% of the space each. */
