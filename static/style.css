@@ -3,7 +3,8 @@
     --pink: rgb(228, 81, 130);
     --logo-grey: rgb(65,65,65);
     --negative: rgb(105,186,165);
-    
+    --dark-complement: rgb(86,65,70);
+    --light-complement: rgb(242,167,185);
 }
 
 body {
@@ -111,52 +112,32 @@ button:hover {
     
 }
 
-.navC {
+.navContainer {
     display: grid;
     grid-template-columns: auto auto auto auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-left: -10px;
 }
 
-.navI {
+.navItem {
     background-color: var(--pink);
     text-align: center;
+
     padding: 10px
 }
 
-.navI img {
+.navItem img {
     width: 40px;
     height: auto;
     margin: auto;
 }
 
-.navI:hover {
-    background: var(--pink)
+.navItem:hover {
+    background: var(--light-complement);
 }
 
-/* Taskbar boxes that take 20% of the space each. */
-.navbarContainer {
-    background-color: var(--pink);
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    margin: 10px;
-	bottom: 0;
-}
-
-.navbutton{
-    
-    text-align: center;
-    height: 40px;
-	float: left;
-    font-size: 30px;
-    background-color: var(--pink);
-    color: var(--dark-grey);
-	width: 25%;
-}
-
-.navbutton:hover {
-    color: black;
-	background-color: white;
-}
 
 a:link, a:visited {
     text-decoration: none;
