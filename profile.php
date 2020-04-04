@@ -49,6 +49,7 @@ global $connect;
             <p>Location</p>
             <p><?php echo $location;?></p>
             <button onclick="window.location.href = 'createprofile.html';">edit profile</button>
+            <button onclick="window.location.href = 'settings.html';">settings</button>
         </div>
     </div>
     
