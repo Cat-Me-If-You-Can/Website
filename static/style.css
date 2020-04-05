@@ -1,6 +1,10 @@
 :root {
     --dark-grey: rgb(44, 40, 40);
     --pink: rgb(228, 81, 130);
+    --logo-grey: rgb(65,65,65);
+    --negative: rgb(105,186,165);
+    --dark-complement: rgb(86,65,70);
+    --light-complement: rgb(242,167,185);
 }
 
 body {
@@ -46,8 +50,17 @@ h1 {
     color: white;
 }
 
-h2 {
+.subheading {
+    padding: 0px;
+    
     background-color: var(--pink);
+    
+}
+
+h2 {
+   padding: 7px;
+    color: white;
+   border-bottom: 1px solid var(--light-complement);
 }
 
 .form {
@@ -60,21 +73,22 @@ label {
     color: white;
 }
 
-input {
+input, select {
     height: 40px;
     width: 100%;
     margin-bottom: 20px;
     font-size: 30px;
 }
-
+/* 
 select {
     height: 100px;
     width: 100%;
     margin-bottom: 20px;
     font-size: 72px;
-}
+} */
 
-button {
+
+button, .inputButton {
     border: none;
     height: 40px;
     width: 100%;
@@ -83,12 +97,16 @@ button {
     color: var(--dark-grey);
 }
 
-button:hover {
+button:hover, .inputButton:hover {
     color: white;
 }
 
 .profileDetails {
     color: white;
+}
+
+.profileDetails p {
+    padding-left: 10px;
 }
 
 .profilePic {
@@ -108,39 +126,49 @@ button:hover {
     
 }
 
-/* Taskbar boxes that take 20% of the space each. */
-.navbarContainer {
-    background-color: var(--pink);
-    overflow: hidden;
+.navContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     position: fixed;
+    bottom: 0;
     width: 100%;
-    margin: 10px;
-	bottom: 0;
-}
-
-.navbutton{
+    margin-left: -10px;
     
-    text-align: center;
-    height: 40px;
-	float: left;
-    font-size: 30px;
-    background-color: var(--pink);
-    color: var(--dark-grey);
-	width: 25%;
 }
 
-.navbutton:hover {
-    color: black;
-	background-color: white;
+.navItem {
+    background-color: var(--pink);
+    text-align: center;
+    padding: 10px
 }
+
+.navItem img {
+    width: 40px;
+    height: auto;
+    margin: auto;
+}
+
+.navItem:hover {
+    background: var(--light-complement);
+}
+
 
 a:link, a:visited {
     text-decoration: none;
-    color: var(--dark-grey);
+    color: black;
 }
 
-a:hover {
+/* a:hover {
     color: white;
+} */
+
+/* Add this class to any button at the bottom of a page to scroll past the navbar. */
+.bottomButton {
+    margin-bottom: 110px;
+    box-shadow: 3px 3px var(--light-complement);
+    border: 1px solid var(--light-complement);
 }
 
-
+.bottomButton:hover {
+    box-shadow: none;
+}

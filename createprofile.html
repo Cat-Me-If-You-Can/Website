@@ -22,29 +22,61 @@
 
         <form action="createprofile.php" method="post" enctype="multipart/form-data">
             <div class="profilePic">
-                <!-- <input type="button" id="uploadProfilePic" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
-                <input type="file" style="display:none;" id="file" name="file"> -->
-                <input type="file" name="uploadfile" />
+                <input type="button" id="uploadProfilePic" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
+                <input type="file" style="display:none;" id="file" name="uploadfile">
+                <!-- <input type="file" name="uploadfile" /> -->
                 </div>
-         <label for="name">Your Cat's Name</label>
+        <div class="subheading">
+        <h2>Your Cat's Name</h2>
+        </div>
         <input type="text" name="name">
-        <label for="gender">Gender</label><br>
+        <div class="subheading"><h2>Gender</h2></div>
+        
         <select name="gender" id="genderSelection">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
         </select><br><br>
-        <label for="">Personality</label>
+        <div class="subheading"><h2>Personality</h2></div>
         <input type="text" name="personality1">
         <input type="text" name="personality2">
         <input type="text" name="personality3">
-        <label for="">Likes</label>
+        <div class="subheading"><h2>Likes</h2></div>
         <input type="text" name="likes">
-        <label for="">Dislikes</label>
+        <div class="subheading"><h2>Dislikes</h2></div>
         <input type="text" name="dislikes">
-        <label for="">Location</label>
+        <div class="subheading"><h2>Location</h2></div>
         <input type="text" name="location">
-        <input type="submit" name="upload" value="Upload" />
+        <input type="submit" name="upload" value="Upload" class="bottomButton inputButton" />
     </form>
 </div>
+
+<div class="navContainer">
+    <a href="#">
+    <div class="navItem">
+        <img src="images/icons/toyger-cat.png" alt=""><br>
+        Home
+    </div>
+</a>
+    <a href="#">
+    <div class="navItem">
+        <img src="images/icons/bengal-cat.png" alt=""><br>
+        Chat
+    </div>
+</a>
+    <a href="profile.php">
+    <div class="navItem">
+        <img src="images/icons/siamese-cat.png" alt=""><br>
+        Profile
+    
+    </div>
+</a>
+    <a href="logout.php">
+    <div class="navItem">
+        <img src="images/icons/ragdoll-cat.png" alt=""><br>
+        Logout
+    </div>
+</a>
+</div>
+
 </body>
 </html>
