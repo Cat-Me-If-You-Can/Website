@@ -44,19 +44,28 @@ global $connect;
                 ?><div id="uploadProfilePic"></div><?php
             }
             ?>		
-            
+            <div class="subheading">
             <h2>Name</h2>
+            </div>
             <p><?php echo $name;?></p>
+            <div class="subheading">
             <h2>Personality</h2>
+            </div>
             <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
             <p><?php echo $personality1;?></p>
             <p><?php echo $personality2;?></p>
             <p><?php echo $personality3;?></p>
+            <div class="subheading">
             <h2>Likes</h2>
+            </div>
             <p><?php echo $likes;?></p>
+            <div class="subheading">
             <h2>Dislikes</h2>
+            </div>
             <p><?php echo $dislikes;?></p>
+            <div class="subheading">
             <h2>Location</h2>
+            </div>
             <p><?php echo $location;?></p>
             <button class="bottomButton" onclick="window.location.href = 'createprofile.html';">Edit Profile</button>
             

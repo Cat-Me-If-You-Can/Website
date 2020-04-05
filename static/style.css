@@ -50,8 +50,17 @@ h1 {
     color: white;
 }
 
-h2 {
+.subheading {
+    padding: 0px;
+    
     background-color: var(--pink);
+    
+}
+
+h2 {
+   padding: 7px;
+
+   border-bottom: 1px solid var(--light-complement);
 }
 
 .form {
@@ -95,6 +104,10 @@ button:hover {
     color: white;
 }
 
+.profileDetails p {
+    padding-left: 10px;
+}
+
 .profilePic {
     width: 100%;
     margin: auto;
@@ -119,12 +132,12 @@ button:hover {
     bottom: 0;
     width: 100%;
     margin-left: -10px;
+    
 }
 
 .navItem {
     background-color: var(--pink);
     text-align: center;
-
     padding: 10px
 }
 
@@ -141,15 +154,20 @@ button:hover {
 
 a:link, a:visited {
     text-decoration: none;
-    color: var(--dark-grey);
+    color: black;
 }
 
-a:hover {
+/* a:hover {
     color: white;
-}
+} */
 
 /* Add this class to any button at the bottom of a page to scroll past the navbar. */
 .bottomButton {
-    margin-bottom: 90px;
+    margin-bottom: 110px;
+    box-shadow: 3px 3px var(--light-complement);
+    border: 1px solid var(--light-complement);
 }
 
+.bottomButton:hover {
+    box-shadow: none;
+}
