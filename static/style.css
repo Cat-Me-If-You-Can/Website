@@ -87,7 +87,7 @@ select {
     font-size: 72px;
 }
 
-button {
+button, .inputButton {
     border: none;
     height: 40px;
     width: 100%;
@@ -96,7 +96,7 @@ button {
     color: var(--dark-grey);
 }
 
-button:hover {
+button:hover, .inputButton:hover {
     color: white;
 }
 
