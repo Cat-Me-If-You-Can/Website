@@ -45,26 +45,26 @@ global $connect;
             }
             ?>		
             <div class="subheading">
-            <h2>Name</h2>
+            <p>Name</p>
             </div>
             <p><?php echo $name;?></p>
             <div class="subheading">
-            <h2>Personality</h2>
+            <p>Personality</p>
             </div>
             <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
             <p><?php echo $personality1;?></p>
             <p><?php echo $personality2;?></p>
             <p><?php echo $personality3;?></p>
             <div class="subheading">
-            <h2>Likes</h2>
+            <p>Likes</p>
             </div>
             <p><?php echo $likes;?></p>
             <div class="subheading">
-            <h2>Dislikes</h2>
+            <p>Dislikes</p>
             </div>
             <p><?php echo $dislikes;?></p>
             <div class="subheading">
-            <h2>Location</h2>
+            <p>Location</p>
             </div>
             <p><?php echo $location;?></p>
             <button class="bottomButton" onclick="window.location.href = 'createprofile.html';">Edit Profile</button>
