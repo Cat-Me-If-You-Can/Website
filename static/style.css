@@ -231,6 +231,40 @@ a:link, a:visited {
     height: auto;
 }
 
+.chatHeader {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.unmatch {
+    /* text-align: right; */
+    background-color: var(--pink);
+    text-align: center;
+   
+}
+
+.unmatch:hover {
+    background-color: var(--light-complement);
+}
+
+
+.chat {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.receiveMessageWindow {
+    height: 500px;
+    width: 95%;
+    background-color: white;
+    border: 10px solid var(--light-complement)
+}
+
+.sendMessageWindow {
+    margin-top: 20px;
+}
 
 
 /* For desktop view */
