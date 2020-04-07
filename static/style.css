@@ -177,3 +177,20 @@ a:link, a:visited {
 .bottomButton:hover {
     box-shadow: none;
 }
+
+
+@media only screen and (min-width: 600px) {
+    .container {
+        width: 700px;
+    }
+
+    .navContainer {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        justify-content: center;
+        bottom: 0;
+        width: 100%;
+        margin: auto;
+        
+    }
+}
