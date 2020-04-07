@@ -1,0 +1,82 @@
+<?php 
+// This will need to retrieve a profile of a potential match, not the user.
+
+require_once 'init.php';
+global $connect;
+
+ $sql="select * from profile where userid='".$_SESSION['id']."'";
+ $sql = "SELECT * FROM profile WHERE userid='8'";
+ $query = $connect->query($sql);
+ $row = $query->fetch_assoc();
+
+ $picture=$row["picture"];
+ $name=$row["name"];
+ $gender=$row["gender"];
+ $personality1=$row["personality1"];
+ $personality2=$row["personality2"];
+ $personality3=$row["personality3"];
+ $likes=$row["likes"];
+ $dislikes=$row["dislikes"];
+ $location=$row["location"];
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Find A Match</title>
+</head>
+<body>
+    <div class="container">
+        <div id="logo">
+            <img src="static/images/logo.png" alt="">
+            </div>
+        <div class="profileDetails">
+            
+            <!-- If profile picture, load into src below -->
+            <!-- If no profile picture, display white circle -->
+            <?php
+            if($picture == true){
+                ?><div id="ppcontainer">
+                <img id="profilepic" src="images/<?php echo $picture;?>" alt="Profile Picture">
+                </div> <?php
+            } else {
+                ?><div id="uploadProfilePic"></div><?php
+            }
+            ?>		
+            <div class="subheading">
+            <p>Name</p>
+            </div>
+            <p><?php echo $name;?></p>
+            <div class="subheading">
+            <p>Personality</p>
+            </div>
+            <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
+            <p><?php echo $personality1;?></p>
+            <p><?php echo $personality2;?></p>
+            <p><?php echo $personality3;?></p>
+            <div class="subheading">
+            <p>Likes</p>
+            </div>
+            <p><?php echo $likes;?></p>
+            <div class="subheading">
+            <p>Dislikes</p>
+            </div>
+            <p><?php echo $dislikes;?></p>
+            <div class="subheading">
+            <p>Location</p>
+            </div>
+            <p style="margin-bottom:150px"><?php echo $location;?></p>
+            
+        </div>
+    </div>
+    <div class="likeDislike">
+        <div class="likeButton"><img src="static/images/like1.png" alt=""></div>
+        <div class="dislikeButton"><img src="static/images/dislike1.png" alt=""></div>
+    </div>
+    <?php include 'navbar.php';?>
+</body>
+</html>
