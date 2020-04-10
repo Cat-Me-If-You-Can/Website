@@ -10,7 +10,9 @@
 body {
     background-color: var(--dark-grey);
     /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: 'Rubik', sans-serif;
+    /* font-family: 'Rubik', sans-serif; */
+    /*     font-family: 'Nunito', sans-serif; */
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -28,6 +30,41 @@ body {
     width: 100px;
     height: auto;
     
+}
+
+#splashLogo {
+    margin: auto;
+    width: 300px;
+}
+
+#splashLogo img {
+    width: 300px;
+    height: auto;
+}
+
+#splashContent {
+    text-align: center;
+    color: white;
+}
+
+#splashContent p {
+    margin-bottom: 40px;
+}
+
+#splashContent button {
+    box-shadow: 3px 3px var(--light-complement);
+    border: 1px solid var(--light-complement);
+    height: 70px;
+    margin-bottom: 30px;
+    width: 50%;
+}
+
+#splashContent button:hover {
+    box-shadow: 3px 3px var(--dark-grey);
+    background-color: var(--light-complement);
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 #ppcontainer {
