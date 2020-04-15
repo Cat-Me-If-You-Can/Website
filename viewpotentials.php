@@ -23,6 +23,8 @@ global $connect;
 
  $lowerbound = $playful - 20;
  $upperbound = $playful  + 20;
+
+ 
  
  $sql="select * from profile where playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'";
  $query2 = $connect->query($sql);
@@ -41,9 +43,11 @@ global $connect;
  $dislikes2=$row2["dislikes"];
  $location2=$row2["location"];
 
-
-
-
+ if(matchExists($id,$id2) === TRUE) {
+    echo " already matched with user";
+} else 
+{
+}
 
 ?>
 
