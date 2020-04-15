@@ -37,6 +37,15 @@ if(isset($_POST['upload'])) {
                 
             $sql = "INSERT INTO profile (picture, name, gender, playful, angry, somber, independent, cuddly, likes, dislikes, location, userid) VALUES ('$filename', '$name', '$gender', '$playful', '$angry', '$somber', '$independent', '$cuddly', '$likes', '$dislikes', '$location', '$userid')";
             $query = $connect->query($sql);
+
+            $sql="select * from profile where userid='".$_SESSION['id']."'";
+            $query = $connect->query($sql);
+            $row = $query->fetch_assoc();
+           
+            $id=$row["id"];
+
+            $sql = "INSERT INTO matches (catid) VALUES ('$id')";
+            $query = $connect->query($sql);
             // $stmt = $connect->prepare("INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')");
             // $stmt->bind_param("sss", $email, $newPassword, $salt);
             //$query = $connect->query($stmt);

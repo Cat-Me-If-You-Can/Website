@@ -26,10 +26,11 @@ global $connect;
 
  $sql = "SELECT profile.id, profile.userid, profile.name, profile.gender, profile.playful, profile.angry, profile.somber, profile.independent, profile.cuddly, profile.likes, profile.dislikes, profile.location, matches.catid, matches.id, matches.catmatch, matches.matched, profile.picture
  FROM profile
- INNER JOIN matches ON profile.id=matches.catid WHERE playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'";
+ INNER JOIN matches ON profile.id=matches.catid";
  $query2 = $connect->query($sql);
  $row2 = $query2->fetch_assoc();
  
+ # WHERE playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'
  
  #$sql="select * from profile where playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'";
  #$query2 = $connect->query($sql);
