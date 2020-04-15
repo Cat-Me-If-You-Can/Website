@@ -5,21 +5,57 @@ require_once 'init.php';
 global $connect;
 
  $sql="select * from profile where userid='".$_SESSION['id']."'";
- $sql = "SELECT * FROM profile WHERE userid='8'";
  $query = $connect->query($sql);
  $row = $query->fetch_assoc();
 
+ $id=$row["id"];
  $picture=$row["picture"];
  $name=$row["name"];
  $gender=$row["gender"];
- $personality1=$row["personality1"];
- $personality2=$row["personality2"];
- $personality3=$row["personality3"];
+ $playful=$row["playful"];
+ $angry=$row["angry"];
+ $somber=$row["somber"];
+ $independent=$row["independent"];
+ $cuddly=$row["cuddly"];
  $likes=$row["likes"];
  $dislikes=$row["dislikes"];
  $location=$row["location"];
 
+ $lowerbound = $playful - 20;
+ $upperbound = $playful  + 20;
+
+ $sql="select * from matches where catid='".$id."'";
+ $query3 = $connect->query($sql);
+ $row3 = $query3->fetch_assoc();
+
+ $catid=$row3["catid"];
+ $catmatch=$row3["catmatch"];
+ $matched=$row3["matched"];
+
+ $sql="select * from profile where playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'";
+ $query2 = $connect->query($sql);
+ $row2 = $query2->fetch_assoc();
+ 
+ $id2=$row2["id"];
+ $picture2=$row2["picture"];
+ $name2=$row2["name"];
+ $gender2=$row2["gender"];
+ $playful2=$row2["playful"];
+ $angry2=$row2["angry"];
+ $somber2=$row2["somber"];
+ $independent2=$row2["independent"];
+ $cuddly2=$row2["cuddly"];
+ $likes2=$row2["likes"];
+ $dislikes2=$row2["dislikes"];
+ $location2=$row2["location"];
+
+
+
+
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +75,9 @@ global $connect;
             <!-- If profile picture, load into src below -->
             <!-- If no profile picture, display white circle -->
             <?php
-            if($picture == true){
+            if($picture2 == true){
                 ?><div id="ppcontainer">
-                <img id="profilepic" src="images/<?php echo $picture;?>" alt="Profile Picture">
+                <img id="profilepic" src="images/<?php echo $picture2;?>" alt="Profile Picture">
                 </div> <?php
             } else {
                 ?><div id="uploadProfilePic"></div><?php
@@ -50,27 +86,40 @@ global $connect;
             <div class="subheading">
             <p>Name</p>
             </div>
-            <p><?php echo $name;?></p>
+            <p><?php echo $name2;?></p>
             <div class="subheading">
             <p>Personality</p>
             </div>
             <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
-            <p><?php echo $personality1;?></p>
-            <p><?php echo $personality2;?></p>
-            <p><?php echo $personality3;?></p>
+            <p>playful: <?php echo $playful2;?></p>
+            <p>angry: <?php echo $angry2;?></p>
+            <p>somber: <?php echo $somber2;?></p>
+            <p>independent: <?php echo $independent2;?></p>
+            <p>cuddly: <?php echo $cuddly2;?></p>
             <div class="subheading">
             <p>Likes</p>
             </div>
-            <p><?php echo $likes;?></p>
+            <p><?php echo $likes2;?></p>
             <div class="subheading">
             <p>Dislikes</p>
             </div>
-            <p><?php echo $dislikes;?></p>
+            <p><?php echo $dislikes2;?></p>
             <div class="subheading">
             <p>Location</p>
             </div>
-            <p style="margin-bottom:150px"><?php echo $location;?></p>
-            
+            <p><?php echo $location2;?></p>
+            <br><br>
+            <form action="match.php" method="post">
+            <div class="subheading"><p>Did you want to match with <?php echo $name2;?></p></div>
+                <select name="match" id="genderSelection">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <input type = "hidden" name = "catid" value = <?php echo $id;?> />
+                <input type = "hidden" name = "catmatch" value = <?php echo $id2;?> />
+                <input type="submit" name="Submit" class="bottomButton inputButton" />
+                </select>
+            </form>
+            <p style="margin-bottom:300px"></p>   
         </div>
     </div>
     <div class="likeDislike">

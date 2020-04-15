@@ -9,9 +9,11 @@ global $connect;
  $picture=$row["picture"];
  $name=$row["name"];
  $gender=$row["gender"];
- $personality1=$row["personality1"];
- $personality2=$row["personality2"];
- $personality3=$row["personality3"];
+ $playful=$row["playful"];
+ $angry=$row["angry"];
+ $somber=$row["somber"];
+ $independent=$row["independent"];
+ $cuddly=$row["cuddly"];
  $likes=$row["likes"];
  $dislikes=$row["dislikes"];
  $location=$row["location"];
@@ -53,9 +55,11 @@ global $connect;
             <p>Personality</p>
             </div>
             <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
-            <p><?php echo $personality1;?></p>
-            <p><?php echo $personality2;?></p>
-            <p><?php echo $personality3;?></p>
+            <p>playful: <?php echo $playful;?></p>
+            <p>angry: <?php echo $angry;?></p>
+            <p>somber: <?php echo $somber;?></p>
+            <p>independent: <?php echo $independent;?></p>
+            <p>cuddly: <?php echo $cuddly;?></p>
             <div class="subheading">
             <p>Likes</p>
             </div>

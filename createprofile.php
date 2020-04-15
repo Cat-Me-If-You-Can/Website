@@ -17,9 +17,11 @@ if(isset($_POST['upload'])) {
      
         $name = $_POST['name'];
         $gender = $_POST['gender'];
-        $personality1 = $_POST['personality1'];
-        $personality2 = $_POST['personality2'];
-        $personality3 = $_POST['personality3'];
+        $playful = $_POST['playful'];
+        $angry = $_POST['angry'];
+        $somber = $_POST['somber'];
+        $independent = $_POST['independent'];
+        $cuddly = $_POST['cuddly'];
         $likes = $_POST['likes'];
         $dislikes = $_POST['dislikes'];
         $location = $_POST['location'];
@@ -27,13 +29,13 @@ if(isset($_POST['upload'])) {
 
 
             if(profileExists($_SESSION["id"]) === TRUE) {
-                $sql = "UPDATE profile SET picture='$filename', name='$name', gender='$gender', personality1='$personality1', personality2='$personality2', personality3='$personality3', likes='$likes', dislikes='$dislikes', location='$location', userid='$userid' WHERE userid='".$_SESSION['id']."'";
+                $sql = "UPDATE profile SET picture='$filename', name='$name', gender='$gender', playful='$playful', angry='$angry', somber='$somber', independent='$independent', cuddly='$cuddly', likes='$likes', dislikes='$dislikes', location='$location', userid='$userid' WHERE userid='".$_SESSION['id']."'";
                 $query = $connect->query($sql);
                 header('location: profile.php');
             exit();
             } else {
                 
-            $sql = "INSERT INTO profile (picture, name, gender, personality1, personality2, personality3, likes, dislikes, location, userid) VALUES ('$filename', '$name', '$gender', '$personality1', '$personality2', '$personality3', '$likes', '$dislikes', '$location', '$userid')";
+            $sql = "INSERT INTO profile (picture, name, gender, playful, angry, somber, independent, cuddly, likes, dislikes, location, userid) VALUES ('$filename', '$name', '$gender', '$playful', '$angry', '$somber', '$independent', '$cuddly', '$likes', '$dislikes', '$location', '$userid')";
             $query = $connect->query($sql);
             // $stmt = $connect->prepare("INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')");
             // $stmt->bind_param("sss", $email, $newPassword, $salt);
