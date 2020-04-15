@@ -23,15 +23,7 @@ global $connect;
 
  $lowerbound = $playful - 20;
  $upperbound = $playful  + 20;
-
- $sql="select * from matches where catid='".$id."'";
- $query3 = $connect->query($sql);
- $row3 = $query3->fetch_assoc();
-
- $catid=$row3["catid"];
- $catmatch=$row3["catmatch"];
- $matched=$row3["matched"];
-
+ 
  $sql="select * from profile where playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'";
  $query2 = $connect->query($sql);
  $row2 = $query2->fetch_assoc();
