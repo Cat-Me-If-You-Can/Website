@@ -1,5 +1,5 @@
 <div class="navContainer">
-        <a href="settings.html">
+        <a href="settings.php">
         <div class="navItem">
             <img src="static/images/icons/toyger-cat.png" alt=""><br>
             Home

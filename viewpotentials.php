@@ -21,12 +21,12 @@ global $connect;
  $dislikes=$row["dislikes"];
  $location=$row["location"];
 
- $lowerbound = $playful - 30;
- $upperbound = $playful  + 30;
+ $lowerbound = $playful - 99;
+ $upperbound = $playful  + 99;
 
- $sql = "SELECT profile.id, profile.userid, profile.name, profile.gender, profile.playful, profile.angry, profile.somber, profile.independent, profile.cuddly, profile.likes, profile.dislikes, profile.location, matches.catid, matches.id, matches.catmatch, matches.matched, profile.picture
+ $sql = "SELECT profile.id, profile.userid, profile.name, profile.gender, profile.playful, profile.angry, profile.somber, profile.independent, profile.cuddly, profile.likes, profile.dislikes, profile.location, matches.catid, matches.catmatch, matches.matched, matches.wantstom, profile.picture
  FROM profile
- INNER JOIN matches ON profile.id=matches.catid WHERE playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'";
+ INNER JOIN matches ON profile.id=matches.catid WHERE matched=''";
  $query2 = $connect->query($sql);
  $row2 = $query2->fetch_assoc();
  
@@ -36,7 +36,7 @@ global $connect;
  #$query2 = $connect->query($sql);
  #$row2 = $query2->fetch_assoc();
  
- $id2=$row2["id"];
+ $id2=$row2["catid"];
  $picture2=$row2["picture"];
  $name2=$row2["name"];
  $gender2=$row2["gender"];
@@ -49,12 +49,9 @@ global $connect;
  $dislikes2=$row2["dislikes"];
  $location2=$row2["location"];
 
- if(matchExists($id,$id2) === TRUE) {
-    echo " already matched with user";
-} else 
-{
-}
-
+ echo $id;
+ echo " ";
+ echo $id2;
 ?>
 
 
