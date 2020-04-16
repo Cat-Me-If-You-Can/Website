@@ -21,12 +21,12 @@ global $connect;
  $dislikes=$row["dislikes"];
  $location=$row["location"];
 
- $lowerbound = $playful - 20;
- $upperbound = $playful  + 20;
+ $lowerbound = $playful - 30;
+ $upperbound = $playful  + 30;
 
  $sql = "SELECT profile.id, profile.userid, profile.name, profile.gender, profile.playful, profile.angry, profile.somber, profile.independent, profile.cuddly, profile.likes, profile.dislikes, profile.location, matches.catid, matches.id, matches.catmatch, matches.matched, profile.picture
  FROM profile
- INNER JOIN matches ON profile.id=matches.catid";
+ INNER JOIN matches ON profile.id=matches.catid WHERE playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'";
  $query2 = $connect->query($sql);
  $row2 = $query2->fetch_assoc();
  
@@ -74,6 +74,11 @@ global $connect;
             </div>
         <div class="profileDetails">
             
+        <?php
+        if(matchExists($id,$id2) === TRUE) {
+    echo "SORRY NO MORE MATCHES :( CHANGE YOUR PROFILE SETTINGS TO INCREASE CHANCES OF FINDING LOVE";
+} else { ?>
+
             <!-- If profile picture, load into src below -->
             <!-- If no profile picture, display white circle -->
             <?php
@@ -128,6 +133,7 @@ global $connect;
         <div class="likeButton"><img src="static/images/like1.png" alt=""></div>
         <div class="dislikeButton"><img src="static/images/dislike1.png" alt=""></div>
     </div>
+    <?php } ?>
     <?php include 'navbar.php';?>
 </body>
 </html>
