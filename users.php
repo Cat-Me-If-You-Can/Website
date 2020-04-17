@@ -137,7 +137,7 @@ function ifLikeExist() {
     global $connect;
     $sql = "SELECT * FROM likestable";
     $query = $connect->query($sql);
-    if($query->num_rows == 1) {
+    if($query->num_rows >= 1) {
         return true;
     } else {
         return false;

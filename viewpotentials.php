@@ -76,7 +76,7 @@ $picture2=$row2["picture"];
  #$query2 = $connect->query($sql);
  #$row2 = $query2->fetch_assoc();
  
- $sql = "SELECT * from profile where id NOT IN (SELECT cat2 FROM likestable where cat1 = '".$id."')"; 
+ $sql = "SELECT * from profile where id NOT IN (SELECT cat2 FROM likestable where cat1 = '".$id."') AND NOT userid='".$_SESSION['id']."'"; 
  $query2 = $connect->query($sql);
  $row2 = $query2->fetch_assoc();
 
@@ -117,7 +117,9 @@ $picture2=$row2["picture"];
         <div class="profileDetails">
             
         <?php
-        if(matchExists($id,$id2) === TRUE) {
+
+
+        if(matchExists($id,$id2) === TRUE || $id2 == NULL) {
     echo "SORRY NO MORE MATCHES :( CHANGE YOUR PROFILE SETTINGS TO INCREASE CHANCES OF FINDING LOVE";
 } else { ?>
 
