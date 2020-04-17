@@ -21,8 +21,8 @@ global $connect;
  $dislikes=$row["dislikes"];
  $location=$row["location"];
 
- $lowerbound = $playful - 99;
- $upperbound = $playful  + 99;
+ $lowerbound = $playful - 20;
+ $upperbound = $playful  + 20;
 
 //check if likes table is empty 
 if(ifLikeExist() === FALSE) {
@@ -51,32 +51,8 @@ $picture2=$row2["picture"];
  echo " ";
  echo $id2;
 } else {
-
-// if not then Select UserID from profile where userID NOT IN (Select cat2 from likes where cat1 == logged in user)
-
-
-
-//  $sql = "SELECT profile.id, profile.userid, profile.name, profile.gender, profile.playful, profile.angry, profile.somber, profile.independent, profile.cuddly, profile.likes, profile.dislikes, profile.location, likestable.id, likestable.cat1, likestable.cat2, likestable.like, profile.picture
-//  FROM profile
-//  INNER JOIN likestable ON profile.id=likestable.cat1";
-//  $query2 = $connect->query($sql);
-//  $row2 = $query2->fetch_assoc();
  
-// select from profile user id not in cat no
-
-//  $sql = "SELECT profile.id, profile.userid, profile.name, profile.gender, profile.playful, profile.angry, profile.somber, profile.independent, profile.cuddly, profile.likes, profile.dislikes, profile.location, matches.catid, matches.catmatch, matches.matched, matches.wantstom, profile.picture
-//  FROM profile
-//  INNER JOIN matches ON profile.id=matches.catid WHERE matched='' AND NOT catid='$id' AND NOT wantstom='$id'";
-//  $query2 = $connect->query($sql);
-//  $row2 = $query2->fetch_assoc();
- 
- # WHERE playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'
- 
- #$sql="select * from profile where playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND NOT userid='".$_SESSION['id']."'";
- #$query2 = $connect->query($sql);
- #$row2 = $query2->fetch_assoc();
- 
- $sql = "SELECT * from profile where id NOT IN (SELECT cat2 FROM likestable where cat1 = '".$id."') AND NOT userid='".$_SESSION['id']."'"; 
+ $sql = "SELECT * from profile where playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND id NOT IN (SELECT cat2 FROM likestable where cat1 = '".$id."') AND NOT userid='".$_SESSION['id']."'"; 
  $query2 = $connect->query($sql);
  $row2 = $query2->fetch_assoc();
 
