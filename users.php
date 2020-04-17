@@ -116,13 +116,13 @@ function matchExists($id, $id2) {
 }
 
 
-function FullmatchExists($id, $id2) {
+function FullmatchExists($cat1, $cat2) {
     // global keyword is used to access a global variable from within a function
     global $connect;
     $yes = "yes";
-    $sql = "SELECT * FROM matches WHERE catid = '$id' OR '$id2' AND catmatch = '$id2' OR '$id' AND matched = '$yes'";
+    $sql = "SELECT * FROM likestable WHERE cat1 = '$cat1' OR '$cat2' AND cat2 = '$cat1' OR '$cat2' AND likes = '$yes'";
     $query = $connect->query($sql);
-    if($query->num_rows == 1) {
+    if($query->num_rows == 2) {
         return true;
     } else {
         return false;
