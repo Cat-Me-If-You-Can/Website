@@ -1,11 +1,11 @@
 <div class="navContainer">
-        <a href="#">
+        <a href="settings.php">
         <div class="navItem">
             <img src="static/images/icons/toyger-cat.png" alt=""><br>
             Home
         </div>
     </a>
-        <a href="#">
+        <a href="viewpotentials.php">
         <div class="navItem">
             <img src="static/images/icons/bengal-cat.png" alt=""><br>
             Chat

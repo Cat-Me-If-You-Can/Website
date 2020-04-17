@@ -99,5 +99,67 @@ function userdata($email) {
  
     // close the database connection
 }
+
+function matchExists($id, $id2) {
+    // global keyword is used to access a global variable from within a function
+    global $connect;
+    $sql = "SELECT * FROM likestable WHERE cat1 = '$id' AND cat2 = '$id2'";
+    $query = $connect->query($sql);
+    if($query->num_rows == 1) {
+        return true;
+    } else {
+        return false;
+    }
+ 
+    $connect->close();
+    // close the database connection
+}
+
+
+function FullmatchExists($cat1, $cat2) {
+    // global keyword is used to access a global variable from within a function
+    global $connect;
+    $yes = "yes";
+    $sql = "SELECT * FROM likestable WHERE cat1 = '$cat1' AND cat2 = '$cat2' OR cat1 = '$cat2' AND cat2 = '$cat1' AND likes = '$yes'";
+    $query = $connect->query($sql);
+    if($query->num_rows == 2) {
+        return true;
+    } else {
+        return false;
+    }
+ 
+    $connect->close();
+    // close the database connection
+}
+
+function ifLikeExist() {
+    // global keyword is used to access a global variable from within a function
+    global $connect;
+    $sql = "SELECT * FROM likestable";
+    $query = $connect->query($sql);
+    if($query->num_rows >= 1) {
+        return true;
+    } else {
+        return false;
+    }
+ 
+    $connect->close();
+    // close the database connection
+}
+
+function matchcheck($id) {
+    // global keyword is used to access a global variable from within a function
+    global $connect;
+    $sql = "SELECT * FROM matchestable WHERE likeID1 = '$id' or likeID2 = '$id'";
+    $query = $connect->query($sql);
+    if($query->num_rows >= 1) {
+        return true;
+    } else {
+        return false;
+    }
+ 
+    $connect->close();
+    // close the database connection
+}
 ?>
  
