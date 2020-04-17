@@ -1,3 +1,25 @@
+<?php 
+require_once 'init.php';
+global $connect;
+
+ $sql="select * from profile where userid='".$_SESSION['id']."'";
+ $query = $connect->query($sql);
+ $row = $query->fetch_assoc();
+
+ $picture=$row["picture"];
+ $name=$row["name"];
+ $gender=$row["gender"];
+ $playful=$row["playful"];
+ $angry=$row["angry"];
+ $somber=$row["somber"];
+ $independent=$row["independent"];
+ $cuddly=$row["cuddly"];
+ $likes=$row["likes"];
+ $dislikes=$row["dislikes"];
+ $location=$row["location"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +61,7 @@
         <div class="subheading">
         <p>Your Cat's Name</p>
         </div>
-        <input type="text" name="name">
+        <input type="text" name="name" value="<?php echo $name;?>">
         <div class="subheading"><p>Gender</p></div>
         
         <select name="gender" id="genderSelection">
@@ -49,26 +71,26 @@
         <div class="subheading"><p>Personality</p></div>
 
         <label for="playful">playful (between 0 and 100):</label>
-        <input type="range" id="playful" name="playful" min="0" max="100">
+        <input type="range" id="playful" name="playful" min="0" max="100" value="<?php echo $playful;?>">
 
         <label for="angry">angry (between 0 and 100):</label>
-        <input type="range" id="angry" name="angry" min="0" max="100">
+        <input type="range" id="angry" name="angry" min="0" max="100" value="<?php echo $angry;?>">
 
         <label for="somber">somber (between 0 and 100):</label>
-        <input type="range" id="somber" name="somber" min="0" max="100">
+        <input type="range" id="somber" name="somber" min="0" max="100" value="<?php echo $somber;?>">
 
         <label for="independent">independent (between 0 and 100):</label>
-        <input type="range" id="independent" name="independent" min="0" max="100">
+        <input type="range" id="independent" name="independent" min="0" max="100" value="<?php echo $independent;?>">
 
         <label for="cuddly">cuddly (between 0 and 100):</label>
-        <input type="range" id="cuddly" name="cuddly" min="0" max="100">
+        <input type="range" id="cuddly" name="cuddly" min="0" max="100" value="<?php echo $cuddly;?>">
    
         <div class="subheading"><p>Likes</p></div>
-        <input type="text" name="likes">
+        <input type="text" name="likes" value="<?php echo $likes;?>">
         <div class="subheading"><p>Dislikes</p></div>
-        <input type="text" name="dislikes">
+        <input type="text" name="dislikes" value="<?php echo $dislikes;?>"> 
         <div class="subheading"><p>Location</p></div>
-        <input type="text" name="location">
+        <input type="text" name="location" value="<?php echo $location;?>"> 
         <input type="submit" name="upload" value="Upload" class="bottomButton inputButton" />
     </form>
 </div>
