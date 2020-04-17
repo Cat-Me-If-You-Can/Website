@@ -23,9 +23,7 @@ global $connect;
 
  $yes = "yes";
 
- $sql = "SELECT profile.id, profile.userid, profile.name, profile.gender, profile.playful, profile.angry, profile.somber, profile.independent, profile.cuddly, profile.likes, profile.dislikes, profile.location, matches.catid, matches.id, matches.catmatch, matches.matched, profile.picture
- FROM profile
- INNER JOIN matches ON profile.id=matches.catid WHERE catid = '$id' AND matched = '$yes'";
+ $sql = "SELECT * FROM matchestable where likeID1 = '".$id."' OR likeID2 = '".$id."'";
  $query2 = $connect->query($sql);
  
 //  $id2=$row2["id"];
@@ -71,34 +69,56 @@ global $connect;
         <div class="match">
                 <?php
                 
-                $sql2 = "SELECT profile.id, profile.userid, profile.name, profile.gender, profile.playful, profile.angry, profile.somber, profile.independent, profile.cuddly, profile.likes, profile.dislikes, profile.location, matches.catid, matches.id, matches.catmatch, matches.matched, profile.picture
-                FROM profile
-                INNER JOIN matches ON profile.id=matches.catid";
+                $sql2 = "SELECT * FROM matchestable where likeID1 = '".$id."' OR likeID2 = '".$id."'";
                 $query3 = $connect->query($sql2);
                 $row3 = $query3->fetch_assoc();
 
-                 $id3=$row3["id"];
-                 $picture3=$row3["picture"];
-                 $name3=$row3["name"];
-                 $gender3=$row3["gender"];
-                 $playful3=$row3["playful"];
-                 $angry3=$row3["angry"];
-                 $somber3=$row3["somber"];
-                 $independent3=$row3["independent"];
-                 $cuddly3=$row3["cuddly"];
-                 $likes3=$row3["likes"];
-                 $dislikes3=$row3["dislikes"];
-                 $location3=$row3["location"];
+                
+                 $likeID1=$row3["likeID1"];
+                 $likeID2=$row3["likeID2"];
 
+                 if($likeID1 == $id)
+                 {
+                    $matchid = $likeID2;
+                 }
+                 else 
+                    $matchid = $likeID1;
+                }       
+                    $sql4="select * from profile where id='".$matchid."'";
+                    $query = $connect->query($sql4);
+                    $row4 = $query->fetch_assoc();
+
+                     $id4=$row4["id"];
+                     $picture4=$row4["picture"];
+                     $name4=$row4["name"];
+                     $gender4=$row4["gender"];
+                     $playful4=$row4["playful"];
+                     $angry4=$row4["angry"];
+                     $somber4=$row4["somber"];
+                     $independent4=$row4["independent"];
+                     $cuddly4=$row4["cuddly"];
+                     $likes4=$row4["likes"];
+                     $dislikes4=$row4["dislikes"];
+                     $location4=$row4["location"];
                 ?>
                 <!-- Match's profile pic -->
+                <?php
+                if($picture4 == true){
+                ?><div id="ppcontainer">
+                <img id="profilepic" src="images/<?php echo $picture4;?>" alt="Profile Picture">
+                </div>
+                <?php
+                } else 
+                {
+                ?>
                 <img src="static/images/logo.png" alt="">
+                }
+                <p class="matchName"><?php echo "Name: " . $name4;?></p>
                 <!-- Match's name -->
-                <p class="matchName"><?php echo "id: " . $row2["catmatch"] . $row3["name"];?></p>
-                
             </div>
             <?php
         }
+    
         } else {
         echo "0 results";
         }
@@ -143,4 +163,5 @@ global $connect;
 
     </div>
 </body>
+<?php include 'navbar.php';?>
 </html>

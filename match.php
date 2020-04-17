@@ -15,7 +15,7 @@ require_once 'init.php';
             $sql = "INSERT INTO matchestable (likeID1, likeID2, matched) VALUES ('$cat1', '$cat2', '$matched')";
             $query = $connect->query($sql);
             echo "ITS A MATCH!";
-            sleep(3);
+            echo "<script>alert('ITS A MATCH!');</script>"; 
             header('location: viewpotentials.php');
             exit();
         } else {

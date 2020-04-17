@@ -146,5 +146,20 @@ function ifLikeExist() {
     $connect->close();
     // close the database connection
 }
+
+function matchcheck($id) {
+    // global keyword is used to access a global variable from within a function
+    global $connect;
+    $sql = "SELECT * FROM matchestable WHERE likeID1 = '$id' or likeID2 = '$id'";
+    $query = $connect->query($sql);
+    if($query->num_rows >= 1) {
+        return true;
+    } else {
+        return false;
+    }
+ 
+    $connect->close();
+    // close the database connection
+}
 ?>
  
