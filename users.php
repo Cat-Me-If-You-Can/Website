@@ -103,8 +103,7 @@ function userdata($email) {
 function matchExists($id, $id2) {
     // global keyword is used to access a global variable from within a function
     global $connect;
-    $yes = "yes";
-    $sql = "SELECT * FROM matches WHERE catid = '$id' AND catmatch = '$id2' AND matched = '$yes'";
+    $sql = "SELECT * FROM likestable WHERE cat1 = '$id' AND cat2 = '$id2'";
     $query = $connect->query($sql);
     if($query->num_rows == 1) {
         return true;
@@ -122,6 +121,21 @@ function FullmatchExists($id, $id2) {
     global $connect;
     $yes = "yes";
     $sql = "SELECT * FROM matches WHERE catid = '$id' OR '$id2' AND catmatch = '$id2' OR '$id' AND matched = '$yes'";
+    $query = $connect->query($sql);
+    if($query->num_rows == 1) {
+        return true;
+    } else {
+        return false;
+    }
+ 
+    $connect->close();
+    // close the database connection
+}
+
+function ifLikeExist() {
+    // global keyword is used to access a global variable from within a function
+    global $connect;
+    $sql = "SELECT * FROM likestable";
     $query = $connect->query($sql);
     if($query->num_rows == 1) {
         return true;

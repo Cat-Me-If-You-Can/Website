@@ -3,18 +3,35 @@ require_once 'init.php';
  
         global $connect;
      
-        $catid = $_POST['catid'];
-        $catmatch = $_POST['catmatch'];
-        $matched = $_POST['match']; 
+        $cat1 = $_POST['cat1'];
+        $cat2 = $_POST['cat2'];
+        $likes = $_POST['like'];
                 
-            $sql = "INSERT INTO matches (catid, catmatch, matched, wantstom) VALUES ('$catid', '$catmatch', '$matched', '')";
-            $query = $connect->query($sql);
 
-            $sql = "INSERT INTO matches (catid, catmatch, matched, wantstom) VALUES ('$catmatch', '', '', '$catid')";
-            $query = $connect->query($sql);
+        $sql = "INSERT INTO likestable (cat1, cat2, likes) VALUES ('$cat1', '$cat2', '$likes')";
+        $query = $connect->query($sql);
 
-            $sql = "DELETE FROM matches WHERE catid='".$_POST['catmatch']."' AND catmatch='' AND wantstom=''";
-            $query = $connect->query($sql);
+
+
+        // $sql = "INSERT INTO matchtable (cat1, cat2, cat1m, cat2m) VALUES ('$catid', '$catmatch', '$matched', '')";
+        // $query = $connect->query($sql);
+
+        // $sql = "INSERT INTO matches (catid, catmatch, matched, wantstom) VALUES ('$catmatch', '', '', '$catid')";
+        // $query = $connect->query($sql);
+
+        // $sql = "DELETE FROM matches WHERE catid='".$_POST['catmatch']."' AND catmatch='' AND wantstom=''";
+        // $query = $connect->query($sql);
+
+
+
+            // $sql = "INSERT INTO matches (catid, catmatch, matched, wantstom) VALUES ('$catid', '$catmatch', '$matched', '')";
+            // $query = $connect->query($sql);
+
+            // $sql = "INSERT INTO matches (catid, catmatch, matched, wantstom) VALUES ('$catmatch', '', '', '$catid')";
+            // $query = $connect->query($sql);
+
+            // $sql = "DELETE FROM matches WHERE catid='".$_POST['catmatch']."' AND catmatch='' AND wantstom=''";
+            // $query = $connect->query($sql);
 
 
 
