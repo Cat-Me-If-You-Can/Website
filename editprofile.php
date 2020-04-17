@@ -122,6 +122,5 @@ global $connect;
     </div>
 </a>
 </div>
-
 </body>
 </html>
