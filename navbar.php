@@ -8,7 +8,13 @@
         <a href="viewpotentials.php">
         <div class="navItem">
             <img src="static/images/icons/bengal-cat.png" alt=""><br>
-            Chat
+            Cats
+        </div>
+    </a>
+    <a href="matches.php">
+        <div class="navItem">
+            <img src="static/images/icons/peterbald-cat.png" alt=""><br>
+            Matches
         </div>
     </a>
         <a href="profile.php">

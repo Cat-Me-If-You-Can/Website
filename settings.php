@@ -1,6 +1,6 @@
 <?php 
 require_once 'init.php';
-echo $_SESSION['id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +19,9 @@ echo $_SESSION['id'];
         <img src="static/images/logo.png" alt="">
         </div>
         
-        <button onclick="window.location.href = 'viewpotentials.php';">View Potentials</button>\
-        <button onclick="window.location.href = 'matches.php';">View Matches</button>
-
+        <button onclick="window.location.href = 'viewpotentials.php';">Start Finding Matches!</button>\
+        <button onclick="window.location.href = 'matches.php';">View Current Matches</button>
+</div>
 </body>
 <?php include 'navbar.php';?>
 </html>

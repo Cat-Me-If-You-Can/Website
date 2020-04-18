@@ -97,6 +97,7 @@ $picture2=$row2["picture"];
     <title>Find A Match</title>
 </head>
 <body>
+    
     <div class="container">
         <div id="logo">
             <img src="static/images/logo.png" alt="">
@@ -147,24 +148,47 @@ $picture2=$row2["picture"];
             </div>
             <p><?php echo $location2;?></p>
             <br><br>
-            <form action="match.php" method="post">
-            <div class="subheading"><p>Did you want to match with <?php echo $name2;?></p></div>
-                <select name="like" id="genderSelection">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-                <input type = "hidden" name = "cat1" value = <?php echo $id;?> />
-                <input type = "hidden" name = "cat2" value = <?php echo $id2;?> />
-                <input type="submit" name="Submit" class="bottomButton inputButton" />
-                </select>
+
+            <div class="wantToMatch">
+                    <p>Match with <?php echo $name2; ?>?</p>
+            </div>
+            <div class="likeDislikeForm">
+            <form class="inlikeButton" action="match.php" method="post">
+            <input type="hidden" id="like" name="like" value="yes">
+            <input type = "hidden" name = "cat1" value = <?php echo $id;?> />
+            <input type = "hidden" name = "cat2" value = <?php echo $id2;?> />
+            <input  type="image" src="static/images/like1.png" value="yes">
             </form>
-            <p style="margin-bottom:300px"></p>   
+
+            <form class="indislikeButton"  action="match.php" method="post">
+            <input type="image" src="static/images/dislike1.png" value="no">
+            <input type="hidden" id="like" name="like" value="no">
+            <input type = "hidden" name = "cat1" value = <?php echo $id;?> />
+            <input type = "hidden" name = "cat2" value = <?php echo $id2;?> />
+            </form>
+            </div>
+            
+            
+     
+            <p style="margin-bottom:100px"></p>   
         </div>
     </div>
-    <div class="likeDislike">
+    <!-- <div class="likeDislike">
         <div class="likeButton"><img src="static/images/like1.png" alt=""></div>
         <div class="dislikeButton"><img src="static/images/dislike1.png" alt=""></div>
-    </div>
+    </div> -->
     <?php } ?>
-    <?php include 'navbar.php';?>
+ <script>
+     like = (e) => {
+        e.value = "yes";
+        document.getElementById("like").value = "yes";
+        alert(document.getElementById("like").value);
+
+     }
+     dislike = (e) => {
+         e.value = "no"
+     }
+ </script>
 </body>
+<?php include 'navbar.php';?>
 </html>

@@ -105,62 +105,31 @@ global $connect;
                 <?php
                 if($picture4 == true){
                 ?><div id="ppcontainer">
+                <a href="chat.html">
                 <img id="profilepic" src="images/<?php echo $picture4;?>" alt="Profile Picture">
+                </a>
                 </div>
                 <?php
                 } else 
                 {
-                ?>
-                <img src="static/images/logo.png" alt="">
+                
+                echo '<img src="static/images/logo.png" alt="">';
                 }
+                ?>
+                <a href="chat.html">
                 <p class="matchName"><?php echo "Name: " . $name4;?></p>
+                </a>
                 <!-- Match's name -->
             </div>
             <?php
         }
     
-        } else {
+         else {
         echo "0 results";
         }
         ?>
-            <div class="match">
-                <!-- Match's profile pic -->
-                <img src="static/images/logo.png" alt="">
-                <!-- Match's name -->
-                <p class="matchName">Bobby Lofts</p>
-            </div>
-            <div class="match">
-                <!-- Match's profile pic -->
-                <img src="static/images/logo.png" alt="">
-                <!-- Match's name -->
-                <p class="matchName">Bobby Lofts</p>
-            </div>
-            <div class="match">
-                <!-- Match's profile pic -->
-                <img src="static/images/logo.png" alt="">
-                <!-- Match's name -->
-                <p class="matchName">Bobby Lofts</p>
-            </div>
-            <div class="match">
-                <!-- Match's profile pic -->
-                <img src="static/images/logo.png" alt="">
-                <!-- Match's name -->
-                <p class="matchName">Bobby Lofts</p>
-            </div>
-            <div class="match">
-                <!-- Match's profile pic -->
-                <img src="static/images/logo.png" alt="">
-                <!-- Match's name -->
-                <p class="matchName">Bobby Lofts</p>
-            </div>
-            <div class="match">
-                <!-- Match's profile pic -->
-                <img src="static/images/logo.png" alt="">
-                <!-- Match's name -->
-                <p class="matchName">Bobby Lofts</p>
-            </div>
         </div>
-
+    </div>
     </div>
 </body>
 <?php include 'navbar.php';?>

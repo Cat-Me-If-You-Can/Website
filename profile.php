@@ -1,6 +1,7 @@
 <?php 
 require_once 'init.php';
 global $connect;
+echo $_SESSION['id'];
 
  $sql="select * from profile where userid='".$_SESSION['id']."'";
  $query = $connect->query($sql);
@@ -76,6 +77,7 @@ global $connect;
             
         </div>
     </div>
-    <?php include 'navbar.php';?>
+
 </body>
+<?php include 'navbar.php';?>
 </html>
