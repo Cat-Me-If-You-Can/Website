@@ -376,6 +376,7 @@ a:link, a:visited {
 
 .sendMessageWindow {
     margin-top: 20px;
+    width: 100%;
 }
 
 
@@ -436,4 +437,12 @@ a:link, a:visited {
         text-align: center;
         border-radius: 2%;
     }
+
+    .receiveMessageWindow {
+        height: 500px;
+        width: 97.5%;
+        background-color: white;
+        border: 10px solid var(--light-complement)
+    }
+
 }
