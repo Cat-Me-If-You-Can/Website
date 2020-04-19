@@ -116,7 +116,7 @@ $picture2=$row2["picture"];
             <?php
             if($picture2 == true){
                 ?><div id="ppcontainer">
-                <img id="profilepic" src="images/<?php echo $picture2;?>" alt="Profile Picture">
+                <img id="profilepic" src="static/images/<?php echo $picture2;?>" alt="Profile Picture">
                 </div> <?php
             } else {
                 ?><div id="uploadProfilePic"></div><?php

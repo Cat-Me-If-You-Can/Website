@@ -23,27 +23,10 @@ global $connect;
 
  $yes = "yes";
 
- $sql = "SELECT * FROM matchestable where likeID1 = '".$id."' OR likeID2 = '".$id."'";
+ $sql = "SELECT * FROM matchestable where likeID1 = '".$id."' OR likeID2 = '".$id."' AND matched = '$yes'";
  $query2 = $connect->query($sql);
- 
-//  $id2=$row2["id"];
-//  $picture2=$row2["picture"];
-//  $name2=$row2["name"];
-//  $gender2=$row2["gender"];
-//  $playful2=$row2["playful"];
-//  $angry2=$row2["angry"];
-//  $somber2=$row2["somber"];
-//  $independent2=$row2["independent"];
-//  $cuddly2=$row2["cuddly"];
-//  $likes2=$row2["likes"];
-//  $dislikes2=$row2["dislikes"];
-//  $location2=$row2["location"];
 
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,19 +52,14 @@ global $connect;
         <div class="match">
                 <?php
                 
-                $sql2 = "SELECT * FROM matchestable where likeID1 = '".$id."' OR likeID2 = '".$id."'";
-                $query3 = $connect->query($sql2);
-                $row3 = $query3->fetch_assoc();
-
-                
-                 $likeID1=$row3["likeID1"];
-                 $likeID2=$row3["likeID2"];
+                 $likeID1=$row2["likeID1"];
+                 $likeID2=$row2["likeID2"];
 
                  if($likeID1 == $id)
                  {
                     $matchid = $likeID2;
                  }
-                 else 
+                 else {
                     $matchid = $likeID1;
                 }       
                     $sql4="select * from profile where id='".$matchid."'";
@@ -100,13 +78,14 @@ global $connect;
                      $likes4=$row4["likes"];
                      $dislikes4=$row4["dislikes"];
                      $location4=$row4["location"];
+            
                 ?>
                 <!-- Match's profile pic -->
                 <?php
                 if($picture4 == true){
                 ?><div id="ppcontainer">
                 <a href="chat.html">
-                <img id="profilepic" src="images/<?php echo $picture4;?>" alt="Profile Picture">
+                <img id="profilepic" src="static/images/<?php echo $picture4;?>" alt="Profile Picture">
                 </a>
                 </div>
                 <?php
@@ -122,6 +101,7 @@ global $connect;
                 <!-- Match's name -->
             </div>
             <?php
+    }
         }
     
          else {

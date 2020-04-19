@@ -42,7 +42,7 @@ echo $_SESSION['id'];
             <?php
             if($picture == true){
                 ?><div id="ppcontainer">
-                <img id="profilepic" src="images/<?php echo $picture;?>" alt="Profile Picture">
+                <img id="profilepic" src="static/images/<?php echo $picture;?>" alt="Profile Picture">
                 </div> <?php
             } else {
                 ?><div id="uploadProfilePic"></div><?php
