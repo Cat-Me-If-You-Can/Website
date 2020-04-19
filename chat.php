@@ -1,3 +1,14 @@
+<?php 
+require_once 'init.php';
+ 
+        global $connect;
+
+        $matchid = $_POST['matchid'];
+        $mycatid = $_POST['mycatid'];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +25,26 @@
             </div>
             <div class="chatHeader">
             <h1>Chat</h1>
+            <div class="form">
+                <form action="unmatch.php" method="post">
+                <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
+                <input type = "hidden" name = "mycatid" value = <?php echo $mycatid;?> />
+                <input type="submit" name="register"value="Unmatch" class="bottomButton inputButton">
+                </div>
             <!-- Unmatch should prompt a confirmation dialog, then on confirm, unmatch -->
-            <div class="unmatch" id="unmatch"><h1>Unmatch</h1></div>
+            <!-- <div class="unmatch" id="unmatch"><h1>Unmatch</h1></div>
             <div class="modal" id="modal">
                 <div class="modalContent">
                     <p>Unmatch with user?</p>
                     <div id="confirmDialogue">
-                    <button id="confirmUnmatch">Yes</button>
+                    <button id="confirmUnmatch">Yes
+                
+                </form>
+                    </button>
                     <button id="cancelUnmatch">No</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
             
         </div>
             <div class="chat">

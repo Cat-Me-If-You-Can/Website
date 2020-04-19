@@ -84,9 +84,9 @@ global $connect;
                 <?php
                 if($picture4 == true){
                 ?><div id="ppcontainer">
-                <a href="chat.html">
+                
                 <img id="profilepic" src="static/images/<?php echo $picture4;?>" alt="Profile Picture">
-                </a>
+                
                 </div>
                 <?php
                 } else 
@@ -95,8 +95,15 @@ global $connect;
                 echo '<img src="static/images/logo.png" alt="">';
                 }
                 ?>
-                <a href="chat.html">
+                
                 <p class="matchName"><?php echo "Name: " . $name4;?></p>
+                <div class="form">
+                <form action="chat.php" method="post">
+                <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
+                <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
+                <input type="submit" name="register"value="Chat" class="bottomButton inputButton">
+                </div>
+                </form>
                 </a>
                 <!-- Match's name -->
             </div>
