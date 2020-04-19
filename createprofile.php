@@ -11,7 +11,7 @@ if(isset($_POST['upload'])) {
         $filename = $_FILES['uploadfile']['name'];
         $filetmpname = $_FILES['uploadfile']['tmp_name'];
         //folder where images will be uploaded
-        $folder = 'images/';
+        $folder = 'static/images/';
         //function for saving the uploaded images in a specific folder
         move_uploaded_file($filetmpname, $folder.$filename);
      

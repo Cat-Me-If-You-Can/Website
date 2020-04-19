@@ -68,8 +68,8 @@ global $connect;
         ?>
         <div class="match">
                 <?php
-                
-                $sql2 = "SELECT * FROM matchestable where likeID1 = '".$id."' OR likeID2 = '".$id."'";
+                $yes = "yes";    
+                $sql2 = "SELECT * FROM matchestable where likeID1 = '".$id."' OR likeID2 = '".$id."' AND matched = '$yes'";
                 $query3 = $connect->query($sql2);
                 $row3 = $query3->fetch_assoc();
 
@@ -106,7 +106,7 @@ global $connect;
                 if($picture4 == true){
                 ?><div id="ppcontainer">
                 <a href="chat.html">
-                <img id="profilepic" src="images/<?php echo $picture4;?>" alt="Profile Picture">
+                <img id="profilepic" src="static/images/<?php echo $picture4;?>" alt="Profile Picture">
                 </a>
                 </div>
                 <?php
