@@ -15,7 +15,16 @@
             <div class="chatHeader">
             <h1>Chat</h1>
             <!-- Unmatch should prompt a confirmation dialog, then on confirm, unmatch -->
-            <div class="unmatch"><h1>Unmatch</h1></div>
+            <div class="unmatch" id="unmatch"><h1>Unmatch</h1></div>
+            <div class="modal" id="modal">
+                <div class="modalContent">
+                    <p>Unmatch with user?</p>
+                    <div id="confirmDialogue">
+                    <button id="confirmUnmatch">Yes</button>
+                    <button id="cancelUnmatch">No</button>
+                    </div>
+                </div>
+            </div>
             
         </div>
             <div class="chat">
@@ -27,5 +36,20 @@
                 </div>
             </div>
     </div>
+
+    <script>
+        let modal = document.getElementById("modal");
+        let btn = document.getElementById("unmatch");
+
+        btn.onclick = () => {
+            modal.style.display = "block";
+        }
+
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
