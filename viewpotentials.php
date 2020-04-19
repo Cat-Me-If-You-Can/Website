@@ -7,7 +7,9 @@ global $connect;
  $sql="select * from profile where userid='".$_SESSION['id']."'";
  $query = $connect->query($sql);
  $row = $query->fetch_assoc();
-
+ 
+ // checks for cat linked to active user
+ if(isset($row["name"])){
  $id=$row["id"];
  $picture=$row["picture"];
  $name=$row["name"];
@@ -20,7 +22,20 @@ global $connect;
  $likes=$row["likes"];
  $dislikes=$row["dislikes"];
  $location=$row["location"];
-
+ } else {
+ $picture=null;
+ $name=null;
+ $gender=null;
+ $playful=null;
+ $angry=null;
+ $somber=null;
+ $independent=null;
+ $cuddly=null;
+ $likes=null;
+ $dislikes=null;
+ $location=null;
+ }
+ 
  $lowerbound = $playful - 40;
  $upperbound = $playful  + 40;
 
@@ -35,8 +50,8 @@ global $connect;
 
  $lowerbound5 = $cuddly - 40;
  $upperbound5 = $cuddly  + 40;
-//check if likes table is empty 
-if(ifLikeExist() === FALSE) {
+//check if likes table is empty and current user has a cat
+if(ifLikeExist() === FALSE && isset($row["name"])) {
     echo "no likes in like table";
     echo "session id";
     echo $_SESSION['id'];
@@ -62,24 +77,29 @@ $picture2=$row2["picture"];
  echo " ";
  echo $id2;
 } else {
- 
- $sql = "SELECT * from profile where playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND angry BETWEEN '".$lowerbound2."' AND '".$upperbound2."' AND somber BETWEEN '".$lowerbound3."' AND '".$upperbound3."' AND independent BETWEEN '".$lowerbound4."' AND '".$upperbound4."' AND cuddly BETWEEN '".$lowerbound5."' AND '".$upperbound5."' AND id NOT IN (SELECT cat2 FROM likestable where cat1 = '".$id."') AND NOT userid='".$_SESSION['id']."'"; 
- $query2 = $connect->query($sql);
- $row2 = $query2->fetch_assoc();
+ //checks if a current user has a cat created
+ if(isset($row["name"])){
+	 $sql = "SELECT * from profile where playful BETWEEN '".$lowerbound."' AND '".$upperbound."' AND angry BETWEEN '".$lowerbound2."' AND '".$upperbound2."' AND somber BETWEEN '".$lowerbound3."' AND '".$upperbound3."' AND independent BETWEEN '".$lowerbound4."' AND '".$upperbound4."' AND cuddly BETWEEN '".$lowerbound5."' AND '".$upperbound5."' AND id NOT IN (SELECT cat2 FROM likestable where cat1 = '".$id."') AND NOT userid='".$_SESSION['id']."'"; 
+	 $query2 = $connect->query($sql);
+	 $row2 = $query2->fetch_assoc();
 
- $id2=$row2["id"];
- $picture2=$row2["picture"];
- $name2=$row2["name"];
- $gender2=$row2["gender"];
- $playful2=$row2["playful"];
- $angry2=$row2["angry"];
- $somber2=$row2["somber"];
- $independent2=$row2["independent"];
- $cuddly2=$row2["cuddly"];
- $likes2=$row2["likes"];
- $dislikes2=$row2["dislikes"];
- $location2=$row2["location"];
-
+	 
+	 $id2=$row2["id"];
+	 $picture2=$row2["picture"];
+	 $name2=$row2["name"];
+	 $gender2=$row2["gender"];
+	 $playful2=$row2["playful"];
+	 $angry2=$row2["angry"];
+	 $somber2=$row2["somber"];
+	 $independent2=$row2["independent"];
+	 $cuddly2=$row2["cuddly"];
+	 $likes2=$row2["likes"];
+	 $dislikes2=$row2["dislikes"];
+	 $location2=$row2["location"];
+ } else {
+	 $id = null;
+	 $id2 = null;
+ }
  echo $id;
  echo " ";
  echo $id2;

@@ -8,6 +8,7 @@ global $connect;
  $query = $connect->query($sql);
  $row = $query->fetch_assoc();
 
+ if(isset($row["name"])){
  $id=$row["id"];
  $picture=$row["picture"];
  $name=$row["name"];
@@ -20,7 +21,11 @@ global $connect;
  $likes=$row["likes"];
  $dislikes=$row["dislikes"];
  $location=$row["location"];
-
+ } else {
+	$id = null;
+ }
+ 
+ 
  $yes = "yes";
 
  $sql = "SELECT * FROM matchestable where likeID1 = '".$id."' OR likeID2 = '".$id."' AND matched = '$yes'";

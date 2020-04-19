@@ -7,6 +7,7 @@ echo $_SESSION['id'];
  $query = $connect->query($sql);
  $row = $query->fetch_assoc();
 
+ if(isset($row["name"])){
  $picture=$row["picture"];
  $name=$row["name"];
  $gender=$row["gender"];
@@ -18,6 +19,19 @@ echo $_SESSION['id'];
  $likes=$row["likes"];
  $dislikes=$row["dislikes"];
  $location=$row["location"];
+} else {
+ $picture=null;
+ $name=null;
+ $gender=null;
+ $playful=null;
+ $angry=null;
+ $somber=null;
+ $independent=null;
+ $cuddly=null;
+ $likes=null;
+ $dislikes=null;
+ $location=null;
+}
 
 ?>
 

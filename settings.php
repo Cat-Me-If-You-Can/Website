@@ -19,7 +19,7 @@ require_once 'init.php';
         <img src="static/images/logo.png" alt="">
         </div>
         
-        <button onclick="window.location.href = 'viewpotentials.php';">Start Finding Matches!</button>\
+        <button onclick="window.location.href = 'viewpotentials.php';">Start Finding Matches!</button><br><br>
         <button onclick="window.location.href = 'matches.php';">View Current Matches</button>
 </div>
 </body>
