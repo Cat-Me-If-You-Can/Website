@@ -29,10 +29,10 @@ require_once 'init.php';
                 <form action="unmatch.php" method="post">
                 <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
                 <input type = "hidden" name = "mycatid" value = <?php echo $mycatid;?> />
-                <input type="submit" name="register"value="Unmatch" class="bottomButton inputButton">
+                <!-- <input type="submit" name="register"value="Unmatch" class="bottomButton inputButton"> -->
                 </div>
             <!-- Unmatch should prompt a confirmation dialog, then on confirm, unmatch -->
-            <!-- <div class="unmatch" id="unmatch"><h1>Unmatch</h1></div>
+            <div class="unmatch" id="unmatch"><h1>Unmatch</h1></div>
             <div class="modal" id="modal">
                 <div class="modalContent">
                     <p>Unmatch with user?</p>
@@ -44,7 +44,7 @@ require_once 'init.php';
                     <button id="cancelUnmatch">No</button>
                     </div>
                 </div>
-            </div> -->
+            </div>
             
         </div>
             <div class="chat">
@@ -60,9 +60,12 @@ require_once 'init.php';
     <script>
         let modal = document.getElementById("modal");
         let btn = document.getElementById("unmatch");
-
+		let close = document.getElementById("cancelUnmatch");
         btn.onclick = () => {
             modal.style.display = "block";
+        }
+		close.onclick = () => {
+            modal.style.display = "none";
         }
 
         window.onclick = (event) => {
