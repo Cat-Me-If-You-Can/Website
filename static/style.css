@@ -5,20 +5,102 @@
     --negative: rgb(105,186,165);
     --dark-complement: rgb(86,65,70);
     --light-complement: rgb(242,167,185);
+
+    --bg-white: white;
+    --light: black;
+    --warm-pink: black;
+    --rich-pink: black;
+    --orangepink: black;
+    --orange: black;
+    --yellow: black;
+    --grey: grey;
 }
 
+
 body {
-    background-color: var(--dark-grey);
+    /* background-color: var(--bg-white); */
+    background-color: rgb(255, 255, 255);
+    /* background-image: linear-gradient(to bottom right, var(--light), var(--bg-white)); */
     /* font-family: Arial, Helvetica, sans-serif; */
     /* font-family: 'Rubik', sans-serif; */
     /*     font-family: 'Nunito', sans-serif; */
     font-family: 'Poppins', sans-serif;
+   background-color: rgb(68, 33, 223);
+    
+    
+}
+
+#catvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+
+.thumbsButtons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 80%;
+    margin: auto;
+}
+
+
+.thumbsup {
+    
+    height: 75px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: rgb(110, 196, 40);
+    padding: 20px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.thumbsup:hover {
+    background-color: rgb(107, 238, 0);
+}
+
+.thumbsup p {
+    margin-left: -10px;
+}
+
+.thumbsup img {
+    width: 35px;
+    height: auto;
+    margin-top: -10px;
+}
+
+.thumbsButtons p{
+    margin-top: 0px;
+    font-size: 24px;
+}
+
+.thumbsdown {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: right;
+    height: 75px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgb(245, 80, 80);
+    padding: 20px;
+}
+
+.thumbsdown img {
+    margin-top: 5px;
+}
+
+.thumbsdown:hover {
+    background-color: rgb(233, 22, 22);
 }
 
 .container {
-    width: 400px;
+    width: 97%;
     margin: auto;
-    
 }
 
 #logo {
@@ -44,27 +126,86 @@ body {
 
 #splashContent {
     text-align: center;
-    color: white;
+    color: var(--grey);
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 10px 10px 5px rgb(28, 30, 110);
+    margin-bottom: 200px;
 }
 
 #splashContent p {
     margin-bottom: 40px;
+    
 }
 
-#splashContent button {
-    box-shadow: 3px 3px var(--light-complement);
-    border: 1px solid var(--light-complement);
-    height: 70px;
-    margin-bottom: 30px;
-    width: 50%;
+
+.indexButtons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 70%;
+    margin: auto;
+
+}
+
+
+.indexButtons button {
+    padding: 20px;
+    font-size: 16px;
+}
+
+
+
+#splashContent #loginbutton {
+    background-color: rgb(101, 101, 223);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-right: -2px;
+}
+
+#splashContent #loginbutton:hover {
+    background-color: blue;
+}
+
+#splashContent #registerbutton {
+    background-color: orange;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: -2px;
+}
+
+#splashContent #registerbutton:hover {
+    background-color: rgb(138, 236, 27);
 }
 
 #splashContent button:hover {
-    box-shadow: 3px 3px var(--dark-grey);
-    background-color: var(--light-complement);
-    margin-left: 10px;
-    margin-bottom: 10px;
-    margin-bottom: 30px;
+
+}
+
+.profileBox {
+    
+    background-color: white;
+    /* background-image: linear-gradient(to bottom right,rgb(255, 255, 255), var(--light)); */
+    box-shadow: 2px 2px 3px rgb(207, 205, 205);
+    margin-bottom: -20px;
+    
+ 
+}
+
+.editButtonContainer {
+    width: 100px;
+    margin: auto;
+}
+
+#editProfileButton {
+    width: 100px;
+    height: 100px;
+    background-color: var(--orangepink);
+    font-size: 16px;
+    border-radius: 50%;
+    
+
 }
 
 #ppcontainer {
@@ -84,35 +225,103 @@ body {
 }
 
 h1 {
-    color: white;
+    color: var(--grey);
 }
 
 .subheading {
     padding: 0px;
-    background-color: var(--pink);
+
 }
 
 .subheading p {
-    
-
+    color: grey;
     font-family: 'Rubik', sans-serif;
-
-
-    /* font-family: 'Work Sans', sans-serif; */
    padding: 7px;
-   font-size: 20px;
+   font-size: 24px;
+   text-align: left;
+}
+
+.personalityTraits p {
+    background-color: rgb(63, 63, 211);
     color: white;
-   border-bottom: 1px solid var(--light-complement);
+    margin-bottom: -10px;
+    padding: 15px;
+}
+
+.personalityTraits p:nth-child(even) {
+    background-color: rgb(211, 211, 255);
+    color: rgb(77, 77, 77);
+}
+
+#profileName {
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid rgb(0, 153, 255);
+}
+
+#subheadPersonality {
+    color: var(--orangepink); 
+}
+
+#subheadLikes {
+    color: var(--orange);
+}
+
+#subheadDislikes {
+    color: var(--yellow);
 }
 
 .form {
-    width: 100%;
+    width: 90%;
     margin: auto;
+    margin-top: 100px;
+}
+
+.form form {
+    text-align: center;
+}
+
+#loginform {
+
+        text-align: center;
+        color: var(--grey);
+        background-color: white;
+        width: 70%;
+        margin: auto;
+        padding: 30px;
+        box-shadow: 10px 10px 5px rgb(28, 30, 110);
+        margin-bottom: 200px;
+    
+}
+
+#loginform h1 {
+    text-align: left;
+    color: black;
+}
+
+#loginform a:hover {
+    color: blue;
+}
+
+#loginform label {
+    color: var(--grey);
+}
+
+#loginform input {
+    height: 100px;
+    width: 90%;
+    font-size: 48px;
+    padding-left: 10px;
+    border: 1px solid var(--orange);
 }
 
 
+
+
 label {
-    color: white;
+    color: var(--grey);
 }
 
 input, select {
@@ -132,15 +341,36 @@ select {
 
 button, .inputButton {
     border: none;
-    height: 40px;
-    width: 100%;
-    font-size: 30px;
+    /* height: 40px; */
+   
+    /* font-size: 30px; */
     background-color: var(--pink);
-    color: var(--dark-grey);
+    color: white;
 }
 
 button:hover, .inputButton:hover {
-    color: white;
+    /* color: white; */
+}
+
+.settingsMenu p {
+    text-align: left;
+}
+
+.settingsMenuButtons {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 20px;
+}
+
+.settingsMenuButtons button {
+    height: 60px;
+    width: 100%;
+    background: blue;
+    font-size: 16px;
+}
+
+.settingsMenuButtons button:hover {
+    background-color: rgb(129, 178, 250);
 }
 
 .profileDetails {
@@ -206,9 +436,11 @@ a:link, a:visited {
 
 /* Add this class to any button at the bottom of a page to scroll past the navbar. */
 .bottomButton {
-    margin-bottom: 110px;
-    box-shadow: 3px 3px var(--light-complement);
-    border: 1px solid var(--light-complement);
+    height: 70px;
+    width: 50%;
+    border-radius: 15px;
+    margin: auto;
+    background-color: var(--rich-pink);
 }
 
 .bottomButton:hover {

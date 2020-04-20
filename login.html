@@ -13,11 +13,14 @@
         <div id="logo">
         <img src="static/images/logo.png" alt="">
         </div>
-        <div class="form">
+        <div class="form" id="loginform">
+            <p>Please enter your user details below.</p>
+            <p>Haven't got a login yet? <a href="register.html">Register now.</a></p>
+            <br>
             <form action="login.php" method="post">
-                <label for="email">Email</label>
-                <input type="text" name="email">
-                <label for="password">Password</label>
+                <label for="email">Email</label><br>
+                <input type="text" name="email"><br>
+                <label for="password">Password</label><br>
                 <input type="password" name="password">
                 
                 <button class="bottomButton">Login</button>

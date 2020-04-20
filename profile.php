@@ -45,15 +45,23 @@ echo $_SESSION['id'];
     <title>View Profile</title>
 </head>
 <body>
+   
     <div class="container">
         <div id="logo">
             <img src="static/images/logo.png" alt="">
             </div>
-        <div class="profileDetails">
+        <div class="profileDetails" id="loginform">
+        
+        <div class="subheading">
+            <!-- <p>Name</p> -->
             
+            <p id="profileName">Bobby Lofts</p>
+            </div>
+            <!-- <p id="profileName"><?php echo $name;?></p> -->
+           
             <!-- If profile picture, load into src below -->
             <!-- If no profile picture, display white circle -->
-            <?php
+            <!-- <?php
             if($picture == true){
                 ?><div id="ppcontainer">
                 <img id="profilepic" src="static/images/<?php echo $picture;?>" alt="Profile Picture">
@@ -61,34 +69,42 @@ echo $_SESSION['id'];
             } else {
                 ?><div id="uploadProfilePic"></div><?php
             }
-            ?>		
+            ?>		 -->
+            
+            <div class="profileBox">
             <div class="subheading">
-            <p>Name</p>
-            </div>
-            <p><?php echo $name;?></p>
-            <div class="subheading">
-            <p>Personality</p>
+            <p id="subheadPersonality">Personality</p>
             </div>
             <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
+            <div class="personalityTraits">
             <p>playful: <?php echo $playful;?></p>
             <p>angry: <?php echo $angry;?></p>
             <p>somber: <?php echo $somber;?></p>
             <p>independent: <?php echo $independent;?></p>
             <p>cuddly: <?php echo $cuddly;?></p>
+            </div>
+            </div>
+            <div class="profileBox">
             <div class="subheading">
-            <p>Likes</p>
+            <p id="subheadLikes">Likes</p>
             </div>
             <p><?php echo $likes;?></p>
+            </div>
+            <div class="profileBox">
             <div class="subheading">
-            <p>Dislikes</p>
+            <p id="subheadDislikes">Dislikes</p>
             </div>
             <p><?php echo $dislikes;?></p>
+            </div>
+            <div class="profileBox">
             <div class="subheading">
-            <p>Location</p>
+            <p id="subheadLocation">Location</p>
             </div>
             <p><?php echo $location;?></p>
-            <button class="bottomButton" onclick="window.location.href = 'editprofile.php';">Edit Profile</button>
-            
+            </div>
+            <div class="editButtonContainer">
+            <button id="editProfileButton" class="bottomButton" onclick="window.location.href = 'editprofile.php';">Edit Profile</button>
+            </div>
         </div>
     </div>
 

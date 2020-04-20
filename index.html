@@ -9,6 +9,14 @@
     <title>Cat Me If You Can</title>
 </head>
 <body>
+ 
+    <!-- <video id="catvideo" autoplay playsinline loop muted controls>
+        <source src="https://player.vimeo.com/video/15298502" type="video/mpg" />
+    </video> -->
+    <video onloadeddata="this.play();" autoplay playsinline loop muted controls>
+        <source src="https://player.vimeo.com/video/1269703" type="video/mpg" />
+    </video>
+
     <div class="container">
         <div id="splashLogo">
             <img src="static/images/logo.png" alt="">
@@ -16,12 +24,12 @@
     <div id="splashContent">
         <h1>Cat Me If You Can</h1>
         <p>A dating app for your feline friends.</p>
-        <a href="login.html">
-        <button>Log In</button>
-    </a>
-        <a href="register.html">
-        <button>Register</button>
-    </a>
+        <div class="indexButtons">
+        <button id="loginbutton" onclick="window.location.href = 'login.html';">Log In</button>
+   
+        <button  id="registerbutton" onclick="window.location.href = 'register.html';">Register</button>
+    
+</div>
     </div>
     </div>
 </body>

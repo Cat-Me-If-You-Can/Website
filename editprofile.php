@@ -56,7 +56,7 @@ global $connect;
         <div id="logo">
             <img src="static/images/logo.png" alt="">
             </div>
-            <h1>Create Profile</h1>
+           
         
         <!-- If no profile pic, load this HTML: -->
         <!-- Adapted from https://stackoverflow.com/posts/36248168/revisions -->
@@ -64,7 +64,8 @@ global $connect;
         <!-- If profile pic, load this: -->
         <!-- On page load, PHP needs to do a GET to retrieve user's profile pic, store in a variable, and then the variable goes in the src below -->
         <!-- <img id="profilePic" src="" alt=""> -->
-
+<div id="loginform">
+<h1>Create Profile</h1>
         <form action="createprofile.php" method="post" enctype="multipart/form-data">
             <div class="profilePic">
                 <input type="button" id="uploadProfilePic" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
@@ -104,8 +105,9 @@ global $connect;
         <input type="text" name="dislikes" value="<?php echo $dislikes;?>"> 
         <div class="subheading"><p>Location</p></div>
         <input type="text" name="location" value="<?php echo $location;?>"> 
-        <input type="submit" name="upload" value="Upload" class="bottomButton inputButton" />
+        <input id="uploadprofilebutton" type="submit" name="upload" value="Upload"  />
     </form>
+    </div>
 </div>
 
 </body>

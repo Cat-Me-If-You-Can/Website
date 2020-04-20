@@ -18,10 +18,17 @@ require_once 'init.php';
         <div id="logo">
         <img src="static/images/logo.png" alt="">
         </div>
-        
-        <button onclick="window.location.href = 'viewpotentials.php';">Start Finding Matches!</button><br><br>
-        <button onclick="window.location.href = 'matches.php';">View Current Matches</button>
-</div>
+        <div class="settingsMenu" id="loginform">
+        <p>Welcome back, user.</p>
+        <p>Get started by choosing one of the options below.</p>
+        <div class="settingsMenuButtons">
+            <button  onclick="window.location.href = 'profile.php';">Update your profile</button>
+            <button onclick="window.location.href = 'viewpotentials.php';">Starting finding matches!</button>
+            <button  onclick="window.location.href = 'matches.php';">View your current matches</button>
+        </div>
+
+        </div>
+    </div>
 </body>
 <?php include 'navbar.php';?>
 </html>

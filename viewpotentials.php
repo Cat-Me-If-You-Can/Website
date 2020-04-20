@@ -141,13 +141,16 @@ $picture2=$row2["picture"];
             } else {
                 ?><div id="uploadProfilePic"></div><?php
             }
-            ?>		
+            ?>
+            <div class="profileBox">		
             <div class="subheading">
-            <p>Name</p>
+            <p id="profileName">Name</p>
             </div>
             <p><?php echo $name2;?></p>
+            </div>
+            <div class="profileBox">
             <div class="subheading">
-            <p>Personality</p>
+            <p id="subheadPersonality">Personality</p>
             </div>
             <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
             <p>playful: <?php echo $playful2;?></p>
@@ -155,38 +158,52 @@ $picture2=$row2["picture"];
             <p>somber: <?php echo $somber2;?></p>
             <p>independent: <?php echo $independent2;?></p>
             <p>cuddly: <?php echo $cuddly2;?></p>
+            </div>
+            <div class="profileBox">
             <div class="subheading">
-            <p>Likes</p>
+            <p id="subheadLikes">Likes</p>
             </div>
             <p><?php echo $likes2;?></p>
+            </div>
+            <div class="profileBox">
             <div class="subheading">
-            <p>Dislikes</p>
+            <p id="subheadDislikes">Dislikes</p>
             </div>
             <p><?php echo $dislikes2;?></p>
+            </div>
+            <div class="profileBox">
             <div class="subheading">
-            <p>Location</p>
+            <p id="subheadLocation">Location</p>
             </div>
             <p><?php echo $location2;?></p>
+            </div>
             <br><br>
 
             <div class="wantToMatch">
                     <p>Match with <?php echo $name2; ?>?</p>
             </div>
-            <div class="likeDislikeForm">
-            <form class="inlikeButton" action="match.php" method="post">
+
+        <div class="thumbsButtons">
+        <form  action="match.php" method="post">
             <input type="hidden" id="like" name="like" value="yes">
             <input type = "hidden" name = "cat1" value = <?php echo $id;?> />
             <input type = "hidden" name = "cat2" value = <?php echo $id2;?> />
-            <input  type="image" src="static/images/like1.png" value="yes">
-            </form>
-
-            <form class="indislikeButton"  action="match.php" method="post">
-            <input type="image" src="static/images/dislike1.png" value="no">
-            <input type="hidden" id="like" name="like" value="no">
+            <button class="thumbsup"><p>Like</p>
+            <img src="static/images/likeup2.png" alt="">
+            </button>
+        </form>
+        <form action="match.php" method="post">
+        <input type="hidden" id="like" name="like" value="no">
             <input type = "hidden" name = "cat1" value = <?php echo $id;?> />
             <input type = "hidden" name = "cat2" value = <?php echo $id2;?> />
+            
+            <button class="thumbsdown"><img src="static/images/dislikedown.png" alt="">
+                <p>Next</p>
+            </button>
             </form>
+
             </div>
+
             
             
      
