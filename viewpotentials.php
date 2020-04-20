@@ -122,7 +122,7 @@ $picture2=$row2["picture"];
         <div id="logo">
             <img src="static/images/logo.png" alt="">
             </div>
-        <div class="profileDetails">
+        <div class="profileDetails" id="loginform">
             
         <?php
 
@@ -152,6 +152,7 @@ $picture2=$row2["picture"];
             <div class="subheading">
             <p id="subheadPersonality">Personality</p>
             </div>
+            <div class="personalityTraits">
             <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
             <p>playful: <?php echo $playful2;?></p>
             <p>angry: <?php echo $angry2;?></p>
@@ -159,6 +160,7 @@ $picture2=$row2["picture"];
             <p>independent: <?php echo $independent2;?></p>
             <p>cuddly: <?php echo $cuddly2;?></p>
             </div>
+        </div>
             <div class="profileBox">
             <div class="subheading">
             <p id="subheadLikes">Likes</p>

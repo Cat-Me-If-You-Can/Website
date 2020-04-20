@@ -61,7 +61,7 @@ echo $_SESSION['id'];
            
             <!-- If profile picture, load into src below -->
             <!-- If no profile picture, display white circle -->
-            <!-- <?php
+            <?php
             if($picture == true){
                 ?><div id="ppcontainer">
                 <img id="profilepic" src="static/images/<?php echo $picture;?>" alt="Profile Picture">
@@ -69,7 +69,7 @@ echo $_SESSION['id'];
             } else {
                 ?><div id="uploadProfilePic"></div><?php
             }
-            ?>		 -->
+            ?>		
             
             <div class="profileBox">
             <div class="subheading">
