@@ -28,7 +28,7 @@ global $connect;
  
  $yes = "yes";
 
- $sql = "SELECT * FROM matchestable where likeID1 = '".$id."' OR likeID2 = '".$id."' AND matched = '$yes'";
+ $sql = "SELECT * FROM matchestable where ((likeID1 = '".$id."') OR (likeID2 = '".$id."')) AND matched = '$yes'";
  $query2 = $connect->query($sql);
 
 ?>
