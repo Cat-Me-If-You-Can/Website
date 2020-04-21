@@ -1,0 +1,160 @@
+<style>
+
+html {
+    margin: 0;
+    height: 100%;
+
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+    width: 700px;
+    margin: auto
+
+}
+
+.content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-gap: 30px;
+    margin-top: 100px;
+}
+
+.bigText {
+    margin-top: -0px;
+    font-size: 72px;
+    color: rgb(24, 22, 31);
+    /* border-bottom: 20px solid rgb(84, 148, 231); */
+    width: 300px;
+    font-weight: bold;
+    line-height: 70px;
+}
+
+.bigText span {
+    /* border-bottom: 40px solid blue; */   
+    background-color: purple;
+    
+ 
+}
+
+.button {
+    border-radius: 50px;
+    width: 120px;
+    padding: 15px;
+    text-align: center;
+}
+
+#join {
+    color: white;
+    background-color: purple;
+}
+
+#join:hover {
+    background-color: purple;
+}
+
+.contentItem img {
+    width: 400px;
+    height: auto;
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    box-shadow: 0px 5px 5px grey;
+    margin-bottom: 80px;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+}
+
+.header p {
+    text-align: center;
+}
+
+.medText {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.textBox {
+    box-shadow: 0px 10px 10px rgb(223, 222, 222);
+    padding: 30px;
+    border-radius: 15px;
+    line-height: 34px;
+}
+
+footer {
+    background-color: grey;
+    height: 200px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <p>menu</p>
+        <p>Cat Me If You Can</p>
+        <p>Sign in</p>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="contentItem">
+                <img src="cute1.jpg" alt="">
+            </div>
+            <div class="contentItem"><p class="bigText">
+                <span>Ready</span> <span>to dive</span> <span>in?</span>
+            </p>
+            <p>Welcome to Cat Me If You Can. Meow!</p>
+            <div class="button" id="join">Join now!</div>
+            </div>
+            <div class="contentItem textBox">
+                <p class="medText">Finding The One</p>
+                <p>Any relationship can start by scratching at a yarn ball. Any relationship can start by scratching at a yarn ball. Any relationship can start by scratching at a yarn ball. Any relationship can start by scratching at a yarn ball.</p>
+                <div class="registerNow">Register Now! -></div>
+            </div>
+            <div class="contentItem">
+                <img src="cute2.jpg" alt="">
+            </div>
+            <div class="contentItem">
+                <img src="cute3.jpg" alt="">
+            </div>
+            <div class="contentItem textBox">
+                <p class="medText">Finding The One</p>
+                <p>Any relationship can start by scratching at a yarn ball. Any relationship can start by scratching at a yarn ball. Any relationship can start by scratching at a yarn ball. Any relationship can start by scratching at a yarn ball.</p>
+                <div class="registerNow">Register Now! -></div>
+            </div>
+            
+        </div>
+        <footer>
+            <p>Made with love by some folks.</p>
+        </footer>
+    </div>
+    
+</body>
+</html>

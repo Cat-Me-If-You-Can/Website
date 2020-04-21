@@ -117,12 +117,23 @@ $picture2=$row2["picture"];
     <title>Find A Match</title>
 </head>
 <body>
-    
-    <div class="container">
-        <div id="logo">
+<div class="header">
+<p>Your Cats</p>
+        <p>Look for dates</p>
+        <p>Cat Me If You Can</p>
+        <p>Matches</p>
+        <p>Sign out</p>
+    </div>
+<div id="logo">
             <img src="static/images/logo.png" alt="">
             </div>
-        <div class="profileDetails" id="loginform">
+    <div class="container">
+        
+    <div class="subheading">
+            <p id="profileName"><?php echo $name2;?>Bobby Lofts</p>
+         
+            <p></p>
+            </div>
             
         <?php
 
@@ -142,12 +153,8 @@ $picture2=$row2["picture"];
                 ?><div id="uploadProfilePic"></div><?php
             }
             ?>
-            <div class="profileBox">		
-            <div class="subheading">
-            <p id="profileName">Name</p>
-            </div>
-            <p><?php echo $name2;?></p>
-            </div>
+         	
+            
             <div class="profileBox">
             <div class="subheading">
             <p id="subheadPersonality">Personality</p>
@@ -161,6 +168,7 @@ $picture2=$row2["picture"];
             <p>cuddly: <?php echo $cuddly2;?></p>
             </div>
         </div>
+        <div class="likesAndDislikesBox">
             <div class="profileBox">
             <div class="subheading">
             <p id="subheadLikes">Likes</p>
@@ -173,6 +181,7 @@ $picture2=$row2["picture"];
             </div>
             <p><?php echo $dislikes2;?></p>
             </div>
+            </div>
             <div class="profileBox">
             <div class="subheading">
             <p id="subheadLocation">Location</p>
@@ -180,7 +189,7 @@ $picture2=$row2["picture"];
             <p><?php echo $location2;?></p>
             </div>
             <br><br>
-
+            <div class="matchBox">
             <div class="wantToMatch">
                     <p>Match with <?php echo $name2; ?>?</p>
             </div>
@@ -205,13 +214,14 @@ $picture2=$row2["picture"];
             </form>
 
             </div>
+            </div>
 
             
             
      
             <p style="margin-bottom:100px"></p>   
         </div>
-    </div>
+    
     <!-- <div class="likeDislike">
         <div class="likeButton"><img src="static/images/like1.png" alt=""></div>
         <div class="dislikeButton"><img src="static/images/dislike1.png" alt=""></div>

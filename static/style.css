@@ -16,6 +16,12 @@
     --grey: grey;
 }
 
+html {
+    margin: 0;
+    height: 100%;
+
+}
+
 
 body {
     /* background-color: var(--bg-white); */
@@ -25,9 +31,27 @@ body {
     /* font-family: 'Rubik', sans-serif; */
     /*     font-family: 'Nunito', sans-serif; */
     font-family: 'Poppins', sans-serif;
-   background-color: rgb(68, 33, 223);
+   /* background-color: rgb(68, 33, 223); */
+    margin: 0;
+    height: 100%;
     
-    
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    box-shadow: 5px 0px 5px grey;
+    margin-bottom: 80px;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-bottom: 0px;
+}
+
+.header p {
+    text-align: center;
 }
 
 #catvideo {
@@ -45,7 +69,9 @@ body {
     grid-template-columns: 50% 50%;
     width: 80%;
     margin: auto;
+ 
 }
+
 
 
 .thumbsup {
@@ -66,17 +92,20 @@ body {
 
 .thumbsup p {
     margin-left: -10px;
+    
 }
 
 .thumbsup img {
     width: 35px;
     height: auto;
     margin-top: -10px;
+    
 }
 
 .thumbsButtons p{
     margin-top: 0px;
     font-size: 24px;
+    
 }
 
 .thumbsdown {
@@ -88,6 +117,7 @@ body {
     border-bottom-right-radius: 15px;
     background-color: rgb(245, 80, 80);
     padding: 20px;
+    
 }
 
 .thumbsdown img {
@@ -277,6 +307,7 @@ h1 {
     width: 90%;
     margin: auto;
     margin-top: 100px;
+    
 }
 
 .form form {
@@ -614,8 +645,19 @@ a:link, a:visited {
 
 /* For desktop view */
 @media only screen and (min-width: 600px) {
+
+    body {
+        background-color: white;
+    }
     .container {
-        width: 700px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+        grid-gap: 30px;
+    }
+
+    .profileBox {
+        padding: 20px;
     }
 
     .navContainer {
@@ -675,6 +717,19 @@ a:link, a:visited {
         width: 97.5%;
         background-color: white;
         border: 10px solid var(--light-complement)
+    }
+
+    .header {
+        height: 50px;
+        width: 100%;
+        box-shadow: 5px 0px 5px grey;
+        margin-bottom: 80px;
+        position: fixed;
+        top: 0;
+        background-color: white;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        margin-bottom: 0px;
     }
 
 }

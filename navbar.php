@@ -1,3 +1,11 @@
+<div class="header">
+        <p>Your Cats</p>
+        <p>Look for dates</p>
+        <p>Cat Me If You Can</p>
+        <p>Matches</p>
+        <p>Sign out</p>
+</div>
+<!-- 
 <div class="navContainer">
         <a href="settings.php">
         <div class="navItem">
@@ -30,4 +38,4 @@
             Logout
         </div>
     </a>
-    </div>
+    </div> -->

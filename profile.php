@@ -45,12 +45,12 @@ echo $_SESSION['id'];
     <title>View Profile</title>
 </head>
 <body>
-   
-    <div class="container">
-        <div id="logo">
+<div id="logo">
             <img src="static/images/logo.png" alt="">
             </div>
-        <div class="profileDetails" id="loginform">
+    <div class="container">
+        
+        
         
         <div class="subheading">
             <!-- <p>Name</p> -->
@@ -84,6 +84,7 @@ echo $_SESSION['id'];
             <p>cuddly: <?php echo $cuddly;?></p>
             </div>
             </div>
+            <div class="likesAndDislikesBox">
             <div class="profileBox">
             <div class="subheading">
             <p id="subheadLikes">Likes</p>
@@ -96,6 +97,7 @@ echo $_SESSION['id'];
             </div>
             <p><?php echo $dislikes;?></p>
             </div>
+            </div>
             <div class="profileBox">
             <div class="subheading">
             <p id="subheadLocation">Location</p>
@@ -106,7 +108,7 @@ echo $_SESSION['id'];
             <button id="editProfileButton" class="bottomButton" onclick="window.location.href = 'editprofile.php';">Edit Profile</button>
             </div>
         </div>
-    </div>
+    
 
 </body>
 <?php include 'navbar.php';?>
