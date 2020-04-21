@@ -19,10 +19,12 @@ require_once 'init.php';
     <title>Chat</title>
 </head>
 <body>
-    <div class="container">
-        <div id="logo">
+    <div class="colorbg"></div>
+<div id="logo">
             <img src="static/images/logo.png" alt="">
             </div>
+    <div class="container">
+        <div class="chatBox" id=loginform>
             <div class="chatHeader">
             <h1>Chat</h1>
             <div class="form">
@@ -31,8 +33,9 @@ require_once 'init.php';
                 <input type = "hidden" name = "mycatid" value = <?php echo $mycatid;?> />
                 <!-- <input type="submit" name="register"value="Unmatch" class="bottomButton inputButton">  -->
                 </div>
+                
             <!-- Unmatch should prompt a confirmation dialog, then on confirm, unmatch -->
-            <div class="unmatch" id="unmatch"><h1>Unmatch</h1></div>
+            <div class="unmatch" id="unmatch"><p>Unmatch</p></div>
             <div class="modal" id="modal">
                 <div class="modalContent">
                     <p>Unmatch with user?</p>
@@ -44,8 +47,8 @@ require_once 'init.php';
                     <button id="cancelUnmatch">No</button>
                     </div>
                 </div>
-            </div>
-            
+            </div><div class="unmatch">
+            <p>Report</p></div>
         </div>
             <div class="chat">
                 <div class="receiveMessageWindow">
@@ -54,6 +57,7 @@ require_once 'init.php';
                 <div class="sendMessageWindow">
                     <input type="text">
                 </div>
+            </div>
             </div>
     </div>
 
