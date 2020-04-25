@@ -214,12 +214,12 @@ $picture2=$row2["picture"];
             <div class="profileInfo">
                 <p><?php echo $dislikes2;?></p>
             </div>
-			<div class="profileSubhead"><p>distance</p></div>
+			<div class="profileSubhead"><p>Distance</p></div>
 			<div class="profileInfo"><p>
 			<?php echo $distance;?> Km's
 			</p></div>
 
-            <div class="profileSubhead"><p>Location</p></div>
+            <div class="profileSubhead"><p>Suburb</p></div>
             <div class="profileInfo">
                 <p><?php echo $location2;?></p>
             </div>

@@ -1,14 +1,4 @@
 <?php 
-echo "hello";
-if(isset($_POST['submit'])) {
-	echo "two";
-	run();
-} else {
-	echo "three";
-}
-
-
-
 require_once 'init.php';
 global $connect;
 echo $_SESSION['id'];
@@ -43,21 +33,6 @@ echo $_SESSION['id'];
  $location=null;
 }
 
-
- echo "hello"; 
-
-function run(){
-	$sql="select * from suburbs where name='".$location."'";
-	$query = $connect->query($sql);
-	$row = $query->fetch_assoc();
-	
-	if(isset($row["name"])){
-		echo "good location";
-	}else {
-		echo "bad location";
-	}
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +45,7 @@ function run(){
 </head>
 <body>
 <div class="header">
-        <p><a href="profile.html">Your Cats</a></p>
+        <p><a href="profile.php">Your Cats</a></p>
         <p><a href="viewpotentials.php">Look for dates</a></p>
         <p>Cat Me If You Can</p>
         <p><a href="matches.php">Matches</a></p>
@@ -134,7 +109,7 @@ function run(){
             <input class="profileInfoEntry" type="text" name="dislikes" value="<?php echo $dislikes;?>"> 
             </div>
 
-            <div class="profileSubhead"><p>Location</p></div>
+            <div class="profileSubhead"><p>Suburb</p></div>
             <div class="profileInfo">
             <input class="profileInfoEntry" type="text" name="location" value="<?php echo $location;?>"> 
             </div>

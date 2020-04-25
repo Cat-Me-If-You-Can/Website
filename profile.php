@@ -94,7 +94,7 @@ echo $_SESSION['id'];
                 <p><?php echo $dislikes;?></p>
             </div>
 
-            <div class="profileSubhead"><p>Location</p></div>
+            <div class="profileSubhead"><p>Suburb</p></div>
             <div class="profileInfo">
                 <p><?php echo $location;?></p>
             </div>
