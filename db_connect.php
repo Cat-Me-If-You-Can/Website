@@ -2,9 +2,9 @@
  
 #will have to add these once i know the server 
 
-$servername = "127.0.0.1";
+$servername = "localhost";
 $email = "root";
-$password = "";
+$password = "h%P#Dv%iq#NZA4";
 $dbname = "login_registration";
  
 // crearte connection

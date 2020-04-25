@@ -8,58 +8,72 @@ require_once 'init.php';
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
-    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <div class="colorbg"></div>
-<div id="logo">
-            <img src="static/images/logo.png" alt="">
-            </div>
-    <div class="container">
-        <div class="chatBox" id=loginform>
-            <div class="chatHeader">
-            <h1>Chat</h1>
-            <div class="form">
-                <form action="unmatch.php" method="post">
-                <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
-                <input type = "hidden" name = "mycatid" value = <?php echo $mycatid;?> />
-                <!-- <input type="submit" name="register"value="Unmatch" class="bottomButton inputButton">  -->
-                </div>
-                
-            <!-- Unmatch should prompt a confirmation dialog, then on confirm, unmatch -->
-            <div class="unmatch" id="unmatch"><p>Unmatch</p></div>
-            <div class="modal" id="modal">
-                <div class="modalContent">
-                    <p>Unmatch with user?</p>
-                    <div id="confirmDialogue">
-                    <button id="confirmUnmatch">Yes
-                
-                </form>
-                    </button>
-                    <button id="cancelUnmatch">No</button>
-                    </div>
-                </div>
-            </div><div class="unmatch">
-            <p>Report</p></div>
-        </div>
-            <div class="chat">
-                <div class="receiveMessageWindow">
 
+<div class="header">
+        <p>Your Cats</p>
+        <p>Look for dates</p>
+        <p>Cat Me If You Can</p>
+        <p>Matches</p>
+        <p>Sign out</p>
+</div>
+    <div class="container">
+        <div class="chatHead">
+                <img class="headerPic" src="static/images/cutecat1.jpg" alt="">
+            <div class="chatTitle">Messages</div>
+            <div class="messageListBox">
+                <div class="message">
+                    <div class="messageSender">Catty Bates</div>
                 </div>
-                <div class="sendMessageWindow">
-                    <input type="text">
+                <div class="message">
+                    <div class="messageSender">Meowngela Lansbury</div>
+                </div>
+                <div class="message">
+                    <div class="messageSender">Pawl Bettany</div>
                 </div>
             </div>
+        </div>
+
+        <div class="chatBox">
+            <div class="chatBoxHeader">
+            <div class="chattingTo">Chat with Catty Bates</div>
+                <div class="chatBoxLinks">
+                    <p id="unmatch">Unmatch</p>
+                        <div class="modal" id="modal">
+                            <div class="modalContent">
+                                <p>Unmatch with user?</p>
+                                <div id="confirmDialogue">
+                                <button id="confirmUnmatch">Yes
+                            
+                            </form>
+                                </button>
+                                <button id="cancelUnmatch">No</button>
+                                </div>
+                            </div>
+                        </div>
+                    <p>Report</p>
+                </div>
             </div>
+            <div class="receiveMessageBox">
+
+            </div>
+            <div class="sendMessageBox">
+                <input type="text" placeholder="Send message...">
+            </div>
+        </div>
+
+
+
     </div>
+    
 
     <script>
         let modal = document.getElementById("modal");
@@ -79,5 +93,4 @@ require_once 'init.php';
         }
     </script>
 </body>
-<?php include 'navbar.php' ?>
 </html>

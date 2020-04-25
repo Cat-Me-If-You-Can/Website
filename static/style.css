@@ -1,605 +1,298 @@
+/* Put all colours and recurring sizes etc here */
+/* Then invoke them when designing so if we need changes, we can just alter the variables */
 :root {
-    --dark-grey: rgb(44, 40, 40);
-    --pink: rgb(228, 81, 130);
-    --logo-grey: rgb(65,65,65);
-    --negative: rgb(105,186,165);
-    --dark-complement: rgb(86,65,70);
-    --light-complement: rgb(242,167,185);
-
-    --bg-white: white;
-    --light: black;
-    --warm-pink: black;
-    --rich-pink: black;
-    --orangepink: black;
-    --orange: black;
-    --yellow: black;
-    --grey: grey;
+    --buttonBg: rgb(255, 0, 191);
+    --main-accent: rgb(255, 0, 191);
+    --massive-text: 100px;
+    --big-text: 48px;
+    --med-text: 24px;
+    --reg-text: 16px;
 }
 
+/* Makes sure the window takes up the whole page */
+/* Default behaviour is slight padding in the browser window, very weird. */
 html {
     margin: 0;
     height: 100%;
-
 }
-
 
 body {
-    /* background-color: var(--bg-white); */
-    background-color: rgb(255, 255, 255);
-    /* background-image: linear-gradient(to bottom right, var(--light), var(--bg-white)); */
-    /* font-family: Arial, Helvetica, sans-serif; */
-    /* font-family: 'Rubik', sans-serif; */
-    /*     font-family: 'Nunito', sans-serif; */
-    font-family: 'Poppins', sans-serif;
-   /* background-color: rgb(68, 33, 223); */
     margin: 0;
     height: 100%;
-    
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* This is the header bar that spans every page aka the navbar. */
 .header {
     height: 50px;
     width: 100%;
-    box-shadow: 5px 0px 5px grey;
+    box-shadow: 0px 5px 5px grey;
     margin-bottom: 80px;
     position: fixed;
-    bottom: 0;
+    top: 0;
     background-color: white;
     display: grid;
-    grid-template-columns: auto auto auto;
-    margin-bottom: 0px;
+    grid-template-columns: auto auto auto auto auto;
+    /* padding-bottom: 20px; */
 }
 
+/* This is for styling the elements inside the navbar, which are currently just text */
 .header p {
     text-align: center;
-}
-
-#catvideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-}
-
-
-.thumbsButtons {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    width: 80%;
-    margin: auto;
- 
-}
-
-
-
-.thumbsup {
-    
-    height: 75px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    background-color: rgb(110, 196, 40);
-    padding: 20px;
-    text-align: left;
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-.thumbsup:hover {
-    background-color: rgb(107, 238, 0);
-}
-
-.thumbsup p {
-    margin-left: -10px;
     
 }
 
-.thumbsup img {
-    width: 35px;
-    height: auto;
-    margin-top: -10px;
+/* This can be used for icons in the navbar */
+.header img {
+    width: auto;
+    height: 30px;
     
 }
 
-.thumbsButtons p{
-    margin-top: 0px;
-    font-size: 24px;
-    
-}
-
-.thumbsdown {
-    display: grid;
-    grid-template-columns: auto auto;
-    text-align: right;
-    height: 75px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: rgb(245, 80, 80);
-    padding: 20px;
-    
-}
-
-.thumbsdown img {
-    margin-top: 5px;
-}
-
-.thumbsdown:hover {
-    background-color: rgb(233, 22, 22);
-}
-
+/* This is basically the fundamental layout of every page */
 .container {
-    width: 97%;
-    margin: auto;
-}
-
-#logo {
-    margin: auto;
-    width: 120px;
-}
-
-#logo img {
-    width: 100px;
-    height: auto;
-    
-}
-
-#splashLogo {
-    margin: auto;
-    width: 300px;
-}
-
-#splashLogo img {
-    width: 300px;
-    height: auto;
-}
-
-#splashContent {
-    text-align: center;
-    color: var(--grey);
-    background-color: white;
-    width: 70%;
-    margin: auto;
-    padding: 30px;
-    box-shadow: 10px 10px 5px rgb(28, 30, 110);
-    margin-bottom: 200px;
-}
-
-#splashContent p {
-    margin-bottom: 40px;
-    
-}
-
-
-.indexButtons {
     display: grid;
-    grid-template-columns: 50% 50%;
-    width: 70%;
-    margin: auto;
+    grid-template-columns: 40% 60%;
+    grid-gap: 50px;
+    min-width: 900px;
+    max-width: 1200px;
+    padding: 100px;
 
 }
 
+/* The big "Log In" div including the cat pic and the title */
+.loginHead {
+    display: grid;
+    grid-template-rows: auto auto;
+}
 
-.indexButtons button {
-    padding: 20px;
-    font-size: 16px;
+/* Defines the properties of the cat pics used in the page title divs */
+/* The margin-bottom property lets the header text overlay the cat pics */
+.headerPic {
+    width: 80%;
+    margin-bottom: -100px;
+}
+
+/* Used in the page descriptions beneath the headers (e.g. the "Start meeting new cats!" on profile */
+/* To be used for any link that should pop out of the screen to draw the user's attention, like a call to action */
+.keylink {
+    color: var(--main-accent);
+}
+
+/* Defines the header text on the login page */
+.loginTitle {
+    font-size: var(--massive-text);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--main-accent);
+    letter-spacing: -5px;
 }
 
 
-
-#splashContent #loginbutton {
-    background-color: rgb(101, 101, 223);
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    margin-right: -2px;
+/* For any form like the login form that should have big input boxes, also used on editprofile */
+.chunkyForm {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-gap: 30px;
 }
 
-#splashContent #loginbutton:hover {
-    background-color: blue;
+.chunkyForm label {
+    margin-bottom: -300px;
 }
 
-#splashContent #registerbutton {
-    background-color: orange;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    margin-left: -2px;
-}
-
-#splashContent #registerbutton:hover {
-    background-color: rgb(138, 236, 27);
-}
-
-#splashContent button:hover {
-
-}
-
-.profileBox {
-    
-    background-color: white;
-    /* background-image: linear-gradient(to bottom right,rgb(255, 255, 255), var(--light)); */
-    box-shadow: 2px 2px 3px rgb(207, 205, 205);
-    margin-bottom: -20px;
-    
- 
-}
-
-.editButtonContainer {
-    width: 100px;
-    margin: auto;
-}
-
-#editProfileButton {
-    width: 100px;
-    height: 100px;
-    background-color: var(--orangepink);
-    font-size: 16px;
-    border-radius: 50%;
-    
-
-}
-
-#ppcontainer {
-	height:150px;
-    width:150px;
-    border-radius: 75px;
-	overflow: hidden;
-    margin: auto;
-    margin-bottom: 20px;
-
-}
-
-#profilepic {
-	width: 100%;
-    height: 100%;
-    
-}
-
-h1 {
-    color: var(--grey);
-}
-
-.subheading {
-    padding: 0px;
-
-}
-
-.subheading p {
-    color: grey;
-    font-family: 'Rubik', sans-serif;
-   padding: 7px;
-   font-size: 24px;
-   text-align: left;
-}
-
-.personalityTraits p {
-    background-color: rgb(63, 63, 211);
-    color: white;
-    margin-bottom: -10px;
-    padding: 15px;
-}
-
-.personalityTraits p:nth-child(even) {
-    background-color: rgb(211, 211, 255);
-    color: rgb(77, 77, 77);
-}
-
-#profileName {
-    color: rgb(0, 0, 0);
-    font-size: 50px;
-    text-align: left;
-    border: none;
-    border-bottom: 1px solid rgb(0, 153, 255);
-}
-
-#subheadPersonality {
-    color: var(--orangepink); 
-}
-
-#subheadLikes {
-    color: var(--orange);
-}
-
-#subheadDislikes {
-    color: var(--yellow);
-}
-
-.form {
-    width: 90%;
-    margin: auto;
-    margin-top: 100px;
-    
-}
-
-.form form {
+.chunkyForm input {
+    height: 70px;
+    font-size: var(--med-text);
     text-align: center;
 }
 
-.colorbg {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background-color: purple;
-    z-index: -100;
-    position: absolute;
-    padding-bottom: 200px;
-}
-
-#loginform {
-
-        text-align: center;
-        color: var(--grey);
-        background-color: white;
-        width: 70%;
-        margin: auto;
-        padding: 30px;
-        margin-bottom: 200px;
-        border-radius: 15px;
-        box-shadow: 5px 10px 15px rgb(51, 27, 51);
-}
-
-#loginform h1 {
-    text-align: left;
-    color: black;
-}
-
-#loginform a:hover {
-    color: blue;
-}
-
-#loginform label {
-    color: var(--grey);
-}
-
-#loginform input {
-    height: 100px;
-    width: 90%;
-    font-size: 48px;
-    padding-left: 10px;
-    border: 1px solid var(--orange);
-}
-
-
-
-
-label {
-    color: var(--grey);
-}
-
-input, select {
-    height: 40px;
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 30px;
-}
-/* 
-select {
-    height: 100px;
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 72px;
-} */
-
-
-button, .inputButton {
-    border: none;
-    /* height: 40px; */
-   
-    /* font-size: 30px; */
-    background-color: var(--pink);
-    color: white;
-}
-
-button:hover, .inputButton:hover {
-    /* color: white; */
-}
-
-.settingsMenu p {
-    text-align: left;
-}
-
-.settingsMenuButtons {
+/* The sliders used in edit profile */
+.sliders {
     display: grid;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     grid-gap: 20px;
 }
 
-.settingsMenuButtons button {
-    height: 60px;
-    width: 100%;
-    background: blue;
-    font-size: 16px;
-}
-
-.settingsMenuButtons button:hover {
-    background-color: rgb(129, 178, 250);
-}
-
-.profileDetails {
+/* Defines all the pill-shaped buttons like "Edit Profile" etc */
+input.pillButton {
+    width: 200px;
+    background-color: var(--buttonBg);
+    border-radius: 25px;
+    height: 50px;
     color: white;
+    font-size: var(--reg-text);
+    margin: auto;
 }
 
-.profileDetails p {
+/* Header div for profile */
+.profileHead {
+    display: grid;
+    grid-template-rows: 200px 200px 150px;
+    
+}
+
+/* Title on profile page */
+.profileTitle {
+    font-size: var(--massive-text);
+    font-weight: bold;
+    text-decoration: underline;
+    letter-spacing: -5px;
+    margin-top: -100px;
+    /* line-height: 95px; */
+}
+
+/* The page description below the title on the profile page i.e. "This is where you put all your info about your cat" */
+.profileDesc {
+    padding-right: 50px;
+    
+}
+
+/* The container for all the actual profile information */
+.profileInfoBox {
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.profileInfoEntry {
+    height: 50px;
+    width: 100%;
+    padding-left: 20px;
+    font-size: var(--med-text);
+}
+
+.profileNameEntry {
+    border: none;
+    border-bottom: 1px solid var(--main-accent);
+    height: 50px;
+    width: 50%;
+    padding-left: 20px;
+    font-size: var(--med-text);
+}
+
+.profileHeader {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.profileName {
+    font-size: var(--big-text);
+}
+
+.profilePic img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.profileSubhead {
+    width: 30%;
+}
+
+.profileSubhead p {
+    font-size: var(--med-text);
+    border-bottom: 1px solid var(--main-accent);
+}
+
+.profileInfo p {
+    line-height: 29px;
+}
+
+/* Header for the chat page */
+.chatHead {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+  
+}
+
+.chatTitle {
+    font-size: var(--big-text);
+    font-weight: bold;
+    text-decoration: underline;
+    letter-spacing: -2px;
+}
+
+/* The list of "messages" from e.g. Catty Bates, Pawl Bettany etc */
+.messageListBox {
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    margin-bottom: 50px;
+}
+
+/* Each message inside the message list box */
+.message {
+    border-top: 1px solid black;
+    /* border-bottom: 1px solid black; */
+    padding: 20px;
+}
+
+/* The container div for send/receive windows */
+.chatBox {
+    display: grid;
+    grid-template-rows: 10% auto auto;
+}
+
+/* Container div for the chat box title and unmatch/report */
+.chatBoxHeader {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+/* The container div for unmatch/report */
+.chatBoxLinks {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.chattingTo {
+    font-size: var(--big-text);
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.receiveMessageBox {
+    
+    height: 500px;
+    border: 1px solid black;
+}
+
+.sendMessageBox {
+    width: 100%;
+}
+
+.sendMessageBox input {
+    height: 70px;
+    font-size: var(--med-text);
+    width: 98%;
     padding-left: 10px;
 }
 
-.profilePic {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-}
-
-#uploadProfilePic {
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
-    background: white;
-    font-size: 16px;
-    margin: auto;
-    margin-bottom: 20px;
-    
-}
-
-.navContainer {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    margin-left: -10px;
-    
-}
-
-.navItem {
-    background-color: var(--pink);
-    text-align: center;
-    padding: 10px
-}
-
-.navItem img {
-    width: 40px;
-    height: auto;
-    margin: auto;
-}
-
-.navItem:hover {
-    background: var(--light-complement);
-}
-
-
-a:link, a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-/* a:hover {
-    color: white;
-} */
-
-/* Add this class to any button at the bottom of a page to scroll past the navbar. */
-.bottomButton {
-    height: 70px;
-    width: 50%;
-    border-radius: 15px;
-    margin: auto;
-    background-color: var(--rich-pink);
-}
-
-.bottomButton:hover {
-    box-shadow: none;
-}
-
-.likeDislike {
+/* Container for match */
+.matchContainer {
     display: grid;
     grid-template-columns: auto auto;
-    width: 100%;
-    bottom: 50;
-    position: fixed;
     
- 
-}
-
-.likeDislikeForm {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 50px;
-}
-
-.likeDislikeForm input {
-    width: 100px;
-    height: auto;
-    
-}
-
-.inlikeButton {
-    width: 100px;
-    height: auto;
-    margin: auto;
-}
-
-.indislikeButton {
-    width: 100px;
-    height: auto;
-    margin: auto;
-}
-
-.likeButton {
-
-    /* background-color: var(--pink); */
-    margin: auto;
-}
-
-.likeButton img {
-    width: 100px;
-    height: auto;
-}
-
-.dislikeButton {
-
-    /* background-color: var(--negative); */
-    margin: auto;
-}
-
-.dislikeButton img {
-    width: 100px;
-    height: auto;
-}
-
-
-
-.wantToMatch {
-    color: var(--pink);
-    text-align: center;
-    font-size: 24px;
-    margin-top: -50px;
-}
-
-.matches {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
-    width: 100%;
-    margin: auto;
 }
 
 .match {
-    margin: auto;
+    display: grid;
+    grid-template-columns: 80px 400px;
+    width: 200px;
 }
 
-.match p {
-    color: white;
+.matchName {
+    font-size: var(--med-text);
+    letter-spacing: -1px;
+    padding: 20px;
 }
 
 .match img {
-    width: 100px;
-    height: auto;
+    width: 75px;
+    height: 75px;
 }
 
-.chatHeader {
-    display: grid;
-    grid-template-columns: auto auto;
-    width: 50%;
-}
-
-.unmatch {
-    /* text-align: right; */
-    text-align: center;
-   
-}
-
-.unmatch p {
-    border-bottom: 1px solid red;
-    width: 80px;
-}
-
-.unmatch p:hover {
-    border-bottom: 1px solid blue;
-    color: blue;
-}
-
-.unmatch:hover {
-    
-}
-
+/* Styling for the unmatch modal */
 .modal {
     display: none;
     position: fixed;
@@ -613,13 +306,14 @@ a:link, a:visited {
 }
 
 .modalContent {
-    background-color: var(--dark-grey);
-    margin: 55% auto;
+    background-color: white;
+    margin: 20% auto;
     padding: 30px;
-    width: 70%;
-    color: white;
+    width: 40%;
+    color: black;
     text-align: center;
     border-radius: 2%;
+    box-shadow: 5px 5px 5px grey;
 }
 
 #confirmDialogue {
@@ -632,150 +326,83 @@ a:link, a:visited {
     height: 75px;
     width: auto;
     border-radius: 5%;
+    background-color: black;
+    color: white;
 }
 
 #confirmUnmatch {
-    background-color: var(--pink);
+  
 }
 
 #cancelUnmatch {
-    background-color: var(--negative);
+ 
 }
 
+/* Mobile view properties */
+@media only screen and (max-width: 1000px) {
 
-.chat {
+body {
+    
+}
+
+.header {
+    height: 50px;
     width: 100%;
-    margin: auto;
+    box-shadow: 5px 0px 5px grey;
+    margin-bottom: 80px;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin-bottom: 0px;
+}
+
+.container {
+    width: 400px;
     display: grid;
     grid-template-rows: auto auto;
+    grid-template-columns: 400px;
+    margin: auto;
+    padding: 50px;
+    min-width: 0;
 }
 
-.receiveMessageWindow {
-    height: 500px;
-    width: 95%;
-    background-color: white;
-    border: 10px solid var(--light-complement)
+.profileHead {
+    
 }
 
-.sendMessageWindow {
-    margin-top: 20px;
+.profileDesc {
+    margin-top: -50px;
+    
+}
+
+.profileInfoBox {
+    /* margin-top: -100px; */
+}
+
+.loginHead {
+    margin-bottom: 50px;
+}
+
+.chattingTo {
+    font-size: var(--med-text);
+}
+
+.chatHead {
+    display: grid;
+    grid-template-rows: auto auto auto;
     width: 100%;
+    grid-gap: 50px;
+    margin-bottom: -50px;
 }
 
-
-/* For desktop view */
-@media only screen and (min-width: 600px) {
-
-    body {
-        background-color: white;
-    }
-    .container {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto;
-        grid-gap: 30px;
-    }
-
-    #loginform {
-        margin-top: 100px;
+.matchContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 20px;
     
-    }
+}
 
-    .profileBox {
-        padding: 20px;
-    }
-
-    .navContainer {
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
-        justify-content: center;
-        bottom: 0;
-        width: 100%;
-        margin: auto;
-        
-    }
-
-    .matches {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-template-rows: auto auto auto;
-        width: 100%;
-        margin: auto;
-    }
-
-    .likeDislikeForm {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-gap: 50px;
-    }
-    
-    .likeDislikeForm input {
-        width: 100px;
-        height: auto;
-        
-    }
-    
-    .inlikeButton {
-        width: 100px;
-        height: auto;
-        margin: auto;
-    }
-    
-    .indislikeButton {
-        width: 100px;
-        height: auto;
-        margin: auto;
-    }
-
-    .modalContent {
-        background-color: var(--dark-grey);
-        margin: 15% auto;
-        padding: 30px;
-        width: 30%;
-        color: white;
-        text-align: center;
-        border-radius: 2%;
-    }
-
-    .receiveMessageWindow {
-        height: 500px;
-        width: 97.5%;
-        background-color: white;
-        border: 10px solid var(--light-complement)
-    }
-
-    .header {
-        height: 50px;
-        width: 100%;
-        box-shadow: 5px 0px 5px grey;
-        margin-bottom: 80px;
-        position: fixed;
-        top: 0;
-        background-color: white;
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
-        margin-bottom: 0px;
-    }
-
-    
-    .chat {
-        width: 100%;
-        margin: auto;
-        display: grid;
-        grid-template-rows: auto auto;
-    }
-
-    .receiveMessageWindow {
-        height: 400px;
-        width: 95%;
-        background-color: white;
-        border: 2px solid purple;
-    }
-
-    .sendMessageWindow {
-        margin-top: 20px;
-        width: 100%;
-        margin-left: -10px;
-    }
 
 }

@@ -1,6 +1,7 @@
 <?php 
 require_once 'init.php';
 global $connect;
+echo $_SESSION['id'];
 
  $sql="select * from profile where userid='".$_SESSION['id']."'";
  $query = $connect->query($sql);
@@ -31,85 +32,96 @@ global $connect;
  $dislikes=null;
  $location=null;
 }
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Work Sans -->
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-<!-- Rubik -->
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-<!-- Poppins -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-<!-- Nunito -->
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
-
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Profile</title>
     <link rel="stylesheet" href="static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit profile</title>
 </head>
 <body>
-    <div class="container">
-        <div id="logo">
-            <img src="static/images/logo.png" alt="">
-            </div>
-           
-        
-        <!-- If no profile pic, load this HTML: -->
-        <!-- Adapted from https://stackoverflow.com/posts/36248168/revisions -->
-       
-        <!-- If profile pic, load this: -->
-        <!-- On page load, PHP needs to do a GET to retrieve user's profile pic, store in a variable, and then the variable goes in the src below -->
-        <!-- <img id="profilePic" src="" alt=""> -->
-<div id="loginform">
-<h1>Create Profile</h1>
-        <form action="createprofile.php" method="post" enctype="multipart/form-data">
-            <div class="profilePic">
-                <input type="button" id="uploadProfilePic" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
-                <input type="file" style="display:none;" id="file" name="uploadfile">
-                <!-- <input type="file" name="uploadfile" /> -->
-                </div>
-        <div class="subheading">
-        <p>Your Cat's Name</p>
-        </div>
-        <input type="text" name="name" value="<?php echo $name;?>">
-        <div class="subheading"><p>Gender</p></div>
-        
-        <select name="gender" id="genderSelection">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select><br><br>
-        <div class="subheading"><p>Personality</p></div>
-
-        <label for="playful">playful (between 0 and 100):</label>
-        <input type="range" id="playful" name="playful" min="0" max="100" value="<?php echo $playful;?>">
-
-        <label for="angry">angry (between 0 and 100):</label>
-        <input type="range" id="angry" name="angry" min="0" max="100" value="<?php echo $angry;?>">
-
-        <label for="somber">somber (between 0 and 100):</label>
-        <input type="range" id="somber" name="somber" min="0" max="100" value="<?php echo $somber;?>">
-
-        <label for="independent">independent (between 0 and 100):</label>
-        <input type="range" id="independent" name="independent" min="0" max="100" value="<?php echo $independent;?>">
-
-        <label for="cuddly">cuddly (between 0 and 100):</label>
-        <input type="range" id="cuddly" name="cuddly" min="0" max="100" value="<?php echo $cuddly;?>">
-   
-        <div class="subheading"><p>Likes</p></div>
-        <input type="text" name="likes" value="<?php echo $likes;?>">
-        <div class="subheading"><p>Dislikes</p></div>
-        <input type="text" name="dislikes" value="<?php echo $dislikes;?>"> 
-        <div class="subheading"><p>Location</p></div>
-        <input type="text" name="location" value="<?php echo $location;?>"> 
-        <input id="uploadprofilebutton" type="submit" name="upload" value="Upload"  />
-    </form>
-    </div>
+<div class="header">
+        <p><a href="profile.html">Your Cats</a></p>
+        <p><a href="viewpotentials.php">Look for dates</a></p>
+        <p>Cat Me If You Can</p>
+        <p><a href="matches.php">Matches</a></p>
+        <p><a href="logout.php">Sign out</a></p>
 </div>
 
+    <div class="container">
+        <div class="profileHead">
+            <img class="headerPic" src="static/images/cutecat1.jpg" alt="catpic">
+            <div class="profileTitle">Edit<br>Profile</div>
+        
+        <div class="profileDesc">
+            <p>This is where you put all the info about your cat.</p>
+            <p>Done here? <a class="keylink" href="viewpotentials.php">Start meeting new cats!</a></p>
+        </div>
+    </div>
+
+        <form action="createprofile.php" method="post" enctype="multipart/form-data" class="profileInfoBox">
+            <div class="profileHeader">
+                <div class="profileName"><input class="profileNameEntry" placeholder="Enter cat's name" type="text" name="name" value="<?php echo $name;?>"></div>
+                <div class="profilePic"><img src="static/images/cutecat1.jpg" alt="profypic"></div>
+            </div>
+            <div class="profileSubhead"><p>Gender</p></div>
+            <div class="profileInfo">
+                <select name="gender" id=""  class="profileInfoEntry">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="profileSubhead"><p>Bio</p></div>
+            <div class="profileInfo">
+                <p><?php echo $name;?> is a sweet angel who loves to play with other cats. Except for the neighbours' cats, who he's ruthlessly mauled on several occasions. But don't let that put you off. He's really quite nice. Sometimes.</p>
+            </div>
+            <div class="profileSubhead"><p>Personality</p></div>
+            <div class="profileInfo">
+                <div class="sliders">
+                <label for="playful">playful (between 0 and 100):</label>
+                <input type="range" id="playful" name="playful" min="0" max="100" value="<?php echo $playful;?>">
+
+                <label for="angry">angry (between 0 and 100):</label>
+                <input type="range" id="angry" name="angry" min="0" max="100" value="<?php echo $angry;?>">
+
+                <label for="somber">somber (between 0 and 100):</label>
+                <input type="range" id="somber" name="somber" min="0" max="100" value="<?php echo $somber;?>">
+
+                <label for="independent">independent (between 0 and 100):</label>
+                <input type="range" id="independent" name="independent" min="0" max="100" value="<?php echo $independent;?>">
+
+                <label for="cuddly">cuddly (between 0 and 100):</label>
+                <input type="range" id="cuddly" name="cuddly" min="0" max="100" value="<?php echo $cuddly;?>">
+                </div>
+            </div>
+
+            <div class="profileSubhead"><p>Likes</p></div>
+            <div class="profileInfo">
+            <input class="profileInfoEntry" type="text" name="likes" value="<?php echo $likes;?>">
+            </div>
+
+            <div class="profileSubhead"><p>Dislikes</p></div>
+            <div class="profileInfo">
+            <input class="profileInfoEntry" type="text" name="dislikes" value="<?php echo $dislikes;?>"> 
+            </div>
+
+            <div class="profileSubhead"><p>Location</p></div>
+            <div class="profileInfo">
+            <input class="profileInfoEntry" type="text" name="location" value="<?php echo $location;?>"> 
+            </div>
+
+            
+            <input type="submit" name="upload" class="pillButton" value="Upload">
+            
+        </div>
+
+
+
+    </div>
+    
 </body>
-<?php include 'navbar.php';?>
 </html>

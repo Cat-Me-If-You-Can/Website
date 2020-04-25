@@ -2,30 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
 <body>
-    <div class="colorbg"></div>
-    <div id="logo">
-        <img src="static/images/logo.png" alt="">
-        </div>
     <div class="container">
-       
-        <div class="form" id="loginform">
-            <p>Please enter your user details below.</p>
-            <p>Haven't got a login yet? <a href="register.html">Register now.</a></p>
-            <br>
-            <form action="login.php" method="post">
-                <label for="email">Email</label><br>
-                <input type="text" name="email"><br>
-                <label for="password">Password</label><br>
+        <div class="loginHead">
+            <img class="headerPic" src="static/images/cutecat1.jpg" alt="catpic">
+            <div class="loginTitle">Log In</div>
+        </div>
+
+        <div class="loginInputs">
+            <form action="login.php" method="post" class="chunkyForm">
+                <label for="email">Email</label>
+                <input type="text" name="email">
+                <label for="password">Password</label>
                 <input type="password" name="password">
-                
-                <button class="bottomButton">Login</button>
+                <input type="submit" class="pillButton" value="Login">
             </form>
         </div>
     </div>

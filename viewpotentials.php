@@ -106,138 +106,96 @@ $picture2=$row2["picture"];
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
-    <title>Find A Match</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find cats</title>
 </head>
 <body>
+
 <div class="header">
-<p>Your Cats</p>
-        <p>Look for dates</p>
+        <p><a href="profile.php">Your Cats</a></p>
+        <p><a href="viewpotentials.php">Look for dates</a></p>
         <p>Cat Me If You Can</p>
-        <p>Matches</p>
-        <p>Sign out</p>
-    </div>
-<div id="logo">
-            <img src="static/images/logo.png" alt="">
-            </div>
+        <p><a href="matches.php">Matches</a></p>
+        <p><a href="logout.php">Sign out</a></p>
+</div>
+
     <div class="container">
+        <div class="profileHead">
+            <img class="headerPic" src="static/images/cutecat1.jpg" alt="catpic">
+            <div class="profileTitle">Meet<br>Cats</div>
         
-    <div class="subheading">
-            <p id="profileName"><?php echo $name2;?>Bobby Lofts</p>
-         
-            <p></p>
-            </div>
+        <div class="profileDesc">
+            <p>Find new cats to meet and play with. But remember, be friendly!</p>
+            <p>Being catty is not a virtue.</p>
+            <p>Not getting many playdates? <a class="keylink" href="profile.php">Try tuning your profile.</a></p>
+        </div>
+    </div>
+
+        <div class="profileInfoBox">
+            <div class="profileHeader">
+                <div class="profileName"><?php echo $name2;?></div>
+                
+                    <?php if(matchExists($id,$id2) === TRUE || $id2 == NULL) { echo "No cats left for now. Try again later.";}
+                    else { if($picture2 == true) { ?>
+                        <div class="profilePic"><img src="static/images/<?php echo $picture2;?>" alt="profypic"></div>
+                    <?php } else { ?>
+                        <?php
+                    }
+                    }?>
+                <div class="profilePic"><img src="static/images/cutecat1.jpg" alt="profypic"></div>
             
-        <?php
-
-
-        if(matchExists($id,$id2) === TRUE || $id2 == NULL) {
-    echo "SORRY NO MORE MATCHES :( CHANGE YOUR PROFILE SETTINGS TO INCREASE CHANCES OF FINDING LOVE";
-} else { ?>
-
-            <!-- If profile picture, load into src below -->
-            <!-- If no profile picture, display white circle -->
-            <?php
-            if($picture2 == true){
-                ?><div id="ppcontainer">
-                <img id="profilepic" src="static/images/<?php echo $picture2;?>" alt="Profile Picture">
-                </div> <?php
-            } else {
-                ?><div id="uploadProfilePic"></div><?php
-            }
-            ?>
-         	
             
-            <div class="profileBox">
-            <div class="subheading">
-            <p id="subheadPersonality">Personality</p>
             </div>
-            <div class="personalityTraits">
-            <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
-            <p>playful: <?php echo $playful2;?></p>
-            <p>angry: <?php echo $angry2;?></p>
-            <p>somber: <?php echo $somber2;?></p>
-            <p>independent: <?php echo $independent2;?></p>
-            <p>cuddly: <?php echo $cuddly2;?></p>
+            <div class="profileSubhead"><p>Personality</p></div>
+            <div class="profileInfo">
+                <p>Playful: <?php echo $playful2;?></p>
+                <p>Angry: <?php echo $angry2;?></p>
+                <p>Somber: <?php echo $somber2;?></p>
+                <p>Independent: <?php echo $independent2;?></p>
+                <p>Cuddly: <?php echo $cuddly2;?></p>
+            </div>
+
+            <div class="profileSubhead"><p>Likes</p></div>
+            <div class="profileInfo">
+                <p><?php echo $likes2;?></p>
+            </div>
+
+            <div class="profileSubhead"><p>Dislikes</p></div>
+            <div class="profileInfo">
+                <p><?php echo $dislikes2;?></p>
+            </div>
+
+            <div class="profileSubhead"><p>Location</p></div>
+            <div class="profileInfo">
+                <p><?php echo $location2;?></p>
+            </div>
+
+            <div class="likeOrDislikeButtons">
+                <form action="match.php" method="post">
+                    <input type="hidden" name="like" value="yes">
+                    <input type = "hidden" name = "cat1" value = <?php echo $id;?> />
+                    <input type = "hidden" name = "cat2" value = <?php echo $id2;?> />
+                    <input type="submit" class="pillButton" value="Like">
+                </form>
+
+                <form action="match.php" method="post">
+                    <input type="hidden" name="like" value="no">
+                    <input type = "hidden" name = "cat1" value = <?php echo $id;?> />
+                    <input type = "hidden" name = "cat2" value = <?php echo $id2;?> />
+                    <input type="submit" class="pillButton" value="Next cat!">
+                </form>
+                
             </div>
         </div>
-        <div class="likesAndDislikesBox">
-            <div class="profileBox">
-            <div class="subheading">
-            <p id="subheadLikes">Likes</p>
-            </div>
-            <p><?php echo $likes2;?></p>
-            </div>
-            <div class="profileBox">
-            <div class="subheading">
-            <p id="subheadDislikes">Dislikes</p>
-            </div>
-            <p><?php echo $dislikes2;?></p>
-            </div>
-            </div>
-            <div class="profileBox">
-            <div class="subheading">
-            <p id="subheadLocation">Location</p>
-            </div>
-            <p><?php echo $location2;?></p>
-            </div>
-            <br><br>
-            <div class="matchBox">
-            <div class="wantToMatch">
-                    <p>Match with <?php echo $name2; ?>?</p>
-            </div>
 
-        <div class="thumbsButtons">
-        <form  action="match.php" method="post">
-            <input type="hidden" id="like" name="like" value="yes">
-            <input type = "hidden" name = "cat1" value = <?php echo $id;?> />
-            <input type = "hidden" name = "cat2" value = <?php echo $id2;?> />
-            <button class="thumbsup"><p>Like</p>
-            <img src="static/images/likeup2.png" alt="">
-            </button>
-        </form>
-        <form action="match.php" method="post">
-        <input type="hidden" id="like" name="like" value="no">
-            <input type = "hidden" name = "cat1" value = <?php echo $id;?> />
-            <input type = "hidden" name = "cat2" value = <?php echo $id2;?> />
-            
-            <button class="thumbsdown"><img src="static/images/dislikedown.png" alt="">
-                <p>Next</p>
-            </button>
-            </form>
 
-            </div>
-            </div>
 
-            
-            
-     
-            <p style="margin-bottom:100px"></p>   
-        </div>
+    </div>
     
-    <!-- <div class="likeDislike">
-        <div class="likeButton"><img src="static/images/like1.png" alt=""></div>
-        <div class="dislikeButton"><img src="static/images/dislike1.png" alt=""></div>
-    </div> -->
-    <?php } ?>
- <script>
-     like = (e) => {
-        e.value = "yes";
-        document.getElementById("like").value = "yes";
-        alert(document.getElementById("like").value);
-
-     }
-     dislike = (e) => {
-         e.value = "no"
-     }
- </script>
 </body>
-<?php include 'navbar.php';?>
 </html>
