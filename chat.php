@@ -48,6 +48,9 @@ require_once 'init.php';
                 <div class="chatBoxLinks">
                     <p id="unmatch">Unmatch</p>
                         <div class="modal" id="modal">
+                        <form action="unmatch.php" method="post">
+                        <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
+                        <input type = "hidden" name = "mycatid" value = <?php echo $mycatid;?> />
                             <div class="modalContent">
                                 <p>Unmatch with user?</p>
                                 <div id="confirmDialogue">
