@@ -24,7 +24,7 @@ if($_POST) {
  
                 $_SESSION['id'] = $userdata['id'];
             
-                header('location: settings.php');
+                header('location: profile.php');
                 exit();
                      
             } else {
