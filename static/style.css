@@ -1,12 +1,16 @@
+/* Put all colours and recurring sizes etc here */
+/* Then invoke them when designing so if we need changes, we can just alter the variables */
 :root {
-    --buttonBg: purple;
-    --main-accent: purple;
+    --buttonBg: rgb(255, 0, 191);
+    --main-accent: rgb(255, 0, 191);
     --massive-text: 100px;
     --big-text: 48px;
     --med-text: 24px;
     --reg-text: 16px;
 }
 
+/* Makes sure the window takes up the whole page */
+/* Default behaviour is slight padding in the browser window, very weird. */
 html {
     margin: 0;
     height: 100%;
@@ -18,6 +22,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* This is the header bar that spans every page aka the navbar. */
 .header {
     height: 50px;
     width: 100%;
@@ -28,13 +33,23 @@ body {
     background-color: white;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
+    /* padding-bottom: 20px; */
+}
+
+/* This is for styling the elements inside the navbar, which are currently just text */
+.header p {
+    text-align: center;
     
 }
 
-.header p {
-    text-align: center;
+/* This can be used for icons in the navbar */
+.header img {
+    width: auto;
+    height: 30px;
+    
 }
 
+/* This is basically the fundamental layout of every page */
 .container {
     display: grid;
     grid-template-columns: 40% 60%;
@@ -45,31 +60,43 @@ body {
 
 }
 
+.adminContent {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-rows: auto auto auto;
+  
+}
+
+/* The big "Log In" div including the cat pic and the title */
 .loginHead {
     display: grid;
     grid-template-rows: auto auto;
 }
 
+/* Defines the properties of the cat pics used in the page title divs */
+/* The margin-bottom property lets the header text overlay the cat pics */
 .headerPic {
     width: 80%;
     margin-bottom: -100px;
 }
 
+/* Used in the page descriptions beneath the headers (e.g. the "Start meeting new cats!" on profile */
+/* To be used for any link that should pop out of the screen to draw the user's attention, like a call to action */
 .keylink {
     color: var(--main-accent);
 }
 
+/* Defines the header text on the login page */
 .loginTitle {
     font-size: var(--massive-text);
     font-weight: bold;
     text-decoration: underline;
+    text-decoration-color: var(--main-accent);
     letter-spacing: -5px;
 }
 
-.loginInputs {
-    
-}
 
+/* For any form like the login form that should have big input boxes, also used on editprofile */
 .chunkyForm {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -83,16 +110,17 @@ body {
 .chunkyForm input {
     height: 70px;
     font-size: var(--med-text);
-    
     text-align: center;
 }
 
+/* The sliders used in edit profile */
 .sliders {
     display: grid;
     grid-template-rows: auto auto auto auto auto;
     grid-gap: 20px;
 }
 
+/* Defines all the pill-shaped buttons like "Edit Profile" etc */
 input.pillButton {
     width: 200px;
     background-color: var(--buttonBg);
@@ -103,25 +131,30 @@ input.pillButton {
     margin: auto;
 }
 
+/* Header div for profile */
 .profileHead {
     display: grid;
     grid-template-rows: 200px 200px 150px;
     
 }
 
+/* Title on profile page */
 .profileTitle {
     font-size: var(--massive-text);
     font-weight: bold;
     text-decoration: underline;
     letter-spacing: -5px;
     margin-top: -100px;
+    /* line-height: 95px; */
 }
 
+/* The page description below the title on the profile page i.e. "This is where you put all your info about your cat" */
 .profileDesc {
     padding-right: 50px;
     
 }
 
+/* The container for all the actual profile information */
 .profileInfoBox {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -131,6 +164,16 @@ input.pillButton {
     height: 50px;
     width: 100%;
     padding-left: 20px;
+    font-size: var(--med-text);
+}
+
+.profileNameEntry {
+    border: none;
+    border-bottom: 1px solid var(--main-accent);
+    height: 50px;
+    width: 50%;
+    padding-left: 20px;
+    font-size: var(--med-text);
 }
 
 .profileHeader {
@@ -149,19 +192,19 @@ input.pillButton {
 }
 
 .profileSubhead {
-    
     width: 30%;
 }
 
 .profileSubhead p {
     font-size: var(--med-text);
-    border-bottom: 1px solid purple;
+    border-bottom: 1px solid var(--main-accent);
 }
 
 .profileInfo p {
     line-height: 29px;
 }
 
+/* Header for the chat page */
 .chatHead {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -176,6 +219,7 @@ input.pillButton {
     letter-spacing: -2px;
 }
 
+/* The list of "messages" from e.g. Catty Bates, Pawl Bettany etc */
 .messageListBox {
     border: 1px solid black;
     display: grid;
@@ -183,16 +227,29 @@ input.pillButton {
     margin-bottom: 50px;
 }
 
+/* Each message inside the message list box */
 .message {
     border-top: 1px solid black;
     /* border-bottom: 1px solid black; */
     padding: 20px;
 }
 
-
+/* The container div for send/receive windows */
 .chatBox {
     display: grid;
     grid-template-rows: 10% auto auto;
+}
+
+/* Container div for the chat box title and unmatch/report */
+.chatBoxHeader {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+/* The container div for unmatch/report */
+.chatBoxLinks {
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .chattingTo {
@@ -218,6 +275,7 @@ input.pillButton {
     padding-left: 10px;
 }
 
+/* Container for match */
 .matchContainer {
     display: grid;
     grid-template-columns: auto auto;
@@ -241,6 +299,53 @@ input.pillButton {
     height: 75px;
 }
 
+/* Styling for the unmatch modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255,255,255,0.4);
+    
+}
+
+.modalContent {
+    background-color: white;
+    margin: 20% auto;
+    padding: 30px;
+    width: 40%;
+    color: black;
+    text-align: center;
+    border-radius: 2%;
+    box-shadow: 5px 5px 5px grey;
+}
+
+#confirmDialogue {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+}
+
+.modalContent button {
+    height: 75px;
+    width: auto;
+    border-radius: 5%;
+    background-color: black;
+    color: white;
+}
+
+#confirmUnmatch {
+  
+}
+
+#cancelUnmatch {
+ 
+}
+
+/* Mobile view properties */
 @media only screen and (max-width: 1000px) {
 
 body {

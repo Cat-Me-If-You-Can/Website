@@ -65,12 +65,12 @@ echo $_SESSION['id'];
 
         <form action="createprofile.php" method="post" enctype="multipart/form-data" class="profileInfoBox">
             <div class="profileHeader">
-                <div class="profileName"><input type="text" name="name" value="<?php echo $name;?>"></div>
+                <div class="profileName"><input class="profileNameEntry" placeholder="Enter cat's name" type="text" name="name" value="<?php echo $name;?>"></div>
                 <div class="profilePic"><img src="static/images/cutecat1.jpg" alt="profypic"></div>
             </div>
             <div class="profileSubhead"><p>Gender</p></div>
             <div class="profileInfo">
-                <select name="gender" id="">
+                <select name="gender" id=""  class="profileInfoEntry">
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>

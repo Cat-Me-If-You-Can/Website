@@ -132,7 +132,7 @@ $picture2=$row2["picture"];
         <div class="profileDesc">
             <p>Find new cats to meet and play with. But remember, be friendly!</p>
             <p>Being catty is not a virtue.</p>
-            <p>Not getting many playdates? <a class="keylink" href="profile.html">Try tuning your profile.</a></p>
+            <p>Not getting many playdates? <a class="keylink" href="profile.php">Try tuning your profile.</a></p>
         </div>
     </div>
 

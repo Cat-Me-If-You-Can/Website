@@ -45,7 +45,10 @@ echo $_SESSION['id'];
 </head>
 <body>
 <div class="header">
-        <p><a href="profile.php">Your Cats</a></p>
+        <p><a href="profile.php">
+            <!-- <img src="static/images/icons/cat.png" alt=""> -->
+            <span>Your Cats</span>
+        </a></p>
         <p><a href="viewpotentials.php">Look for dates</a></p>
         <p>Cat Me If You Can</p>
         <p><a href="matches.php">Matches</a></p>
