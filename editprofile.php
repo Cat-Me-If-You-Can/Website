@@ -1,4 +1,14 @@
 <?php 
+echo "hello";
+if(isset($_POST['submit'])) {
+	echo "two";
+	run();
+} else {
+	echo "three";
+}
+
+
+
 require_once 'init.php';
 global $connect;
 echo $_SESSION['id'];
@@ -31,6 +41,21 @@ echo $_SESSION['id'];
  $likes=null;
  $dislikes=null;
  $location=null;
+}
+
+
+ echo "hello"; 
+
+function run(){
+	$sql="select * from suburbs where name='".$location."'";
+	$query = $connect->query($sql);
+	$row = $query->fetch_assoc();
+	
+	if(isset($row["name"])){
+		echo "good location";
+	}else {
+		echo "bad location";
+	}
 }
 
 ?>
@@ -113,7 +138,7 @@ echo $_SESSION['id'];
             <div class="profileInfo">
             <input class="profileInfoEntry" type="text" name="location" value="<?php echo $location;?>"> 
             </div>
-
+			
             
             <input type="submit" name="upload" class="pillButton" value="Upload">
             

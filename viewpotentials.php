@@ -4,6 +4,8 @@
 require_once 'init.php';
 global $connect;
 
+
+
  $sql="select * from profile where userid='".$_SESSION['id']."'";
  $query = $connect->query($sql);
  $row = $query->fetch_assoc();
@@ -103,6 +105,49 @@ $picture2=$row2["picture"];
  echo $id;
  echo " ";
  echo $id2;
+ 
+ 
+ 
+ function diffcalc($lat1, $lon1, $lat2, $lon2) {
+	$thet = $lon1 - $lon2;
+	$dist = (sin(deg2rad($lat1)) * sin(deg2rad($lat2))) + (cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($thet)));
+	$dist = acos($dist);
+	$dist = rad2deg($dist);
+	$kmperlat = 111.325;
+	$dist = $dist * $kmperlat;
+	return (round($dist));
+} 
+ 
+ function mysqli_result($res, $row, $field=0) {
+	 $res->data_seek($row);
+	 $datarow = $res->fetch_array();
+	 return $datarow[$field];
+ }
+ 
+ function distcalc($loc1, $loc2) {
+
+	$link = mysqli_connect("localhost", "root", "", "login_registration");
+	$res1 = mysqli_query($link, "SELECT * FROM suburbs WHERE lat <> 0 and lon <> 0 and name = '".$loc1."'");
+	$res2 = mysqli_query($link, "SELECT * FROM suburbs WHERE lat <> 0 and lon <> 0 and name = '".$loc2."'");
+	
+	if($res1 && $res2){
+	$num1 = mysqli_num_rows($res1);
+	$num2 = mysqli_num_rows($res2);
+	
+		if ($num1 != 0 && $num2 != 0){
+			$lat1 = mysqli_result($res1,0,"lat");
+			$lon1 = mysqli_result($res1,0,"lon");
+			$lat2 = mysqli_result($res2,0,"lat");
+			$lon2 = mysqli_result($res2,0,"lon");
+			$dist = diffcalc($lat1, $lon1, $lat2, $lon2);
+			echo $dist;
+			return $dist;
+		}
+	}
+ }
+ 
+ $distance = distcalc($row["location"],$row2["location"]);
+ 
 }
 ?>
 
@@ -169,6 +214,10 @@ $picture2=$row2["picture"];
             <div class="profileInfo">
                 <p><?php echo $dislikes2;?></p>
             </div>
+			<div class="profileSubhead"><p>distance</p></div>
+			<div class="profileInfo"><p>
+			<?php echo $distance;?> Km's
+			</p></div>
 
             <div class="profileSubhead"><p>Location</p></div>
             <div class="profileInfo">
