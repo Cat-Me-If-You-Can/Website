@@ -89,11 +89,11 @@ echo $_SESSION['id'];
             </div>
             <div class="profileSubhead"><p>Personality</p></div>
             <div class="profileInfo">
-                <p>Playful: <?php echo $playful;?></p>
-                <p>Angry: <?php echo $angry;?></p>
-                <p>Somber: <?php echo $somber;?></p>
-                <p>Independent: <?php echo $independent;?></p>
-                <p>Cuddly: <?php echo $cuddly;?></p>
+                <p>Playful: <?php echo $playful;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $playful;?>"></p>
+                <p>Angry: <?php echo $angry;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $angry;?>"></p>
+                <p>Somber: <?php echo $somber;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $somber;?>"></p>
+                <p>Independent: <?php echo $independent;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $independent;?>"></p>
+                <p>Cuddly: <?php echo $cuddly;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $cuddly;?>"></p>
             </div>
 
             <div class="profileSubhead"><p>Likes</p></div>
