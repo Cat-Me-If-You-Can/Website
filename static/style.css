@@ -504,8 +504,8 @@ body {
     cursor: pointer;
   }
 	
-    .header:nth-child(3) {
-    display: none;	
-  }
-
+  
+#cmiyc {
+display: none;
+}
 }
