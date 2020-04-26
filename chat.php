@@ -74,7 +74,6 @@ require_once 'init.php';
                                 <p>Unmatch with user?</p>
                                 <div id="confirmDialogue">
                                 <button id="confirmUnmatch">Yes
-                            
                             </form>
                                 </button>
                                 <button id="cancelUnmatch">No</button>

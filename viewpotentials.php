@@ -158,11 +158,11 @@ $picture2=$row2["picture"];
             </div>
             <div class="profileSubhead"><p>Personality</p></div>
             <div class="profileInfo">
-            <p>Playful: <?php echo $playful;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $playful;?>"></p>
-                <p>Angry: <?php echo $angry;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $angry;?>"></p>
-                <p>Somber: <?php echo $somber;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $somber;?>"></p>
-                <p>Independent: <?php echo $independent;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $independent;?>"></p>
-                <p>Cuddly: <?php echo $cuddly;?> <input type="range" min="0" max="100" name="sld" value="<?php echo $cuddly;?>"></p>
+            <p>Playful: <?php echo getTraitLevel($playful2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $playful2;?>"></p>
+                <p>Angry: <?php echo getTraitLevel($angry2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $angry2;?>"></p>
+                <p>Somber: <?php echo getTraitLevel($somber2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $somber2;?>"></p>
+                <p>Independent: <?php echo getTraitLevel($independent2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $independent2;?>"></p>
+                <p>Cuddly: <?php echo getTraitLevel($cuddly2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $cuddly2;?>"></p>
             </div>
 
             <div class="profileSubhead"><p>Likes</p></div>
