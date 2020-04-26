@@ -55,6 +55,11 @@ body {
     /* padding-bottom: 20px; */
 }
 
+.header a {
+    text-decoration: none;
+    color: var(--main-accent);
+}
+
 /* This is for styling the elements inside the navbar, which are currently just text */
 .header p {
     text-align: center;
