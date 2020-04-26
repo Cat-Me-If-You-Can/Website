@@ -85,7 +85,7 @@ $picture2=$row2["picture"];
 	 $query2 = $connect->query($sql);
 	 $row2 = $query2->fetch_assoc();
 
-	 
+	 if(isset ($row2["id"])) {
 	 $id2=$row2["id"];
 	 $picture2=$row2["picture"];
 	 $name2=$row2["name"];
@@ -98,21 +98,12 @@ $picture2=$row2["picture"];
 	 $likes2=$row2["likes"];
 	 $dislikes2=$row2["dislikes"];
 	 $location2=$row2["location"];
- } else {
-	 $id = null;
-	 $id2 = null;
-	 $picture2=null;
+	 }else {
 	 $name2=null;
-	 $gender2=null;
-	 $playful2=null;
-	 $angry2=null;
-	 $somber2=null;
-	 $independent2=null;
-	 $cuddly2=null;
-	 $likes2=null;
-	 $dislikes2=null;
-	 $location2=null;
- }
+	 $id2=null;
+	 $location2=0;
+	}
+ } 
  echo $id;
  echo " ";
  echo $id2;
@@ -156,9 +147,9 @@ $picture2=$row2["picture"];
 		}
 	}
  }
- 
+ if ((isset($row["location"])) && (isset($row2["location"]))){
  $distance = distcalc($row["location"],$row2["location"]);
- 
+ }
 }
 ?>
 
