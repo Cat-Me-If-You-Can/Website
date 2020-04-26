@@ -192,9 +192,6 @@ $picture2=$row2["picture"];
                 
             </div>
         </div>
-
-
-
     </div>
     
 </body>

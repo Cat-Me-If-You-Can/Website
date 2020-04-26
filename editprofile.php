@@ -9,6 +9,7 @@ echo $_SESSION['id'];
 
  if(isset($row["name"])){
  $picture=$row["picture"];
+ $bio=$row["bio"];
  $name=$row["name"];
  $gender=$row["gender"];
  $playful=$row["playful"];
@@ -21,6 +22,7 @@ echo $_SESSION['id'];
  $location=$row["location"];
 } else {
  $picture=null;
+ $bio=null;
  $name=null;
  $gender=null;
  $playful=null;
@@ -66,7 +68,10 @@ echo $_SESSION['id'];
         <form action="createprofile.php" method="post" enctype="multipart/form-data" class="profileInfoBox">
             <div class="profileHeader">
                 <div class="profileName"><input class="profileNameEntry" placeholder="Enter cat's name" type="text" name="name" value="<?php echo $name;?>"></div>
-                <div class="profilePic"><img src="static/images/cutecat1.jpg" alt="profypic"></div>
+                <div class="profilePic">
+                    <input type="button" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
+                    <input type="file" style="display:none;" id="file" name="uploadfile">
+                </div>
             </div>
             <div class="profileSubhead"><p>Gender</p></div>
             <div class="profileInfo">
@@ -76,8 +81,8 @@ echo $_SESSION['id'];
                 </select>
             </div>
             <div class="profileSubhead"><p>Bio</p></div>
-            <div class="profileInfo">
-                <p><?php echo $name;?> is a sweet angel who loves to play with other cats. Except for the neighbours' cats, who he's ruthlessly mauled on several occasions. But don't let that put you off. He's really quite nice. Sometimes.</p>
+            <div class="profileInfo"><input class="profileInfoEntry" placeholder="Enter a small bio about your cat" type="text" value="<?php echo $bio;?>">
+               <!-- <p><?php echo $name;?> is a sweet angel who loves to play with other cats. Except for the neighbours' cats, who he's ruthlessly mauled on several occasions. But don't let that put you off. He's really quite nice. Sometimes.</p> -->
             </div>
             <div class="profileSubhead"><p>Personality</p></div>
             <div class="profileInfo">
