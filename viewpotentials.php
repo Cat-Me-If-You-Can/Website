@@ -186,23 +186,28 @@ $picture2=$row2["picture"];
                 <div class="profileName"><?php echo $name2;?></div>
                 
                     <?php if(matchExists($id,$id2) === TRUE || $id2 == NULL) { echo "No cats left for now. Try again later.";}
-                    else { if($picture2 == true) { ?>
+                    else { ?>
+                    
+                   
+                      <?php
+                    if($picture2 == true) { ?>
                         <div class="profilePic"><img src="static/images/<?php echo $picture2;?>" alt="profypic"></div>
-                    <?php } else { ?>
+                    <?php } 
+                    else { ?>
                         <?php
                     }
-                    }?>
-                <div class="profilePic"><img src="static/images/cutecat1.jpg" alt="profypic"></div>
+                    ?>
+            
             
             
             </div>
             <div class="profileSubhead"><p>Personality</p></div>
             <div class="profileInfo">
-                <p>Playful: <?php echo $playful2;?></p>
-                <p>Angry: <?php echo $angry2;?></p>
-                <p>Somber: <?php echo $somber2;?></p>
-                <p>Independent: <?php echo $independent2;?></p>
-                <p>Cuddly: <?php echo $cuddly2;?></p>
+            <p>Playful: <?php echo getTraitLevel($playful2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $playful2;?>"></p>
+                <p>Angry: <?php echo getTraitLevel($angry2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $angry2;?>"></p>
+                <p>Somber: <?php echo getTraitLevel($somber2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $somber2;?>"></p>
+                <p>Independent: <?php echo getTraitLevel($independent2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $independent2;?>"></p>
+                <p>Cuddly: <?php echo getTraitLevel($cuddly2);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $cuddly2;?>"></p>
             </div>
 
             <div class="profileSubhead"><p>Likes</p></div>
@@ -241,10 +246,7 @@ $picture2=$row2["picture"];
                 
             </div>
         </div>
-
-
-
     </div>
-    
+    <?php }  ?>
 </body>
 </html>

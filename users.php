@@ -161,5 +161,38 @@ function matchcheck($id) {
     $connect->close();
     // close the database connection
 }
+
+
+function getTraitLevel($trait){
+    $hellno = "hell no";
+    $notVery = "not very";
+    $sortof = "sort of";
+    $verymuch = "very much";
+    $extreamly = "extreamly";
+
+    switch ($trait) {
+        
+        case ($trait<=20 && $trait>0):
+            return $hellno;
+            break;
+        case $trait<=40:
+            return $notVery;
+            break;
+        case $trait<=60:
+            return $sortof;
+            break;
+        case $trait<=80:
+            return $verymuch;
+            break;
+        case $trait<=100:
+            return $extreamly;
+            break;
+        default:
+            echo "ERROR";
+    }
+
+    $error = "error";
+    return $error;
+}
 ?>
  

@@ -48,6 +48,8 @@ body {
     width: 120px;
     padding: 15px;
     text-align: center;
+    color: black;
+    font-weight: bold;;
 }
 
 #join {
@@ -59,13 +61,17 @@ body {
     background-color: blueviolet;
 }
 
+#join a {
+    color: white;
+}
+
 .contentItem img {
     width: 400px;
     height: auto;
 }
 
 .header {
-    height: 50px;
+    height: 60px;
     width: 100%;
     box-shadow: 0px 5px 5px grey;
     margin-bottom: 80px;
@@ -73,12 +79,33 @@ body {
     top: 0;
     background-color: white;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 150px auto 100px 150px;
+    padding-top: -10px;
     
 }
 
 .header p {
     text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.header img {
+    width: auto;
+    height: 30px;
+           
+}
+
+#register {
+    background-color: blueviolet;
+    border-radius: 50px;
+    width: 120px;
+    padding: 10px;
+    text-align: center;
+}
+
+#register a {
+    color: white;
 }
 
 .medText {
@@ -112,12 +139,12 @@ footer p {
 }
 
 .servicesContainer {
-display: grid;
-grid-template-columns: auto auto auto;
-width: 100%;
-margin: auto;
-text-align: center;
-margin-left: 70px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-left: 70px;
 
 }
 
@@ -139,6 +166,48 @@ margin-left: 70px;
     width: 100px;
 }
 
+a:link{
+    color: blueviolet;
+    text-decoration: none;
+}
+
+a:visited{
+    color: blueviolet;
+    text-decoration: none;
+}
+
+a:hover{
+    color: blueviolet;
+    text-decoration: none;
+}
+
+a:active{
+    color: blueviolet;
+    text-decoration: none;
+}
+
+#registerNow {
+    color:blueviolet;
+    font-weight: bold;
+}
+
+/* Mobile view properties */
+@media only screen and (max-width: 1000px) {
+
+body {
+    
+}
+.content {
+    width: 400px;
+    display: grid;
+    grid-template-columns: 400px;
+    margin: auto;
+    padding: 50px;
+    min-width: 0;
+}
+
+}
+
 </style>
 
 <!DOCTYPE html>
@@ -146,14 +215,16 @@ margin-left: 70px;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cat Me If You Can</title>
 </head>
 <body>
-    <div class="header">
-        <p>Menu</p>
-        <p>Cat Me If You Can</p>
+<div class="header">
+        <p><a href="#Menu">Menu</a></p>
+        <p>Cat Me If You Can</p> 
         <p><a href="login.html">Sign in</a></p>
-    </div>
+        <p id="register"><a href="register.html">Register</a></p>
+</div>
+
     <div class="container">
         <div class="content">
             <div class="contentItem">
@@ -168,7 +239,7 @@ margin-left: 70px;
             <div class="contentItem textBox">
                 <p class="medText">Finding The One</p>
                 <p>There are many fish in the sea, but why catch them alone when you can catch more together. By claiming your spot on the couch, or sleeping through the day and causing havoc at night, these things make you who you are. At Cat Me If You Can, we care about these unique traits to find the best possible cat-panion for you.  </p>
-                <div class="registerNow"><a href="register.html">Register Now!</a></div>
+                <div id="registerNow"><a href="register.html">Register Now!</a></div>
             </div>
             <div class="contentItem">
                 <img src="static/images/cutecat2.jpg" alt="">
@@ -179,7 +250,7 @@ margin-left: 70px;
             <div class="contentItem textBox">
                 <p class="medText">About Us</p>
                 <p>When Cat Me If You Can first appeared, the dating scene was well known and blooming. Now that meeting new people on a dating app is the norm, we wanted to steer away from the norm and introduce the ability to make connections using our furry-friends. </p>
-                <div class="registerNow"><a href="register.html">Register Now!</a></div>
+                <div id="registerNow"><a href="register.html">Register Now!</a></div>
             </div>
                   
         </div>
@@ -187,16 +258,16 @@ margin-left: 70px;
             <p id="servicesHeader" class="medtext">Services</p>
             <div class="servicesContainer">
                 <div class="service">
-                    <p><img src="static/images/icons/cat.png" alt=""></p>
+                    <p><img src="static/images/icons/paw.png" alt=""></p>
                 <p>Meet new cats</p>
             <p>The cutest cats are joining Cat Me If You Can every day.</p>
         </div>
         <div class="service">
-            <p><img src="static/images/icons/yarn.png" alt=""></p>
+            <p><img src="static/images/icons/catlove.PNG" alt=""></p>
         <p>Online chat</p>
     <p>Set up dates with your ameowzing new friend.</p>
 </div><div class="service">
-    <p><img src="static/images/icons/tuna.png" alt=""></p>
+    <p><img src="static/images/icons/tunacans.PNG" alt=""></p>
 <p>Discover the perfect match</p>
 <p>Our matchmaking algorithm is the cat's pyjamas.</p>
 

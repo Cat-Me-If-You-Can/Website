@@ -39,6 +39,7 @@ body {
 /* This is for styling the elements inside the navbar, which are currently just text */
 .header p {
     text-align: center;
+      
     
 }
 
@@ -191,6 +192,16 @@ input.pillButton {
     height: 150px;
 }
 
+#ppcontainer {
+	height:150px;
+    width:150px;
+    border-radius: 75px;
+	overflow: hidden;
+    margin: auto;
+    margin-bottom: 20px;
+
+}
+
 .profileSubhead {
     width: 30%;
 }
@@ -203,6 +214,18 @@ input.pillButton {
 .profileInfo p {
     line-height: 29px;
 }
+
+#uploadProfilePic {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    background: blueviolet;
+    font-size: 16px;
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
+
 
 /* Header for the chat page */
 .chatHead {
@@ -410,6 +433,41 @@ body {
     grid-gap: 20px;
     
 }
-
-
+.slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
 }

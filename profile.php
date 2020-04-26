@@ -9,6 +9,7 @@ echo $_SESSION['id'];
 
  if(isset($row["name"])){
  $picture=$row["picture"];
+ $bio=$row["bio"];
  $name=$row["name"];
  $gender=$row["gender"];
  $playful=$row["playful"];
@@ -21,6 +22,7 @@ echo $_SESSION['id'];
  $location=$row["location"];
 } else {
  $picture=null;
+ $bio=null;
  $name=null;
  $gender=null;
  $playful=null;
@@ -69,19 +71,29 @@ echo $_SESSION['id'];
         <div class="profileInfoBox">
             <div class="profileHeader">
                 <div class="profileName"><?php echo $name;?></div>
-                <div class="profilePic"><img src="static/images/cutecat1.jpg" alt="profypic"></div>
+                <div class="profilePic">
+                <?php    
+                    if($picture == true){
+                        ?><div id="ppcontainer">
+                        <img class="profilePic" src="static/images/<?php echo $picture;?>" alt="Profile Picture">
+                        </div> <?php
+                    } else {
+                        ?><div id="uploadProfilePic"></div><?php
+                    }
+                    ?>
+                </div>
             </div>
             <div class="profileSubhead"><p>Bio</p></div>
             <div class="profileInfo">
-                <p><?php echo $name;?> is a sweet angel who loves to play with other cats. Except for the neighbours' cats, who he's ruthlessly mauled on several occasions. But don't let that put you off. He's really quite nice. Sometimes.</p>
+                <p><?php echo $bio;?></p>
             </div>
             <div class="profileSubhead"><p>Personality</p></div>
             <div class="profileInfo">
-                <p>Playful: <?php echo $playful;?></p>
-                <p>Angry: <?php echo $angry;?></p>
-                <p>Somber: <?php echo $somber;?></p>
-                <p>Independent: <?php echo $independent;?></p>
-                <p>Cuddly: <?php echo $cuddly;?></p>
+                <p>Playful: <?php echo getTraitLevel($playful);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $playful;?>"></p>
+                <p>Angry: <?php echo getTraitLevel($angry);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $angry;?>"></p>
+                <p>Somber: <?php echo getTraitLevel($somber);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $somber;?>"></p>
+                <p>Independent: <?php echo getTraitLevel($independent);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $independent;?>"></p>
+                <p>Cuddly: <?php echo getTraitLevel($cuddly);?> <input type="range" min="0" max="100" name="sld" value="<?php echo $cuddly;?>"></p>
             </div>
 
             <div class="profileSubhead"><p>Likes</p></div>

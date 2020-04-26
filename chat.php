@@ -6,6 +6,25 @@ require_once 'init.php';
         $matchid = $_POST['matchid'];
         $mycatid = $_POST['mycatid'];
 
+
+
+        $sql4="select * from profile where id='".$matchid."'";
+        $query = $connect->query($sql4);
+        $row4 = $query->fetch_assoc();
+
+         $id4=$row4["id"];
+         $picture4=$row4["picture"];
+         $name4=$row4["name"];
+         $gender4=$row4["gender"];
+         $playful4=$row4["playful"];
+         $angry4=$row4["angry"];
+         $somber4=$row4["somber"];
+         $independent4=$row4["independent"];
+         $cuddly4=$row4["cuddly"];
+         $likes4=$row4["likes"];
+         $dislikes4=$row4["dislikes"];
+         $location4=$row4["location"];
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +50,7 @@ require_once 'init.php';
             <div class="chatTitle">Messages</div>
             <div class="messageListBox">
                 <div class="message">
-                    <div class="messageSender">Catty Bates</div>
+                    <div class="messageSender"><?php echo $name4;?></div>
                 </div>
                 <div class="message">
                     <div class="messageSender">Meowngela Lansbury</div>
@@ -44,7 +63,7 @@ require_once 'init.php';
 
         <div class="chatBox">
             <div class="chatBoxHeader">
-            <div class="chattingTo">Chat with Catty Bates</div>
+            <div class="chattingTo">Chat with <?php echo $name4;?></div>
                 <div class="chatBoxLinks">
                     <p id="unmatch">Unmatch</p>
                         <div class="modal" id="modal">
@@ -55,7 +74,6 @@ require_once 'init.php';
                                 <p>Unmatch with user?</p>
                                 <div id="confirmDialogue">
                                 <button id="confirmUnmatch">Yes
-                            
                             </form>
                                 </button>
                                 <button id="cancelUnmatch">No</button>
