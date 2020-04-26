@@ -15,7 +15,39 @@ if($_POST) {
     if($password == "") {
         echo " * Password Field is Required <br />";
     }
+
+    if($email && $password) {
+        if(userExists($email) == TRUE && $email === "admin"){
+            $login = login($email, $password);
+            if($login) {
+                $userdata = userdata($email);
  
+                $_SESSION['id'] = $userdata['id'];
+            
+                header('location: admindashboard.php');
+                exit();
+            } else {
+                echo "Incorrect email/password combination";
+            }
+          
+        }elseif(userExists($email) == TRUE && $email !== "admin"){
+            $login = login($email, $password);
+            if($login) {
+                $userdata = userdata($email);
+ 
+                $_SESSION['id'] = $userdata['id'];
+            
+                header('location: profile.php');
+                exit();
+            } else {
+                echo "Incorrect email/password combination";
+            }
+        } else{
+            echo "email does not exists";
+        }
+    }
+}
+    /*
     if($email && $password) {
         if(userExists($email) == TRUE) {
             $login = login($email, $password);
@@ -24,7 +56,7 @@ if($_POST) {
  
                 $_SESSION['id'] = $userdata['id'];
             
-                header('location: settings.php');
+                header('location: profile.php');
                 exit();
                      
             } else {
@@ -34,8 +66,9 @@ if($_POST) {
             echo "email does not exists";
         }
     }
+    */
  
-} // /if
+// /if
  
  
 ?>

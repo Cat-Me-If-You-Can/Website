@@ -2,7 +2,7 @@
  
 #will have to add these once i know the server 
 
-$servername = "127.0.0.1";
+$servername = "localhost";
 $email = "root";
 $password = "";
 $dbname = "login_registration";

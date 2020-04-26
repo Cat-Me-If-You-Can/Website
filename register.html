@@ -2,28 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 </head>
 <body>
-    <div class="colorbg"></div>
-    <div id="logo">
-        <img src="static/images/logo.png" alt="">
-        </div>
     <div class="container">
-       
-        <div class="form" id="loginform">
-            <form action="register.php" method="post">
-                <label for="email">Email</label>
+        <div class="loginHead">
+            <img class="headerPic" src="static/images/cutecat1.jpg" alt="catpic">
+            <div class="loginTitle">Register</div>
+            <p>Already have an account? <a class="keylink" href="login.html">Log In Here!</a></p>
+        </div>
+
+        <div class="loginInputs">
+            <form action="register.php" method="post" class="chunkyForm">
+                <label for="email">Please enter your email address</label>
                 <input type="text" name="email">
-                <label for="password">Password</label>
+                <label for="password">And the password you'd like to use.</label>
                 <input type="password" name="password">
-                <label for="cpassword">Confirm Password</label>
+                <label for="">And then type the same password again, just to confirm.</label>
                 <input type="password" name="cpassword">
-                <input type="submit" name="register"value="Register" class="bottomButton inputButton">
+                <input type="submit" name="register" class="pillButton" value="Register">
             </form>
         </div>
     </div>

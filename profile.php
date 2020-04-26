@@ -39,77 +39,74 @@ echo $_SESSION['id'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/style.css">
-    <title>View Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your profile</title>
 </head>
 <body>
-<div id="logo">
-            <img src="static/images/logo.png" alt="">
-            </div>
-    <div class="container">
-        
-        
-        
-        <div class="subheading">
-            <!-- <p>Name</p> -->
-            
-            <p id="profileName">Bobby Lofts</p>
-            </div>
-            <!-- <p id="profileName"><?php echo $name;?></p> -->
-           
-            <!-- If profile picture, load into src below -->
-            <!-- If no profile picture, display white circle -->
-            <?php
-            if($picture == true){
-                ?><div id="ppcontainer">
-                <img id="profilepic" src="static/images/<?php echo $picture;?>" alt="Profile Picture">
-                </div> <?php
-            } else {
-                ?><div id="uploadProfilePic"></div><?php
-            }
-            ?>		
-            
-            <div class="profileBox">
-            <div class="subheading">
-            <p id="subheadPersonality">Personality</p>
-            </div>
-            <!-- if personalityTraits, GET personality traits, else <p>Add more personality traits for your cat!</p>-->
-            <div class="personalityTraits">
-            <p>playful: <?php echo $playful;?></p>
-            <p>angry: <?php echo $angry;?></p>
-            <p>somber: <?php echo $somber;?></p>
-            <p>independent: <?php echo $independent;?></p>
-            <p>cuddly: <?php echo $cuddly;?></p>
-            </div>
-            </div>
-            <div class="likesAndDislikesBox">
-            <div class="profileBox">
-            <div class="subheading">
-            <p id="subheadLikes">Likes</p>
-            </div>
-            <p><?php echo $likes;?></p>
-            </div>
-            <div class="profileBox">
-            <div class="subheading">
-            <p id="subheadDislikes">Dislikes</p>
-            </div>
-            <p><?php echo $dislikes;?></p>
-            </div>
-            </div>
-            <div class="profileBox">
-            <div class="subheading">
-            <p id="subheadLocation">Location</p>
-            </div>
-            <p><?php echo $location;?></p>
-            </div>
-            <div class="editButtonContainer">
-            <button id="editProfileButton" class="bottomButton" onclick="window.location.href = 'editprofile.php';">Edit Profile</button>
-            </div>
-        </div>
-    
+<div class="header">
+        <p><a href="profile.php">
+            <!-- <img src="static/images/icons/cat.png" alt=""> -->
+            <span>Your Cats</span>
+        </a></p>
+        <p><a href="viewpotentials.php">Look for dates</a></p>
+        <p>Cat Me If You Can</p>
+        <p><a href="matches.php">Matches</a></p>
+        <p><a href="logout.php">Sign out</a></p>
+</div>
 
+    <div class="container">
+        <div class="profileHead">
+            <img class="headerPic" src="static/images/cutecat1.jpg" alt="catpic">
+            <div class="profileTitle">Your<br>Profile</div>
+        
+        <div class="profileDesc">
+            <p>This is where you put all the info about your cat.</p>
+            <p>Done here? <a class="keylink" href="viewpotentials.php">Start meeting new cats!</a></p>
+        </div>
+    </div>
+
+        <div class="profileInfoBox">
+            <div class="profileHeader">
+                <div class="profileName"><?php echo $name;?></div>
+                <div class="profilePic"><img src="static/images/cutecat1.jpg" alt="profypic"></div>
+            </div>
+            <div class="profileSubhead"><p>Bio</p></div>
+            <div class="profileInfo">
+                <p><?php echo $name;?> is a sweet angel who loves to play with other cats. Except for the neighbours' cats, who he's ruthlessly mauled on several occasions. But don't let that put you off. He's really quite nice. Sometimes.</p>
+            </div>
+            <div class="profileSubhead"><p>Personality</p></div>
+            <div class="profileInfo">
+                <p>Playful: <?php echo $playful;?></p>
+                <p>Angry: <?php echo $angry;?></p>
+                <p>Somber: <?php echo $somber;?></p>
+                <p>Independent: <?php echo $independent;?></p>
+                <p>Cuddly: <?php echo $cuddly;?></p>
+            </div>
+
+            <div class="profileSubhead"><p>Likes</p></div>
+            <div class="profileInfo">
+                <p><?php echo $likes;?></p>
+            </div>
+
+            <div class="profileSubhead"><p>Dislikes</p></div>
+            <div class="profileInfo">
+                <p><?php echo $dislikes;?></p>
+            </div>
+
+            <div class="profileSubhead"><p>Suburb</p></div>
+            <div class="profileInfo">
+                <p><?php echo $location;?></p>
+            </div>
+
+            
+                <input type="button" class="pillButton" value="Edit Profile" onclick="window.location.href = 'editprofile.php';">
+            
+        </div>
+
+
+
+    </div>
+    
 </body>
-<?php include 'navbar.php';?>
 </html>
