@@ -63,8 +63,6 @@ body {
 /* This is for styling the elements inside the navbar, which are currently just text */
 .header p {
     text-align: center;
-      
-    
 }
 
 /* This can be used for icons in the navbar */
@@ -505,4 +503,9 @@ body {
     background: #4CAF50;
     cursor: pointer;
   }
+	
+    .header:nth-child(3) {
+    display: none;	
+  }
+
 }
