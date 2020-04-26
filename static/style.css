@@ -417,7 +417,7 @@ body {
     bottom: 0;
     background-color: white;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
     margin-bottom: 0px;
 }
 
