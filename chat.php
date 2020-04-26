@@ -37,13 +37,13 @@ require_once 'init.php';
 </head>
 <body>
 
-<div class="header">
-        <p>Your Cats</p>
-        <p>Look for dates</p>
+	<div class="header">
+        <p><a href="profile.php">Your Cats</a></p>
+        <p><a href="viewpotentials.php">Look for dates</a></p>
         <p>Cat Me If You Can</p>
-        <p>Matches</p>
-        <p>Sign out</p>
-</div>
+        <p><a href="matches.php">Matches</a></p>
+        <p><a href="logout.php">Sign out</a></p>
+	</div>
     <div class="container">
         <div class="chatHead">
                 <img class="headerPic" src="static/images/cutecat1.jpg" alt="">
@@ -65,7 +65,7 @@ require_once 'init.php';
             <div class="chatBoxHeader">
             <div class="chattingTo">Chat with <?php echo $name4;?></div>
                 <div class="chatBoxLinks">
-                    <p id="unmatch">Unmatch</p>
+                    <p class="chatButton" id="unmatch"><br>Unmatch</p>
                         <div class="modal" id="modal">
                         <form action="unmatch.php" method="post">
                         <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
@@ -73,14 +73,14 @@ require_once 'init.php';
                             <div class="modalContent">
                                 <p>Unmatch with user?</p>
                                 <div id="confirmDialogue">
-                                <button id="confirmUnmatch">Yes
+                                <input type = "submit" class="chatButton" id="confirmUnmatch"value="Yes"></input>
                             </form>
-                                </button>
-                                <button id="cancelUnmatch">No</button>
+                               
+                                <p class="chatButton" id="cancelUnmatch"><br>No</p>
                                 </div>
                             </div>
                         </div>
-                    <p>Report</p>
+                    <p class="chatButton"><br>Report</p>
                 </div>
             </div>
             <div class="receiveMessageBox">

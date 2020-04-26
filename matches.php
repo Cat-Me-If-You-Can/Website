@@ -117,7 +117,7 @@ global $connect;
                 <form action="chat.php" method="post">
                 <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
                 <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
-                <input type="submit" name="register"value="Chat" class="bottomButton inputButton">
+                <input type="submit" name="register"value="Chat" class="pillButton">
                 </div>
                 </form>
                 </a>
