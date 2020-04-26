@@ -61,41 +61,78 @@ global $connect;
         </div>
 
         <div class="matchContainer">
-            <div class="match">
-                <div class="profilePic matchPic">
-                    <img src="static/images/cutecat1.jpg" alt="">
-                </div>
-                <div class="matchName">Bobby Lofts</div>
-            </div>
-            <div class="match">
-                <div class="profilePic">
-                    <img src="static/images/cutecat1.jpg" alt="">
-                </div>
-                <div class="matchName">Bobby Lofts</div>
-            </div>
-            <div class="match">
-                <div class="profilePic">
-                    <img src="static/images/cutecat1.jpg" alt="">
-                </div>
-                <div class="matchName">Bobby Lofts</div>
-            </div>
-            <div class="match">
-                <div class="profilePic">
-                    <img src="static/images/cutecat1.jpg" alt="">
-                </div>
-                <div class="matchName">Bobby Lofts</div>
-            </div>
-            <div class="match">
-                <div class="profilePic">
-                    <img  src="static/images/cutecat1.jpg" alt="">
-                </div>
-                <div class="matchName">Bobby Lofts</div>
-            </div>
-        </div>
+            <?php 
+        if ($query2->num_rows > 0) {
+    // output data of each row
+    while($row2 = $query2->fetch_assoc()) {
+        ?>
+        <div class="match">
+                <?php
+                
+                 $likeID1=$row2["likeID1"];
+                 $likeID2=$row2["likeID2"];
 
+                 if($likeID1 == $id)
+                 {
+                    $matchid = $likeID2;
+                 }
+                 else {
+                    $matchid = $likeID1;
+                }       
+                    $sql4="select * from profile where id='".$matchid."'";
+                    $query = $connect->query($sql4);
+                    $row4 = $query->fetch_assoc();
 
-
-    </div>
+                     $id4=$row4["id"];
+                     $picture4=$row4["picture"];
+                     $name4=$row4["name"];
+                     $gender4=$row4["gender"];
+                     $playful4=$row4["playful"];
+                     $angry4=$row4["angry"];
+                     $somber4=$row4["somber"];
+                     $independent4=$row4["independent"];
+                     $cuddly4=$row4["cuddly"];
+                     $likes4=$row4["likes"];
+                     $dislikes4=$row4["dislikes"];
+                     $location4=$row4["location"];
+            
+                ?>
+                <!-- Match's profile pic -->
+                <?php
+                if($picture4 == true){
+                ?><div class="profilePic matchPic">
+                
+                <img id="profilepic" src="static/images/<?php echo $picture4;?>" alt="Profile Picture">
+                
+                </div>
+                <?php
+                } else 
+                {
+                
+                echo '<img src="static/images/logo.png" alt="">';
+                }
+                ?>
+                <p class="matchName"><?php echo "Name: " . $name4;?></p>
+                <div class="form">
+                <form action="chat.php" method="post">
+                <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
+                <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
+                <input type="submit" name="register"value="Chat" class="bottomButton inputButton">
+                </div>
+                </form>
+                </a>
+                <!-- Match's name -->
+            </div>
+            <?php
+    }
+        }
     
+         else {
+        echo "0 results";
+        }
+        ?>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
