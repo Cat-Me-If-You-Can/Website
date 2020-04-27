@@ -55,11 +55,14 @@ body {
     /* padding-bottom: 20px; */
 }
 
+.header a {
+    text-decoration: none;
+    color: var(--main-accent);
+}
+
 /* This is for styling the elements inside the navbar, which are currently just text */
 .header p {
     text-align: center;
-      
-    
 }
 
 /* This can be used for icons in the navbar */
@@ -414,7 +417,7 @@ body {
     bottom: 0;
     background-color: white;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
     margin-bottom: 0px;
 }
 
@@ -500,4 +503,9 @@ body {
     background: #4CAF50;
     cursor: pointer;
   }
+	
+  
+#cmiyc {
+display: none;
+}
 }
