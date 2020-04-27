@@ -128,7 +128,7 @@ $picture2=$row2["picture"];
  
  function distcalc($loc1, $loc2) {
 
-	$link = mysqli_connect("localhost", "root", "", "login_registration");
+	$link = mysqli_connect("localhost", "root", "h%P#Dv%iq#NZA4", "login_registration");
 	$res1 = mysqli_query($link, "SELECT * FROM suburbs WHERE lat <> 0 and lon <> 0 and name = UPPER('".$loc1."')");
 	$res2 = mysqli_query($link, "SELECT * FROM suburbs WHERE lat <> 0 and lon <> 0 and name = UPPER('".$loc2."')");
 	
