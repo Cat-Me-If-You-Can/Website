@@ -170,7 +170,7 @@ body {
 }
 
 /* Defines all the pill-shaped buttons like "Edit Profile" etc */
-input.pillButton {
+.pillButton {
     width: 200px;
     background-color: var(--buttonBg);
     border-radius: 25px;
@@ -425,6 +425,17 @@ input.pillButton {
 
 #cancelUnmatch {
  
+}
+
+.reportInput {
+    height: 200px;
+    width: 100%;
+}
+
+#confirmReportDialogue {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
 }
 
 /* Mobile view properties */

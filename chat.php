@@ -88,11 +88,11 @@ require_once 'init.php';
                                 <input type="hidden" name="reportingCatId" value="<?php echo // the other cat's id ?>" />
                                     <div class="modalContent">
                                         <p>Please fill out the details for your report below.</p>
-                                        <input type="text" class="reportInput">
+                                        <textarea class="reportInput"></textarea>
                                         <div id="confirmReportDialogue">
-                                            <input type="submit" class="chatButton" id="confirmReport" value="Submit Report" />
+                                            <input type="submit" class="pillButton" id="confirmReport" value="Submit Report" />
                             </form>
-                                    <p class="chatButton" id="cancelReport">Cancel Report</p>
+                                    <input type="button" class="pillButton" id="cancelReport" value="Cancel Report" />
                                         </div>
                                     </div>
                             </form>
