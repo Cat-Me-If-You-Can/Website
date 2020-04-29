@@ -19,12 +19,13 @@ echo $_SESSION['id'];
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <div class="header">
-        <p></p>
-        <p>Menu</p>
+<div class="header">
+        <p><a href="profile.php">Your Cats</a></p>
+        <p><a href="viewpotentials.php">Look for dates</a></p>
         <p>Cat Me If You Can</p>
+        <p><a href="matches.php">Matches</a></p>
         <p><a href="logout.php">Sign out</a></p>
-    </div>
+</div>
     <div class="container">
         <div class="profileHead">
             <img class="headerPic" src="static/images/cutecat1.jpg" alt="">
