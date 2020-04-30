@@ -41,92 +41,55 @@ body {
 
 
 
-.rightside-left-chat,.rightside-right-chat{
+.left-chat,.right-chat{
   float:left;
   width:80%;
   position: relative;
 }
-.rightside-right-chat{
+.right-chat{
   float:right;
   margin-right:35px;
 }
-.rightside-left-chat,.rightside-right-chat{
-  float:left;
-  width:80%;
-  position: relative;
-}
-.rightside-right-chat{
-  float:right;
-  margin-right:35px;
-}
-.right-header-contentChat{
+.header-contentChat{
   overflow-y: scroll; 
   background-color: #FFFFFF;
   position: relative;
   height: 500px;
 }
-.right-header-contentChat ul li{
+.header-contentChat ul li{
   list-style: none;
   margin-top:20px;  
 }
-.right-header-contentChat .rightside-left-chat p,.right-header-contentChat .rightside-right-chat p{
-  background-color: #86BB71;
+.header-contentChat .left-chat p,.header-contentChat .right-chat p{
+  background-color: grey;
   padding:15px;
   border-radius:8px;
   color:#fff;
 }
-.right-header-contentChat .rightside-right-chat p{
-  background-color: #94C2ED;
+.header-contentChat .right-chat p{
+  background-color: var(--buttonBg);
 }
-.right-chat-textbox{
-  padding: 15px 30px;
-  width: 100%;
-  background-color: #3A3A3A;
-}
-.right-chat-textbox input{
-  width:80%;
-  height:40px;
-  border:2px solid #3d85ca;
-  border-radius:5px;
-  padding: 0px 10px;
-  border:1px solid #c1c1c1;
-}
-.right-chat-textbox button{
-  height:40px;
-  width:70px;
-  margin-left:20px;
-}
-.rightside-left-chat span i,.rightside-right-chat span i{
-  color: #86BB71;
-  font-size: 12px;
-}
-.rightside-right-chat span i{
-  color:#94C2ED;
-}
-.rightside-right-chat span{
+.right-chat span{
   float:right;
 }
-.rightside-right-chat span small,.rightside-left-chat span small{
-  color:#BDBDC2;
-}
-.rightside-left-chat:before{
+.left-chat:before{
   content: " ";
   position:absolute;
   top:14px;
   left:15px;
   bottom:150px;
   border:15px solid transparent;
-  border-bottom-color:#86BB71; 
+  border-bottom-color:grey; 
   z-index: 1;
 }
-.rightside-right-chat:before{
+.right-chat:before{
   content: " ";
   position:absolute;
   top:14px;
   right:15px;
   bottom:150px;
   border:15px solid transparent;
-  border-bottom-color:#94C2ED; 
+  border-bottom-color: var(--buttonBg); 
 }
 
 
@@ -363,6 +326,61 @@ input.pillButton {
     text-decoration: underline;
     letter-spacing: -2px;
 }
+
+/* chat window content, messages, ids, scrolling etc.  */
+.left-chat,.right-chat{
+  float:left;
+  width:80%;
+  position: relative;
+}
+.right-chat{
+  float:right;
+  margin-right:35px;
+}
+.header-contentChat{
+  overflow-y: scroll; 
+  background-color: #FFFFFF;
+  position: relative;
+  height: 500px;
+}
+.header-contentChat ul li{
+  list-style: none;
+  margin-top:20px;  
+}
+.header-contentChat .left-chat p,.header-contentChat .right-chat p{
+  background-color: grey;
+  padding:15px;
+  border-radius:8px;
+  color:#fff;
+}
+.header-contentChat .right-chat p{
+  background-color: var(--buttonBg);
+}
+.right-chat span{
+  float:right;
+}
+.left-chat:before{
+  content: " ";
+  position:absolute;
+  top:14px;
+  left:15px;
+  bottom:150px;
+  border:15px solid transparent;
+  border-bottom-color:grey; 
+  z-index: 1;
+}
+.right-chat:before{
+  content: " ";
+  position:absolute;
+  top:14px;
+  right:15px;
+  bottom:150px;
+  border:15px solid transparent;
+  border-bottom-color: var(--buttonBg); 
+}
+
+
+
 
 /* The list of "messages" from e.g. Catty Bates, Pawl Bettany etc */
 .messageListBox {
