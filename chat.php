@@ -5,7 +5,10 @@ require_once 'init.php';
 
         $matchid = $_POST['matchid'];
         $mycatid = $_POST['mycatid'];
-
+		$id = $mycatid;
+		
+		echo $matchid;
+		echo $mycatid;
 
 
         $sql4="select * from profile where id='".$matchid."'";
@@ -34,6 +37,7 @@ require_once 'init.php';
     <link rel="stylesheet" href="static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -67,27 +71,91 @@ require_once 'init.php';
                 <div class="chatBoxLinks">
                     <p class="chatButton" id="unmatch"><br>Unmatch</p>
                         <div class="modal" id="modal">
-                        <form action="unmatch.php" method="post">
-                        <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
-                        <input type = "hidden" name = "mycatid" value = <?php echo $mycatid;?> />
-                            <div class="modalContent">
-                                <p>Unmatch with user?</p>
-                                <div id="confirmDialogue">
-                                <input type = "submit" class="chatButton" id="confirmUnmatch"value="Yes"></input>
-                            </form>
-                               
-                                <p class="chatButton" id="cancelUnmatch"><br>No</p>
-                                </div>
-                            </div>
+							<form action="unmatch.php" method="post">
+							<input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
+							<input type = "hidden" name = "mycatid" value = <?php echo $mycatid;?> />
+								<div class="modalContent">
+									<p>Unmatch with user?</p>
+									<div id="confirmDialogue">
+									<input type = "submit" class="chatButton" id="confirmUnmatch"value="Yes"></input>
+								</form>
+								   
+									<p class="chatButton" id="cancelUnmatch"><br>No</p>
+									</div>
+								</div>
                         </div>
                     <p class="chatButton"><br>Report</p>
                 </div>
             </div>
             <div class="receiveMessageBox">
+				<div id="scrolling_to_bottom" class="col-md-12 right-header-contentChat">
+				<?php
+				
+				$sel_msg = "select * from messages where (sendID='$id' AND receiveID='$id4') OR (receiveID='$id' AND sendID='$id4') ORDER by 1 ASC"; 
+						$run_msg = mysqli_query($connect,$sel_msg);		
+						
+						while($row=mysqli_fetch_array($run_msg)){
+			
+						$sendID = $row['sendID'];
+						$receiveID = $row['receiveID'];
+						$msg_content = $row['content'];
+						//$msg_status = $row['msg_status'];
+						//$msg_date = $row['msg_date'];
 
+						?>
+						<ul>
+						<?php
+
+						if($id == $sendID AND $id4 == $receiveID){
+
+							echo"
+								<li>
+									<div class='rightside-right-chat'>
+										<span>$id</span><br><br>
+										<p>$msg_content</p>
+									</div>
+								</li>
+							";
+						}
+
+						else if($id == $receiveID AND $id4 == $sendID){
+							echo"
+								<li>
+									<div class='rightside-left-chat'>
+										<span>$id4</span><br><br>
+										<p>$msg_content</p>
+									</div>
+								</li>
+
+							";
+						}
+
+
+						?>
+						</ul>
+						<?php
+
+						}
+				
+						?>
+				
+				</div>
+				
+				
+				<!-- 
+					query DB, find messages where send or recieve id is current user AND the other id is the matched user
+					print all rows in ascending order, where current user = sender messages are on the right and current user = recipient messages on the left.
+				
+				-->
             </div>
             <div class="sendMessageBox">
-                <input type="text" placeholder="Send message...">
+				<!-- 
+					check message valid, then put into table with send id recieve id match id
+				-->
+				<form method="post"><!-- this breaks as the user you are chatting to isnt passed into session -->
+					<input type="text" placeholder="Send message...">
+					<input type="submit" name="send" value="send">
+				</form>
             </div>
         </div>
 
@@ -95,7 +163,10 @@ require_once 'init.php';
 
     </div>
     
-
+<script>
+		$('#scrolling_to_bottom').animate({
+		scrollTop: $('#scrolling_to_bottom').get(0).scrollHeight}, 1000);
+	</script>
     <script>
         let modal = document.getElementById("modal");
         let btn = document.getElementById("unmatch");
