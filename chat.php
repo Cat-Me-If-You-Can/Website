@@ -159,22 +159,7 @@ require_once 'init.php';
                         </div>
 
 
-                    <p class="chatButton" id="report"><br>Report</p>
-                        <div class="modal" id="reportModal">
-                            <form action="report.php" method="post">
-                                <input type="hidden" name="reportingCatId" value="<?php echo $mycatid; ?>" />
-                                <input type="hidden" name="reportingCatId" value="<?php echo // the other cat's id ?>" />
-                                    <div class="modalContent">
-                                        <p>Please fill out the details for your report below.</p>
-                                        <textarea class="reportInput"></textarea>
-                                        <div id="confirmReportDialogue">
-                                            <input type="submit" class="pillButton" id="confirmReport" value="Submit Report" />
-                            </form>
-                                    <input type="button" class="pillButton" id="cancelReport" value="Cancel Report" />
-                                        </div>
-                                    </div>
-                            </form>
-                        </div>
+                  
                 </div>
             </div>
 
