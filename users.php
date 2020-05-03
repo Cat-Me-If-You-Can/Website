@@ -164,11 +164,11 @@ function matchcheck($id) {
 
 
 function getTraitLevel($trait){
-    $hellno = "hell no";
-    $notVery = "not very";
-    $sortof = "sort of";
-    $verymuch = "very much";
-    $extreamly = "extreamly";
+    $hellno = "Very little";
+    $notVery = "A bit";
+    $sortof = "Somewhat";
+    $verymuch = "Very much";
+    $extreamly = "Extremely";
 
     switch ($trait) {
         

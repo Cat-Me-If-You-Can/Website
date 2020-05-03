@@ -1,0 +1,91 @@
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    .container {
+        width: 70%;
+        margin: auto;
+    }
+
+    .loginBox {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        margin-top: 200px;
+    }
+
+    #loginHead {
+        font-weight: bold;
+        font-size: 72px;
+        line-height: 10px;
+        width: 70%;
+        border-bottom: 50px solid purple;
+    }
+
+    .loginBox input {
+        height: 70px;
+        width: 70%;
+        
+    }
+
+    .loginFormNew form {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-gap: 30px;
+    }
+
+    #loginbutton {
+        border-radius: 40px;
+        background-color: purple;
+        color: white;
+        font-size: 16px;
+    }
+
+    .header {
+    height: 50px;
+    width: 100%;
+    box-shadow: 0px 5px 5px grey;
+    margin-bottom: 80px;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+}
+
+.header p {
+    text-align: center;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <p>menu</p>
+        <p>Cat Me If You Can</p>
+        <p>Sign in</p>
+    </div>
+    <div class="container">
+        <div class="loginBox">
+            <p id="loginHead">Login</p>
+            <div class="loginFormNew">
+                <form action="login.php">
+                    <input type="text">
+                    <input type="password">
+                    <input id="loginbutton" type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
