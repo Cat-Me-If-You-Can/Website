@@ -39,7 +39,61 @@ body {
 }
 
 
-
+/* chat window content, messages, ids, scrolling etc.  */
+.left-chat,.right-chat{
+    float:left;
+    width:80%;
+    position: relative;
+  }
+  .right-chat{
+    float:right;
+    margin-right:35px;
+  }
+  .header-contentChat{
+    overflow-y: scroll; 
+    background-color: #FFFFFF;
+    position: relative;
+    height: 500px;
+  }
+  .header-contentChat ul li{
+    list-style: none;
+    margin-top:20px;  
+  }
+  .header-contentChat .left-chat p,.header-contentChat .right-chat p{
+    background-color: grey;
+    padding:15px;
+    border-radius:8px;
+    color:#fff;
+  }
+  .header-contentChat .right-chat p{
+    background-color: var(--buttonBg);
+  }
+  .right-chat span{
+    float:right;
+  }
+  .left-chat:before{
+    content: " ";
+    position:absolute;
+    top:14px;
+    left:15px;
+    bottom:150px;
+    border:15px solid transparent;
+    border-bottom-color:grey; 
+    z-index: 1;
+  }
+  .right-chat:before{
+    content: " ";
+    position:absolute;
+    top:14px;
+    right:15px;
+    bottom:150px;
+    border:15px solid transparent;
+    border-bottom-color: var(--buttonBg); 
+  }
+  
+  
+  
+  
 
 /* This is the header bar that spans every page aka the navbar. */
 .header {
@@ -86,22 +140,7 @@ body {
 .adminContent {
     display: grid;
     grid-gap: 50px;
-    grid-template-columns: auto auto auto;
-}
-
-.adminHead {
-    /* Header div for profile */
-    display: grid;
-    grid-template-rows: 200px 200px 150px;
-    
-}
-
-.adminTitle {
-    font-size: var(--big-text);
-    font-weight: bold;
-    text-decoration: underline;
-    letter-spacing: -5px;
-    margin-top: -100px;
+    grid-template-columns: auto auto;
 }
 
 .adminContentItem {
@@ -453,98 +492,6 @@ body {
     grid-gap: 20px;
 }
 
-.reportsHead {
-
-}
-
-.reportsContent {
-    display: grid;
-    grid-template-columns: auto;
-    grid-gap: 40px;
-}
-
-.reportsItem {
-    display: grid;
-    grid-template-rows: auto auto auto auto;
-    /* border: 1px solid black; */
-    height: 200px;
-    padding: 30px;
-    box-shadow: 0px 10px 10px rgb(223, 222, 222);
-    border-radius: 15px;
-}
-
-.reportsActions {
-    display: grid;
-    grid-template-columns: auto auto;
-    text-align: center;
-    height: 20px;
-}
-
-.removeUser {
-    background-color: green;
-    border-bottom-left-radius: 15px;
-    
-}
-
-.removeUser:hover {
-    background-color: rgb(32, 187, 32);
-    
-}
-
-.dismissReport {
-    background-color: red;
-    border-bottom-right-radius: 15px;
-}
-
-.dismissReport:hover {
-    background-color: rgb(255, 109, 109);
-   
-}
-
-.reportedCatId {
-    font-size: var(--med-text);
-    font-weight: bold;
-    letter-spacing: -1px;
-}
-
-.reportingCatId {
-
-}
-
-.reportDetails {
-
-}
-
-.activityContent {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 50px;
-}
-
-.activityContentItem.textBox {
-    padding: 30px;
-    height: 200px;
-}
-
-.statHeader {
-    font-size: var(--med-text);
-    font-weight: bold;
-    letter-spacing: -1px;
-    margin-bottom: -40px;
-}
-
-.statNumber {
-    font-size: 72px;
-    font-weight: bold;
-    letter-spacing: -2px;
-    margin-bottom: -0px;
-   
-}
-
-.statDesc {
-
-}
-
 /* Mobile view properties */
 @media only screen and (max-width: 1000px) {
 
@@ -652,4 +599,61 @@ body {
 #cmiyc {
 display: none;
 }
+/* chat window content, messages, ids, scrolling etc.  */
+.left-chat,.right-chat{
+    float:left;
+    width:80%;
+    position: relative;
+  }
+  .right-chat{
+    float:right;
+    margin-right:35px;
+  }
+  .header-contentChat{
+    overflow-y: scroll; 
+    background-color: #FFFFFF;
+    position: relative;
+    height: 500px;
+  }
+  .header-contentChat ul li{
+    list-style: none;
+    margin-top:20px;  
+  }
+  .header-contentChat .left-chat p,.header-contentChat .right-chat p{
+    background-color: grey;
+    padding:15px;
+    border-radius:8px;
+    color:#fff;
+  }
+  .header-contentChat .right-chat p{
+    background-color: var(--buttonBg);
+  }
+  .right-chat span{
+    float:right;
+  }
+  .left-chat:before{
+    content: " ";
+    position:absolute;
+    top:14px;
+    left:15px;
+    bottom:150px;
+    border:15px solid transparent;
+    border-bottom-color:grey; 
+    z-index: 1;
+  }
+  .right-chat:before{
+    content: " ";
+    position:absolute;
+    top:14px;
+    right:15px;
+    bottom:150px;
+    border:15px solid transparent;
+    border-bottom-color: var(--buttonBg); 
+  }
+  
+  
+  
+  
+
 }
+

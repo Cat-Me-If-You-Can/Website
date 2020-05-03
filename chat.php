@@ -157,9 +157,6 @@ require_once 'init.php';
                                     </div>
                             </form>
                         </div>
-
-
-                  
                 </div>
             </div>
 
