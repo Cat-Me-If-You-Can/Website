@@ -91,9 +91,7 @@ body {
     border-bottom-color: var(--buttonBg); 
   }
   
-  
-  
-  
+
 
 /* This is the header bar that spans every page aka the navbar. */
 .header {
@@ -140,7 +138,22 @@ body {
 .adminContent {
     display: grid;
     grid-gap: 50px;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
+}
+
+.adminHead {
+    /* Header div for profile */
+    display: grid;
+    grid-template-rows: 200px 200px 150px;
+    
+}
+
+.adminTitle {
+    font-size: var(--big-text);
+    font-weight: bold;
+    text-decoration: underline;
+    letter-spacing: -5px;
+    margin-top: -100px;
 }
 
 .adminContentItem {
@@ -492,6 +505,98 @@ body {
     grid-gap: 20px;
 }
 
+.reportsHead {
+
+}
+
+.reportsContent {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 40px;
+}
+
+.reportsItem {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    /* border: 1px solid black; */
+    height: 200px;
+    padding: 30px;
+    box-shadow: 0px 10px 10px rgb(223, 222, 222);
+    border-radius: 15px;
+}
+
+.reportsActions {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    height: 20px;
+}
+
+.removeUser {
+    background-color: green;
+    border-bottom-left-radius: 15px;
+    
+}
+
+.removeUser:hover {
+    background-color: rgb(32, 187, 32);
+    
+}
+
+.dismissReport {
+    background-color: red;
+    border-bottom-right-radius: 15px;
+}
+
+.dismissReport:hover {
+    background-color: rgb(255, 109, 109);
+   
+}
+
+.reportedCatId {
+    font-size: var(--med-text);
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.reportingCatId {
+
+}
+
+.reportDetails {
+
+}
+
+.activityContent {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+}
+
+.activityContentItem.textBox {
+    padding: 30px;
+    height: 200px;
+}
+
+.statHeader {
+    font-size: var(--med-text);
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: -40px;
+}
+
+.statNumber {
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin-bottom: -0px;
+   
+}
+
+.statDesc {
+
+}
+
 /* Mobile view properties */
 @media only screen and (max-width: 1000px) {
 
@@ -595,10 +700,7 @@ body {
     cursor: pointer;
   }
 	
-  
-#cmiyc {
-display: none;
-}
+ 
 /* chat window content, messages, ids, scrolling etc.  */
 .left-chat,.right-chat{
     float:left;
@@ -650,10 +752,10 @@ display: none;
     border:15px solid transparent;
     border-bottom-color: var(--buttonBg); 
   }
-  
-  
-  
-  
+   
 
+
+#cmiyc {
+display: none;
 }
-
+}
