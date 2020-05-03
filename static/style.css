@@ -39,6 +39,58 @@ body {
 }
 
 
+/* chat window content, messages, ids, scrolling etc.  */
+.left-chat,.right-chat{
+    float:left;
+    width:80%;
+    position: relative;
+  }
+  .right-chat{
+    float:right;
+    margin-right:35px;
+  }
+  .header-contentChat{
+    overflow-y: scroll; 
+    background-color: #FFFFFF;
+    position: relative;
+    height: 500px;
+  }
+  .header-contentChat ul li{
+    list-style: none;
+    margin-top:20px;  
+  }
+  .header-contentChat .left-chat p,.header-contentChat .right-chat p{
+    background-color: grey;
+    padding:15px;
+    border-radius:8px;
+    color:#fff;
+  }
+  .header-contentChat .right-chat p{
+    background-color: var(--buttonBg);
+  }
+  .right-chat span{
+    float:right;
+  }
+  .left-chat:before{
+    content: " ";
+    position:absolute;
+    top:14px;
+    left:15px;
+    bottom:150px;
+    border:15px solid transparent;
+    border-bottom-color:grey; 
+    z-index: 1;
+  }
+  .right-chat:before{
+    content: " ";
+    position:absolute;
+    top:14px;
+    right:15px;
+    bottom:150px;
+    border:15px solid transparent;
+    border-bottom-color: var(--buttonBg); 
+  }
+  
 
 
 /* This is the header bar that spans every page aka the navbar. */
@@ -648,7 +700,61 @@ body {
     cursor: pointer;
   }
 	
-  
+ 
+/* chat window content, messages, ids, scrolling etc.  */
+.left-chat,.right-chat{
+    float:left;
+    width:80%;
+    position: relative;
+  }
+  .right-chat{
+    float:right;
+    margin-right:35px;
+  }
+  .header-contentChat{
+    overflow-y: scroll; 
+    background-color: #FFFFFF;
+    position: relative;
+    height: 500px;
+  }
+  .header-contentChat ul li{
+    list-style: none;
+    margin-top:20px;  
+  }
+  .header-contentChat .left-chat p,.header-contentChat .right-chat p{
+    background-color: grey;
+    padding:15px;
+    border-radius:8px;
+    color:#fff;
+  }
+  .header-contentChat .right-chat p{
+    background-color: var(--buttonBg);
+  }
+  .right-chat span{
+    float:right;
+  }
+  .left-chat:before{
+    content: " ";
+    position:absolute;
+    top:14px;
+    left:15px;
+    bottom:150px;
+    border:15px solid transparent;
+    border-bottom-color:grey; 
+    z-index: 1;
+  }
+  .right-chat:before{
+    content: " ";
+    position:absolute;
+    top:14px;
+    right:15px;
+    bottom:150px;
+    border:15px solid transparent;
+    border-bottom-color: var(--buttonBg); 
+  }
+   
+
+
 #cmiyc {
 display: none;
 }

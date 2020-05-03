@@ -65,10 +65,20 @@ function getCatName($id) {
                         <div class="reportDetails">Details: <?php echo $reportDetails; ?></div>
                         <div class="reportsActions">
                             <div class="removeUser"><p>
-                                Remove User
+                            <form action="remove.php" method="post">
+                <input type = "hidden" name = "reportingCatId" value = <?php echo $reportingCatId;?> />
+                <input type = "hidden" name = "reportedCatId" value = <?php echo $reportedCatId;?> />
+                <input type = "hidden" name = "reportDetails" value = <?php echo $reportDetails;?> />
+                <input type="submit" class="removeUser" name="register"value="Remove User">
+                </form>
                             </p></div>
                             <div class="dismissReport"><p>
-                                Dismiss Report
+                                <form action="dismiss.php" method="post">
+                <input type = "hidden" name = "reportingCatId" value = <?php echo $reportingCatId; ?> />
+                <input type = "hidden" name = "reportedCatId" value = <?php echo $reportedCatId; ?> />
+                <input type = "hidden" name = "reportDetails" value = <?php echo $reportDetails; ?> />
+                <input type="submit" class="dismissReport" name="register" value="Dissmiss Report">
+                </form>
                             </p></div>
                         </div>
                     </div>
