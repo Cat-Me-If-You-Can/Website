@@ -2,7 +2,7 @@
 require_once 'init.php';
  
         global $connect;
-
+		$matchidfrommatchphp = $_POST['matchid'];
         $matchid = $_POST['matchid'];
         $mycatid = $_POST['mycatid'];
         $name = $_POST['mycatname'];
@@ -95,9 +95,7 @@ require_once 'init.php';
                      $likes5=$row5["likes"];
                      $dislikes5=$row5["dislikes"];
                      $location5=$row5["location"];
-            
                 ?>
-                <!-- Match's profile pic -->
 
                 <div class="messageSender"><?php echo $name5;?></div>
                 <div class="form">
@@ -117,9 +115,10 @@ require_once 'init.php';
     
          else {
         echo "0 results";
-        }
+		}
+		$matchid = $matchidfrommatchphp;
         ?>
-
+			
             </div>
         </div>
 
@@ -195,7 +194,7 @@ require_once 'init.php';
 					<input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
                 <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
                 <input type = "hidden" name = "mycatname" value = <?php echo $name;?> />
-					<button class="chatButton" name="submit">Send</button>
+					<button class="chatButton" name="submit">send</button>
 				</form>
 				
             </div>
