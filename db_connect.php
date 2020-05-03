@@ -4,7 +4,7 @@
 
 $servername = "localhost";
 $email = "root";
-$password = "h%P#Dv%iq#NZA4";
+$password = "";
 $dbname = "login_registration";
  
 // crearte connection
