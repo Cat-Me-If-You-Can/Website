@@ -19,18 +19,46 @@ echo $_SESSION['id'];
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <div class="header">
-        <p></p>
-        <p>Menu</p>
+<div class="header">
+        <p><a href="profile.php">Your Cats</a></p>
+        <p><a href="viewpotentials.php">Look for dates</a></p>
         <p>Cat Me If You Can</p>
+        <p><a href="matches.php">Matches</a></p>
         <p><a href="logout.php">Sign out</a></p>
-    </div>
+</div>
     <div class="container">
+        <div class="profileHead">
+            <img class="headerPic" src="static/images/cutecat1.jpg" alt="">
+            <div class="profileTitle">Admin<br>Dashboard</div>
+        </div>
         <div class="adminContent">
-            <input type="button" class="pillButton" value="View Reports">
-            <input type="button" class="pillButton" value="User Activity">
-            <input type="button" class="pillButton" value="Manage Accounts">
+            <div class="textBox adminContentItem">
+                <div class="adminContentItemHead">
+                <p>
+                    View Reports
+                </p>
+                </div>
+                <p>View all reports of abuse from users.</p>
+            </div>
+            <div class="textBox adminContentItem">
+                <div class="adminContentItemHead">
+                <p>
+                    User Activity
+                </p>
+                </div>
+                <p>View statistics on likes, matches, and number of users.</p>
+            </div>
+            <div class="textBox adminContentItem">
+                <div class="adminContentItemHead">
+                <p>
+                    Manage Accounts
+                </p>
+                </div>
+                <p>Remove or edit information on behalf of users.</p>
+            </div>
+           
 </div>
 </div>
+
 </body>
 </html>

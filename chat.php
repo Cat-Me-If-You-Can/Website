@@ -141,9 +141,29 @@ require_once 'init.php';
 									</div>
 								</div>
                         </div>
-                    <p class="chatButton"><br>Report</p>
+						<p class="chatButton" id="report"><br>Report</p>
+                        <div class="modal" id="reportModal">
+                            <form action="report.php" method="post">
+                                <input type="hidden" name="reportingCatId" value="<?php echo $mycatid; ?>" />
+                                <input type="hidden" name="reportedCatId" value="<?php echo $matchid; ?>" />
+                                    <div class="modalContent">
+                                        <p>Please fill out the details for your report below.</p>
+										<input type="textarea" name="reportDetails" value="" />
+                                        <div id="confirmReportDialogue">
+                                            <input type="submit" class="pillButton" id="confirmReport" value="Submit Report" />
+                            </form>
+                                    <input type="button" class="pillButton" id="cancelReport" value="Cancel Report" />
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
                 </div>
             </div>
+
+
+
+
+
             <div class="receiveMessageBox">
 				<div id="scrolling_to_bottom" class="col-md-12 header-contentChat">
 				<?php
@@ -266,6 +286,9 @@ require_once 'init.php';
         let modal = document.getElementById("modal");
         let btn = document.getElementById("unmatch");
 		let close = document.getElementById("cancelUnmatch");
+		let reportModal = document.getElementById("reportModal");
+        let reportBtn = document.getElementById("report");
+        let reportClose = document.getElementById("cancelReport");
         btn.onclick = () => {
             modal.style.display = "block";
         }
@@ -273,9 +296,17 @@ require_once 'init.php';
             modal.style.display = "none";
         }
 
+		reportBtn.onclick = () => {
+            reportModal.style.display = "block";
+        }
+		reportClose.onclick = () => {
+            reportModal.style.display = "none";
+        }
+
         window.onclick = (event) => {
-            if (event.target == modal) {
+            if (event.target == modal || event.target == reportModal) {
                 modal.style.display = "none";
+                reportModal.style.display = "none";
             }
         }
     </script>

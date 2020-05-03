@@ -41,58 +41,6 @@ body {
 
 
 
-.left-chat,.right-chat{
-  float:left;
-  width:80%;
-  position: relative;
-}
-.right-chat{
-  float:right;
-  margin-right:35px;
-}
-.header-contentChat{
-  overflow-y: scroll; 
-  background-color: #FFFFFF;
-  position: relative;
-  height: 500px;
-}
-.header-contentChat ul li{
-  list-style: none;
-  margin-top:20px;  
-}
-.header-contentChat .left-chat p,.header-contentChat .right-chat p{
-  background-color: grey;
-  padding:15px;
-  border-radius:8px;
-  color:#fff;
-}
-.header-contentChat .right-chat p{
-  background-color: var(--buttonBg);
-}
-.right-chat span{
-  float:right;
-}
-.left-chat:before{
-  content: " ";
-  position:absolute;
-  top:14px;
-  left:15px;
-  bottom:150px;
-  border:15px solid transparent;
-  border-bottom-color:grey; 
-  z-index: 1;
-}
-.right-chat:before{
-  content: " ";
-  position:absolute;
-  top:14px;
-  right:15px;
-  bottom:150px;
-  border:15px solid transparent;
-  border-bottom-color: var(--buttonBg); 
-}
-
-
 /* This is the header bar that spans every page aka the navbar. */
 .header {
     height: 50px;
@@ -138,8 +86,34 @@ body {
 .adminContent {
     display: grid;
     grid-gap: 50px;
-    grid-template-rows: auto auto auto;
-  
+    grid-template-columns: auto auto;
+}
+
+.adminContentItem {
+    height: 200px;
+    /* width: 50%; */
+    display: grid;
+    grid-template-rows: 28% auto;
+}
+
+.adminContentItemHead {
+    
+}
+
+.adminContentItemHead p {
+    font-size: var(--med-text);
+    
+}
+
+.adminContentItem:hover {
+    border: 1px solid var(--main-accent);
+}
+
+.textBox {
+    box-shadow: 0px 10px 10px rgb(223, 222, 222);
+    padding: 30px;
+    border-radius: 15px;
+    line-height: 34px;
 }
 
 /* The big "Log In" div including the cat pic and the title */
@@ -196,7 +170,7 @@ body {
 }
 
 /* Defines all the pill-shaped buttons like "Edit Profile" etc */
-input.pillButton {
+.pillButton {
     width: 200px;
     background-color: var(--buttonBg);
     border-radius: 25px;
@@ -327,61 +301,6 @@ input.pillButton {
     letter-spacing: -2px;
 }
 
-/* chat window content, messages, ids, scrolling etc.  */
-.left-chat,.right-chat{
-  float:left;
-  width:80%;
-  position: relative;
-}
-.right-chat{
-  float:right;
-  margin-right:35px;
-}
-.header-contentChat{
-  overflow-y: scroll; 
-  background-color: #FFFFFF;
-  position: relative;
-  height: 500px;
-}
-.header-contentChat ul li{
-  list-style: none;
-  margin-top:20px;  
-}
-.header-contentChat .left-chat p,.header-contentChat .right-chat p{
-  background-color: grey;
-  padding:15px;
-  border-radius:8px;
-  color:#fff;
-}
-.header-contentChat .right-chat p{
-  background-color: var(--buttonBg);
-}
-.right-chat span{
-  float:right;
-}
-.left-chat:before{
-  content: " ";
-  position:absolute;
-  top:14px;
-  left:15px;
-  bottom:150px;
-  border:15px solid transparent;
-  border-bottom-color:grey; 
-  z-index: 1;
-}
-.right-chat:before{
-  content: " ";
-  position:absolute;
-  top:14px;
-  right:15px;
-  bottom:150px;
-  border:15px solid transparent;
-  border-bottom-color: var(--buttonBg); 
-}
-
-
-
-
 /* The list of "messages" from e.g. Catty Bates, Pawl Bettany etc */
 .messageListBox {
     border: 1px solid black;
@@ -506,6 +425,17 @@ input.pillButton {
 
 #cancelUnmatch {
  
+}
+
+.reportInput {
+    height: 200px;
+    width: 100%;
+}
+
+#confirmReportDialogue {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
 }
 
 /* Mobile view properties */
