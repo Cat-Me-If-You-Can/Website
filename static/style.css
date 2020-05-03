@@ -515,6 +515,36 @@ body {
 
 }
 
+.activityContent {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+}
+
+.activityContentItem.textBox {
+    padding: 30px;
+    height: 200px;
+}
+
+.statHeader {
+    font-size: var(--med-text);
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: -40px;
+}
+
+.statNumber {
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin-bottom: -0px;
+   
+}
+
+.statDesc {
+
+}
+
 /* Mobile view properties */
 @media only screen and (max-width: 1000px) {
 

@@ -35,13 +35,13 @@ function getCatName($id) {
 </head>
 <body>
 <div class="header">
-    <p><a href="profile.php">
+    <p><a href="viewreports.php">
         <!-- <img src="static/images/icons/cat.png" alt=""> -->
-        <span>Your Cats</span>
+        View Reports
     </a></p>
-    <p><a href="viewpotentials.php">Look for dates</a></p>
+    <p><a href="useractivity.php">User Activity</a></p>
     <p id="cmiyc">Cat Me If You Can</p>
-    <p><a href="matches.php">Matches</a></p>
+    <p><a href="../phpMyAdmin">Manage Accounts</a></p>
     <p><a href="logout.php">Sign out</a></p>
 </div>
 
@@ -49,6 +49,7 @@ function getCatName($id) {
     <div class="profileHead">
         <img class=headerPic src="static/images/cutecat1.jpg" alt="">
         <div class="profileTitle">User<br>Reports</div>
+        <div class="profileDesc">View and act on reports made by users.<br><br>Done here? Head back to the <a class="keylink" href="admindashboard.php">dashboard.</a></div>
     </div>
     <div class="reportsContent">
         <?php 
