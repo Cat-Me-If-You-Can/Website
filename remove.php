@@ -14,6 +14,9 @@ require_once 'init.php';
 
         $sql = "DELETE from profile WHERE id = '".$reportedCatId."'";
         $query = $connect->query($sql);
+
+        $sql = "DELETE from matchestable WHERE likeID1 = '".$reportedCatId."' OR likeID2 = '".$reportedCatId."'";
+        $query = $connect->query($sql);
             
         header('location: viewreports.php');
         exit();
