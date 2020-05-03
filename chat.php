@@ -26,8 +26,16 @@ require_once 'init.php';
          $cuddly4=$row4["cuddly"];
          $likes4=$row4["likes"];
          $dislikes4=$row4["dislikes"];
-         $location4=$row4["location"];
+		 $location4=$row4["location"];
+		 
 
+		 $yes = "yes";
+
+		 $sql = "SELECT * FROM matchestable where ((likeID1 = '".$id."') OR (likeID2 = '".$id."')) AND matched = '$yes'";
+		 $query2 = $connect->query($sql);
+
+
+		 
 ?>
 
 <!DOCTYPE html>
@@ -53,15 +61,65 @@ require_once 'init.php';
                 <img class="headerPic" src="static/images/cutecat1.jpg" alt="">
             <div class="chatTitle">Messages</div>
             <div class="messageListBox">
-                <div class="message">
-                    <div class="messageSender"><?php echo $name4;?></div>
+            <?php 
+        if ($query2->num_rows > 0) {
+    // output data of each row
+    while($row2 = $query2->fetch_assoc()) {
+        ?>
+        <div class="message">
+                <?php
+                
+                 $likeID1=$row2["likeID1"];
+                 $likeID2=$row2["likeID2"];
+
+                 if($likeID1 == $id)
+                 {
+                    $matchid = $likeID2;
+                 }
+                 else {
+                    $matchid = $likeID1;
+                }       
+                    $sql5="select * from profile where id='".$matchid."'";
+                    $query = $connect->query($sql5);
+                    $row5 = $query->fetch_assoc();
+
+                     $id5=$row5["id"];
+                     $picture5=$row5["picture"];
+                     $name5=$row5["name"];
+                     $gender5=$row5["gender"];
+                     $playful5=$row5["playful"];
+                     $angry5=$row5["angry"];
+                     $somber5=$row5["somber"];
+                     $independent5=$row5["independent"];
+                     $cuddly5=$row5["cuddly"];
+                     $likes5=$row5["likes"];
+                     $dislikes5=$row5["dislikes"];
+                     $location5=$row5["location"];
+            
+                ?>
+                <!-- Match's profile pic -->
+
+                <div class="messageSender"><?php echo $name5;?></div>
+                <div class="form">
+                <form action="chat.php" method="post">
+                <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
+                <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
+                <input type = "hidden" name = "mycatname" value = <?php echo $name;?> />
+                <input type="submit" name="register"value="Chat" class="pillButton">
                 </div>
-                <div class="message">
-                    <div class="messageSender">Meowngela Lansbury</div>
-                </div>
-                <div class="message">
-                    <div class="messageSender">Pawl Bettany</div>
-                </div>
+                </form>
+                </a>
+                <!-- Match's name -->
+            </div>
+            <?php
+    }
+        }
+    
+         else {
+        echo "0 results";
+        }
+        ?>
+
             </div>
         </div>
 
@@ -137,9 +195,18 @@ require_once 'init.php';
 					<input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
                 <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
                 <input type = "hidden" name = "mycatname" value = <?php echo $name;?> />
-					<button class="chatButton" name="submit">
+					<button class="chatButton" name="submit">Send</button>
 				</form>
+				
             </div>
+			<div class="form">
+                <form action="chat.php" method="post" id="chatform">
+                <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
+                <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
+                <input type = "hidden" name = "mycatname" value = <?php echo $name;?> />
+                <input type="submit" class="chatButton" name="register"value="refresh">
+                </div>
+                </form>
         </div>
 
 
