@@ -168,10 +168,25 @@ require_once 'init.php';
 				";
 			}
 			else{
+				
 			$insert = "insert into messages(sendID,receiveID,content) values ('$id','$id4','$msg')";
 			
 			$run_insert = mysqli_query($connect,$insert);
-			
+			?>
+			<p class="matchName"><?php echo "Name: " . $name4;?></p>
+
+                <div class="form">
+                <form action="chat.php" method="post" id="chatform">
+                <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
+                <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
+                <input type = "hidden" name = "mycatname" value = <?php echo $name;?> />
+                <input type="submit" name="register"value="Chat" class="pillButton">
+                </div>
+                </form>
+				<script type="text/javascript">
+					document.getElementById('chatform').submit(); // SUBMIT FORM
+				</script>
+				<?php
 			}
 		}
 	?>
