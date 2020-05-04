@@ -52,7 +52,7 @@ require_once 'init.php';
 	<div class="header">
         <p><a href="profile.php">Your Cats</a></p>
         <p><a href="viewpotentials.php">Look for dates</a></p>
-        <p>Cat Me If You Can</p>
+        <p id="cmiyc">Cat Me If You Can</p>
         <p><a href="matches.php">Matches</a></p>
         <p><a href="logout.php">Sign out</a></p>
 	</div>
