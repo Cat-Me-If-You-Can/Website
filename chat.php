@@ -5,6 +5,7 @@ require_once 'init.php';
 
         $matchid = $_POST['matchid'];
         $mycatid = $_POST['mycatid'];
+        $userid2 = 20;
 
 
 
@@ -83,12 +84,12 @@ require_once 'init.php';
 
                     <p class="chatButton" id="report"><br>Report</p>
                         <div class="modal" id="reportModal">
-                            <form action="report.php" method="post">
+                            <form action="report.php" method="post" id="reportForm">
                                 <input type="hidden" name="reportingCatId" value="<?php echo $mycatid; ?>" />
-                                <input type="hidden" name="reportingCatId" value="<?php echo // the other cat's id ?>" />
+                                <input type="hidden" name="reportedCatId" value="<?php echo $userid2; ?>" />
                                     <div class="modalContent">
                                         <p>Please fill out the details for your report below.</p>
-                                        <textarea class="reportInput"></textarea>
+                                        <textarea class="reportInput" name="reportDetails" form="reportForm"></textarea> 
                                         <div id="confirmReportDialogue">
                                             <input type="submit" class="pillButton" id="confirmReport" value="Submit Report" />
                             </form>
