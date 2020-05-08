@@ -644,12 +644,12 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 300px;
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-columns: 400px;
+    grid-template-columns: 300px;
     margin: auto;
-    padding: 0px;
+    padding: 20px;
     min-width: 0;
 }
 
