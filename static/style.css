@@ -653,8 +653,13 @@ body {
     min-width: 0;
 }
 
+.profileHeader {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
 .barBack {
-    width: 200px;
+    width: 150px;
 }
 
 .profileHead {
