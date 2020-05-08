@@ -49,7 +49,7 @@ echo $_SESSION['id'];
 <div class="header">
         <p><a href="profile.php">Your Cats</a></p>
         <p><a href="viewpotentials.php">Look for dates</a></p>
-        <p>Cat Me If You Can</p>
+        <p id="cmiyc">Cat Me If You Can</p>
         <p><a href="matches.php">Matches</a></p>
         <p><a href="logout.php">Sign out</a></p>
 </div>
@@ -69,7 +69,7 @@ echo $_SESSION['id'];
             <div class="profileHeader">
                 <div class="profileName"><input class="profileNameEntry" placeholder="Enter cat's name" type="text" name="name" value="<?php echo $name;?>"></div>
                 <div class="profilePic">
-                    <input type="button" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
+                    <input id="uploadButton" type="button" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
                     <input type="file" style="display:none;" id="file" name="uploadfile">
                 </div>
             </div>
