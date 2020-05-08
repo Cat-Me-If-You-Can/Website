@@ -6,15 +6,6 @@ global $connect;
 $sql = "select * from reports";
 $query = $connect->query($sql);
 
-// if(isset($row["reportingCatId"])) {
-//     $reportingCatId = $row['reportingCatId'];
-//     $reportedCatId = $row['reportedCatId'];
-//     $reportDetails = $row['reportDetails'];
-// }
-
-// echo $reportingCatId;
-// echo $reportedCatId;
-// echo $reportDetails;
 
 function getCatName($id) {
     global $connect;

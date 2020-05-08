@@ -3,6 +3,7 @@
 :root {
     --buttonBg: rgb(255, 0, 191);
     --main-accent: rgb(255, 0, 191);
+    --main-accent-dark: rgb(207, 18, 160);
     --massive-text: 100px;
     --big-text: 48px;
     --med-text: 24px;
@@ -23,15 +24,13 @@ body {
 }
 
 
-.personality {
-	display: inline-block;
-	vertical-align: middle;
-}
-
 .barBack {
 	background-color: grey;
-	width: 200px;
+    width: 300px;
+    height: 40%;
+    margin-top: 15px;
 }
+
 
 .barFront {
 	background-color: var(--main-accent);
@@ -42,7 +41,7 @@ body {
 /* chat window content, messages, ids, scrolling etc.  */
 .left-chat,.right-chat{
     float:left;
-    width:80%;
+    width:50%;
     position: relative;
   }
   .right-chat{
@@ -55,7 +54,7 @@ body {
     position: relative;
     height: 500px;
   }
-  .header-contentChat ul li{
+  .header-contentChat li{
     list-style: none;
     margin-top:20px;  
   }
@@ -71,25 +70,7 @@ body {
   .right-chat span{
     float:right;
   }
-  .left-chat:before{
-    content: " ";
-    position:absolute;
-    top:14px;
-    left:15px;
-    bottom:150px;
-    border:15px solid transparent;
-    border-bottom-color:grey; 
-    z-index: 1;
-  }
-  .right-chat:before{
-    content: " ";
-    position:absolute;
-    top:14px;
-    right:15px;
-    bottom:150px;
-    border:15px solid transparent;
-    border-bottom-color: var(--buttonBg); 
-  }
+
   
 
 
@@ -105,6 +86,7 @@ body {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     /* padding-bottom: 20px; */
+    z-index: 9999;
 }
 
 .header a {
@@ -144,12 +126,12 @@ body {
 .adminHead {
     /* Header div for profile */
     display: grid;
-    grid-template-rows: 200px 200px 150px;
-    
+    grid-template-rows: 200px 200px;
+    margin-bottom: -100px;
 }
 
 .adminTitle {
-    font-size: var(--big-text);
+    font-size: var(--massive-text);
     font-weight: bold;
     text-decoration: underline;
     letter-spacing: -5px;
@@ -245,6 +227,11 @@ body {
     color: white;
     font-size: var(--reg-text);
     margin: auto;
+    border: none;
+}
+
+.pillButton:hover {
+    background-color: var(--main-accent-dark);
 }
 
 .chatButton {
@@ -335,6 +322,11 @@ body {
 .profileSubhead p {
     font-size: var(--med-text);
     border-bottom: 1px solid var(--main-accent);
+}
+
+.profileInfo {
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .profileInfo p {
@@ -535,7 +527,11 @@ body {
 .removeUser {
     background-color: green;
     border-bottom-left-radius: 15px;
-    
+    border: none;
+}
+
+.removeUser input {
+    background: none;
 }
 
 .removeUser:hover {
@@ -546,6 +542,11 @@ body {
 .dismissReport {
     background-color: red;
     border-bottom-right-radius: 15px;
+    border: none;
+}
+
+.dismissReport input {
+    background: none;
 }
 
 .dismissReport:hover {
@@ -704,7 +705,7 @@ body {
 /* chat window content, messages, ids, scrolling etc.  */
 .left-chat,.right-chat{
     float:left;
-    width:80%;
+    width:70%;
     position: relative;
   }
   .right-chat{
@@ -717,7 +718,7 @@ body {
     position: relative;
     height: 500px;
   }
-  .header-contentChat ul li{
+  .header-contentChat li{
     list-style: none;
     margin-top:20px;  
   }
@@ -733,27 +734,15 @@ body {
   .right-chat span{
     float:right;
   }
-  .left-chat:before{
-    content: " ";
-    position:absolute;
-    top:14px;
-    left:15px;
-    bottom:150px;
-    border:15px solid transparent;
-    border-bottom-color:grey; 
-    z-index: 1;
-  }
-  .right-chat:before{
-    content: " ";
-    position:absolute;
-    top:14px;
-    right:15px;
-    bottom:150px;
-    border:15px solid transparent;
-    border-bottom-color: var(--buttonBg); 
-  }
-   
 
+   
+  .adminTitle {
+    font-size: var(--big-text);
+  }
+
+  .adminContent {
+      grid-template-columns: auto;
+  }
 
 #cmiyc {
 display: none;

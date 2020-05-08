@@ -6,8 +6,9 @@ require_once 'init.php';
         $matchid = $_POST['matchid'];
         $mycatid = $_POST['mycatid'];
         $name = $_POST['mycatname'];
-		$id = $mycatid;
-		
+        $id = $mycatid;
+        
+	
 		echo $matchid;
 		echo $mycatid;
 
@@ -16,18 +17,13 @@ require_once 'init.php';
         $row4 = $query->fetch_assoc();
 
          $id4=$row4["id"];
+         echo "ID FOUR IS".$id4;
          $picture4=$row4["picture"];
          $name4=$row4["name"];
-         $gender4=$row4["gender"];
-         $playful4=$row4["playful"];
-         $angry4=$row4["angry"];
-         $somber4=$row4["somber"];
-         $independent4=$row4["independent"];
-         $cuddly4=$row4["cuddly"];
-         $likes4=$row4["likes"];
-         $dislikes4=$row4["dislikes"];
-		 $location4=$row4["location"];
-		 
+      
+$_SESSION['catid'] = $id;
+$_SESSION['othercatid'] = $id4;
+	
 
 		 $yes = "yes";
 
@@ -44,7 +40,7 @@ require_once 'init.php';
     <meta charset="UTF-8">
     <link rel="stylesheet" href="static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chat</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
@@ -166,67 +162,23 @@ require_once 'init.php';
 
             <div class="receiveMessageBox">
 				<div id="scrolling_to_bottom" class="col-md-12 header-contentChat">
-				<?php
-					$sel_msg = "select * from messages where (sendID='$id' AND receiveID='$id4') OR (receiveID='$id' AND sendID='$id4') ORDER by 1 ASC"; 
-					$run_msg = mysqli_query($connect,$sel_msg);		
-					while($row=mysqli_fetch_array($run_msg)){
-						$sendID = $row['sendID'];
-						$receiveID = $row['receiveID'];
-						$msg_content = $row['content'];
-						?>
-						<ul>
-						<?php
-							if($id == $sendID AND $id4 == $receiveID){
-								echo"
-									<li>
-										<div class='right-chat'>
-											<span>$name</span><br><br>
-											<p>$msg_content</p>
-										</div>
-									</li>
-								";
-							}
-
-							else if($id == $receiveID AND $id4 == $sendID){
-								echo"
-									<li>
-										<div class='left-chat'>
-											<span>$name4</span><br><br>
-											<p>$msg_content</p>
-										</div>
-									</li>
-								";
-							}
-
-						?>
-						</ul>
-					<?php
-					}
-					?>
+				
 				</div>
             </div>
             <div class="sendMessageBox">
 				<!-- 
 					check message valid, then put into table with send id recieve id match id
 				-->
-				<form method="post"><!-- this breaks as the user you are chatting to isnt passed into session -->
-					<input type="text" name="msg_content" placeholder="Send message...">
-					<input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
+				<form id="sendmsg" action="sendmsg.php" method="post"><!-- this breaks as the user you are chatting to isnt passed into session -->
+					<input type="text" id="msg_content" name="msg_content" placeholder="Send message...">
+					<input type = "hidden" name = "othercatid" value = <?php echo $id4;?> />
                 <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
                 <input type = "hidden" name = "mycatname" value = <?php echo $name;?> />
-					<button class="chatButton" name="submit">send</button>
+					<button style="display: none;" class="chatButton" name="submit">send</button>
 				</form>
 				
             </div>
-			<div class="form">
-                <form action="chat.php" method="post" id="chatform">
-                <input type = "hidden" name = "matchid" value = <?php echo $matchid;?> />
-                <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
-                <input type = "hidden" name = "mycatname" value = <?php echo $name;?> />
-                <input type="submit" class="chatButton" name="register"value="refresh">
-                </div>
-                </form>
-        </div>
+
 
 
 
@@ -309,6 +261,45 @@ require_once 'init.php';
                 reportModal.style.display = "none";
             }
         }
+
+let result = document.getElementById("result");
+
+setInterval(makeRequest, 3000);
+
+function makeRequest() {
+$.ajax('request.php', {
+    success: function(data) {
+        // alert('Ajax successful');
+        
+        scrolling_to_bottom.innerHTML = data;
+        console.log(data);
+        
+        
+    },
+    error: function() {
+        alert("error");
+    }
+})
+};
+
+
+$("#sendmsg").submit(function(e) {
+    e.preventDefault();
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax({
+        type: "post",
+        url: url,
+        data: form.serialize(),
+        success: function(data) {
+            console.log(data);
+            document.getElementById("msg_content").value = "";
+        }
+    })
+})
+
     </script>
 </body>
 </html>
