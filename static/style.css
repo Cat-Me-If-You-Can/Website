@@ -211,6 +211,21 @@ body {
     text-align: center;
 }
 
+.chunkyForm input.pillButton {
+    width: 200px;
+    background-color: var(--buttonBg);
+    border-radius: 25px;
+    height: 50px;
+    color: white;
+    font-size: var(--reg-text);
+    margin: auto;
+    border: none;
+}
+
+.chunkyForm input.pillButton:hover {
+    background-color: var(--main-accent-dark);
+}
+
 /* The sliders used in edit profile */
 .sliders {
     display: grid;
