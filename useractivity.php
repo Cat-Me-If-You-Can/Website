@@ -39,12 +39,10 @@ function getGenderBalance() {
 
 }
 
-// echo getGenderBalance()['male'];
-
-
 $numberOfUsers = getCount('users');
 $numberOfMatches = getCount('matchestable');
 $numberOfLikes = getCount('likestable');
+$numberOfMessages = getCount('messages');
 
 $malePercentage = getGenderBalance()['male'];
 $femalePercentage = getGenderBalance()['female'];
@@ -93,7 +91,7 @@ $femalePercentage = getGenderBalance()['female'];
 
         <div class="activityContentItem textBox">
             <p class="statHeader">Messages Sent</p>
-            <p class="statNumber">32,000</p>
+            <p class="statNumber"><?php echo $numberOfMessages; ?></p>
             <p class="statDesc">That's a lot of compliments.</p>
         </div>
 

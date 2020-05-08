@@ -20,14 +20,11 @@ echo $_SESSION['id'];
 </head>
 <body>
 <div class="header">
-        <p><a href="profile.php">
-            <!-- <img src="static/images/icons/cat.png" alt=""> -->
-            <span>Your Cats</span>
-        </a></p>
-        <p><a href="viewpotentials.php">Look for dates</a></p>
-        <p id="cmiyc">Cat Me If You Can</p>
-        <p><a href="matches.php">Matches</a></p>
-        <p><a href="logout.php">Sign out</a></p>
+    <p><a href="viewreports.php">View Reports</a></p>
+    <p><a href="useractivity.php">User Activity</a></p>
+    <p id="cmiyc">Cat Me If You Can</p>
+    <p><a href="../phpMyAdmin/">Manage Accounts</a></p>
+    <p><a href="logout.php">Sign out</a></p>
 </div>
 
     <div class="container">
@@ -36,8 +33,8 @@ echo $_SESSION['id'];
             <div class="adminTitle">Admin<br>Dashboard</div>
         </div>
         <div class="adminContent">
+        <a href="viewreports.php">
             <div class="textBox adminContentItem">
-            <a href="viewreports.php">
                 <div class="adminContentItemHead">
                 <p>
                     View Reports
@@ -47,6 +44,7 @@ echo $_SESSION['id'];
             </div>
             </a>
             <div class="textBox adminContentItem">
+            <a href="useractivity.php">
                 <div class="adminContentItemHead">
                 <p>
                     User Activity
@@ -54,6 +52,8 @@ echo $_SESSION['id'];
                 </div>
                 <p>View statistics on likes, matches, and number of users.</p>
             </div>
+            </a>
+            <a href="../phpmyadmin/">
             <div class="textBox adminContentItem">
                 <div class="adminContentItemHead">
                 <p>
@@ -62,6 +62,7 @@ echo $_SESSION['id'];
                 </div>
                 <p>Remove or edit information on behalf of users.</p>
             </div>
+            </a>
            
 </div>
 </div>
