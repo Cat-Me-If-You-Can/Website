@@ -320,6 +320,16 @@ body {
     height: 150px;
 }
 
+#uploadButton {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: none;
+}
+
+
+
 #ppcontainer {
 	height:150px;
     width:150px;
@@ -639,8 +649,12 @@ body {
     grid-template-rows: auto auto;
     grid-template-columns: 400px;
     margin: auto;
-    padding: 50px;
+    padding: 0px;
     min-width: 0;
+}
+
+.barBack {
+    width: 200px;
 }
 
 .profileHead {
