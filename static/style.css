@@ -41,7 +41,7 @@ body {
 /* chat window content, messages, ids, scrolling etc.  */
 .left-chat,.right-chat{
     float:left;
-    width:80%;
+    width:50%;
     position: relative;
   }
   .right-chat{
@@ -54,7 +54,7 @@ body {
     position: relative;
     height: 500px;
   }
-  .header-contentChat ul li{
+  .header-contentChat li{
     list-style: none;
     margin-top:20px;  
   }
@@ -70,25 +70,7 @@ body {
   .right-chat span{
     float:right;
   }
-  .left-chat:before{
-    content: " ";
-    position:absolute;
-    top:14px;
-    left:15px;
-    bottom:150px;
-    border:15px solid transparent;
-    border-bottom-color:grey; 
-    z-index: 1;
-  }
-  .right-chat:before{
-    content: " ";
-    position:absolute;
-    top:14px;
-    right:15px;
-    bottom:150px;
-    border:15px solid transparent;
-    border-bottom-color: var(--buttonBg); 
-  }
+
   
 
 
@@ -723,7 +705,7 @@ body {
 /* chat window content, messages, ids, scrolling etc.  */
 .left-chat,.right-chat{
     float:left;
-    width:80%;
+    width:70%;
     position: relative;
   }
   .right-chat{
@@ -736,7 +718,7 @@ body {
     position: relative;
     height: 500px;
   }
-  .header-contentChat ul li{
+  .header-contentChat li{
     list-style: none;
     margin-top:20px;  
   }
@@ -752,25 +734,7 @@ body {
   .right-chat span{
     float:right;
   }
-  .left-chat:before{
-    content: " ";
-    position:absolute;
-    top:14px;
-    left:15px;
-    bottom:150px;
-    border:15px solid transparent;
-    border-bottom-color:grey; 
-    z-index: 1;
-  }
-  .right-chat:before{
-    content: " ";
-    position:absolute;
-    top:14px;
-    right:15px;
-    bottom:150px;
-    border:15px solid transparent;
-    border-bottom-color: var(--buttonBg); 
-  }
+
    
   .adminTitle {
     font-size: var(--big-text);

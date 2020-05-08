@@ -21,7 +21,7 @@ require_once 'init.php';
          $picture4=$row4["picture"];
          $name4=$row4["name"];
       
-$_SESSION['id'] = $id;
+$_SESSION['catid'] = $id;
 $_SESSION['othercatid'] = $id4;
 	
 
@@ -40,7 +40,7 @@ $_SESSION['othercatid'] = $id4;
     <meta charset="UTF-8">
     <link rel="stylesheet" href="static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chat</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
@@ -162,43 +162,7 @@ $_SESSION['othercatid'] = $id4;
 
             <div class="receiveMessageBox">
 				<div id="scrolling_to_bottom" class="col-md-12 header-contentChat">
-				<?php
-					$sel_msg = "select * from messages where (sendID='$id' AND receiveID='$id4') OR (receiveID='$id' AND sendID='$id4') ORDER by 1 ASC"; 
-					$run_msg = mysqli_query($connect,$sel_msg);		
-					while($row=mysqli_fetch_array($run_msg)){
-						$sendID = $row['sendID'];
-						$receiveID = $row['receiveID'];
-						$msg_content = $row['content'];
-						?>
-						<ul>
-						<?php
-							if($id == $sendID AND $id4 == $receiveID){
-								echo"
-									<li>
-										<div class='right-chat'>
-											<span>$name</span><br><br>
-											<p>$msg_content</p>
-										</div>
-									</li>
-								";
-							}
-
-							else if($id == $receiveID AND $id4 == $sendID){
-								echo"
-									<li>
-										<div class='left-chat'>
-											<span>$name4</span><br><br>
-											<p>$msg_content</p>
-										</div>
-									</li>
-								";
-							}
-
-						?>
-						</ul>
-					<?php
-					}
-					?>
+				
 				</div>
             </div>
             <div class="sendMessageBox">
@@ -210,7 +174,7 @@ $_SESSION['othercatid'] = $id4;
 					<input type = "hidden" name = "othercatid" value = <?php echo $id4;?> />
                 <input type = "hidden" name = "mycatid" value = <?php echo $id;?> />
                 <input type = "hidden" name = "mycatname" value = <?php echo $name;?> />
-					<button class="chatButton" name="submit">send</button>
+					<button style="display: none;" class="chatButton" name="submit">send</button>
 				</form>
 				
             </div>

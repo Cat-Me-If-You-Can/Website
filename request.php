@@ -6,9 +6,9 @@ global $connect;
 // Session variables might not be the most reliable way to do this but it's working for now
 // If stuff acts weird, try posting this data to this file instead.
 // ($id can remain a session ID 'cos it's what you're logged in as.)
-$id = $_SESSION['id'];
-$id4 = $_SESSION['id4'];
-$name = $_SESSION['name'];
+$id = $_SESSION['catid'];
+$id4 = $_SESSION['othercatid'];
+// $name = $_SESSION['name'];
 
 // Get all the messages in the table related to your cat and the other cat
 $sql = "select * from messages where (sendID='$id' AND receiveID='$id4') OR (receiveID='$id' AND sendID='$id4') ORDER by 1 ASC"; 
@@ -22,7 +22,7 @@ while($row = $query->fetch_assoc()) {
 
     // If you sent the message, do pink box
     if($id == $sendid) {
-        echo "<ul>";
+        
         echo "
         <li>
         <div class='right-chat'>
@@ -31,7 +31,7 @@ while($row = $query->fetch_assoc()) {
         </div>
         </li>
         ";
-        echo "</ul>";
+        
     } 
     // If you're receiving a message, do the grey box.
     else if($id == $receiveid) {
