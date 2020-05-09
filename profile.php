@@ -78,7 +78,9 @@ echo $_SESSION['id'];
                         <img class="profilePic" src="static/images/<?php echo $picture;?>" alt="Profile Picture">
                         </div> <?php
                     } else {
-                        ?><div id="uploadProfilePic"></div><?php
+                        ?><div id="ppcontainer">
+                        <img class="profilePic" src="images/blankprofile2.PNG">
+                        </div> <?php
                     }
                     ?>
                 </div>
