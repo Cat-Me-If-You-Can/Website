@@ -3,6 +3,7 @@
 :root {
     --buttonBg: rgb(255, 0, 191);
     --main-accent: rgb(255, 0, 191);
+    --main-accent-dark: rgb(207, 18, 160);
     --massive-text: 100px;
     --big-text: 48px;
     --med-text: 24px;
@@ -23,15 +24,13 @@ body {
 }
 
 
-.personality {
-	display: inline-block;
-	vertical-align: middle;
-}
-
 .barBack {
 	background-color: grey;
-	width: 200px;
+    width: 300px;
+    height: 40%;
+    margin-top: 15px;
 }
+
 
 .barFront {
 	background-color: var(--main-accent);
@@ -39,6 +38,40 @@ body {
 }
 
 
+/* chat window content, messages, ids, scrolling etc.  */
+.left-chat,.right-chat{
+    float:left;
+    width:50%;
+    position: relative;
+  }
+  .right-chat{
+    float:right;
+    margin-right:35px;
+  }
+  .header-contentChat{
+    overflow-y: scroll; 
+    background-color: #FFFFFF;
+    position: relative;
+    height: 500px;
+  }
+  .header-contentChat li{
+    list-style: none;
+    margin-top:20px;  
+  }
+  .header-contentChat .left-chat p,.header-contentChat .right-chat p{
+    background-color: grey;
+    padding:15px;
+    border-radius:8px;
+    color:#fff;
+  }
+  .header-contentChat .right-chat p{
+    background-color: var(--buttonBg);
+  }
+  .right-chat span{
+    float:right;
+  }
+
+  
 
 
 /* This is the header bar that spans every page aka the navbar. */
@@ -53,6 +86,7 @@ body {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     /* padding-bottom: 20px; */
+    z-index: 9999;
 }
 
 .header a {
@@ -86,7 +120,22 @@ body {
 .adminContent {
     display: grid;
     grid-gap: 50px;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
+}
+
+.adminHead {
+    /* Header div for profile */
+    display: grid;
+    grid-template-rows: 200px 200px;
+    margin-bottom: -100px;
+}
+
+.adminTitle {
+    font-size: var(--massive-text);
+    font-weight: bold;
+    text-decoration: underline;
+    letter-spacing: -5px;
+    margin-top: -100px;
 }
 
 .adminContentItem {
@@ -162,6 +211,21 @@ body {
     text-align: center;
 }
 
+.chunkyForm input.pillButton {
+    width: 200px;
+    background-color: var(--buttonBg);
+    border-radius: 25px;
+    height: 50px;
+    color: white;
+    font-size: var(--reg-text);
+    margin: auto;
+    border: none;
+}
+
+.chunkyForm input.pillButton:hover {
+    background-color: var(--main-accent-dark);
+}
+
 /* The sliders used in edit profile */
 .sliders {
     display: grid;
@@ -178,6 +242,11 @@ body {
     color: white;
     font-size: var(--reg-text);
     margin: auto;
+    border: none;
+}
+
+.pillButton:hover {
+    background-color: var(--main-accent-dark);
 }
 
 .chatButton {
@@ -251,6 +320,16 @@ body {
     height: 150px;
 }
 
+#uploadButton {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: none;
+}
+
+
+
 #ppcontainer {
 	height:150px;
     width:150px;
@@ -268,6 +347,11 @@ body {
 .profileSubhead p {
     font-size: var(--med-text);
     border-bottom: 1px solid var(--main-accent);
+}
+
+.profileInfo {
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .profileInfo p {
@@ -438,6 +522,107 @@ body {
     grid-gap: 20px;
 }
 
+.reportsHead {
+
+}
+
+.reportsContent {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 40px;
+}
+
+.reportsItem {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    /* border: 1px solid black; */
+    height: 200px;
+    padding: 30px;
+    box-shadow: 0px 10px 10px rgb(223, 222, 222);
+    border-radius: 15px;
+}
+
+.reportsActions {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    height: 20px;
+}
+
+.removeUser {
+    background-color: green;
+    border-bottom-left-radius: 15px;
+    border: none;
+}
+
+.removeUser input {
+    background: none;
+}
+
+.removeUser:hover {
+    background-color: rgb(32, 187, 32);
+    
+}
+
+.dismissReport {
+    background-color: red;
+    border-bottom-right-radius: 15px;
+    border: none;
+}
+
+.dismissReport input {
+    background: none;
+}
+
+.dismissReport:hover {
+    background-color: rgb(255, 109, 109);
+   
+}
+
+.reportedCatId {
+    font-size: var(--med-text);
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.reportingCatId {
+
+}
+
+.reportDetails {
+
+}
+
+.activityContent {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+}
+
+.activityContentItem.textBox {
+    padding: 30px;
+    height: 200px;
+}
+
+.statHeader {
+    font-size: var(--med-text);
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: -40px;
+}
+
+.statNumber {
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin-bottom: -0px;
+   
+}
+
+.statDesc {
+
+}
+
 /* Mobile view properties */
 @media only screen and (max-width: 1000px) {
 
@@ -459,13 +644,22 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 300px;
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-columns: 400px;
+    grid-template-columns: 300px;
     margin: auto;
-    padding: 50px;
+    padding: 20px;
     min-width: 0;
+}
+
+.profileHeader {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.barBack {
+    width: 150px;
 }
 
 .profileHead {
@@ -541,7 +735,49 @@ body {
     cursor: pointer;
   }
 	
-  
+ 
+/* chat window content, messages, ids, scrolling etc.  */
+.left-chat,.right-chat{
+    float:left;
+    width:70%;
+    position: relative;
+  }
+  .right-chat{
+    float:right;
+    margin-right:35px;
+  }
+  .header-contentChat{
+    overflow-y: scroll; 
+    background-color: #FFFFFF;
+    position: relative;
+    height: 500px;
+  }
+  .header-contentChat li{
+    list-style: none;
+    margin-top:20px;  
+  }
+  .header-contentChat .left-chat p,.header-contentChat .right-chat p{
+    background-color: grey;
+    padding:15px;
+    border-radius:8px;
+    color:#fff;
+  }
+  .header-contentChat .right-chat p{
+    background-color: var(--buttonBg);
+  }
+  .right-chat span{
+    float:right;
+  }
+
+   
+  .adminTitle {
+    font-size: var(--big-text);
+  }
+
+  .adminContent {
+      grid-template-columns: auto;
+  }
+
 #cmiyc {
 display: none;
 }

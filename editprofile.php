@@ -9,8 +9,8 @@ echo $_SESSION['id'];
 
  if(isset($row["name"])){
  $picture=$row["picture"];
- $bio=$row["bio"];
  $name=$row["name"];
+ $bio=$row["bio"];
  $gender=$row["gender"];
  $playful=$row["playful"];
  $angry=$row["angry"];
@@ -22,8 +22,8 @@ echo $_SESSION['id'];
  $location=$row["location"];
 } else {
  $picture=null;
- $bio=null;
  $name=null;
+ $bio=null;
  $gender=null;
  $playful=null;
  $angry=null;
@@ -49,7 +49,7 @@ echo $_SESSION['id'];
 <div class="header">
         <p><a href="profile.php">Your Cats</a></p>
         <p><a href="viewpotentials.php">Look for dates</a></p>
-        <p>Cat Me If You Can</p>
+        <p id="cmiyc">Cat Me If You Can</p>
         <p><a href="matches.php">Matches</a></p>
         <p><a href="logout.php">Sign out</a></p>
 </div>
@@ -69,7 +69,7 @@ echo $_SESSION['id'];
             <div class="profileHeader">
                 <div class="profileName"><input class="profileNameEntry" placeholder="Enter cat's name" type="text" name="name" value="<?php echo $name;?>"></div>
                 <div class="profilePic">
-                    <input type="button" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
+                    <input id="uploadButton" type="button" value="Upload Profile Pic" onclick="document.getElementById('file').click();">
                     <input type="file" style="display:none;" id="file" name="uploadfile">
                 </div>
             </div>
@@ -80,10 +80,12 @@ echo $_SESSION['id'];
                     <option value="Female">Female</option>
                 </select>
             </div>
+
             <div class="profileSubhead"><p>Bio</p></div>
-            <div class="profileInfo"><input class="profileInfoEntry" placeholder="Enter a small bio about your cat" type="text" value="<?php echo $bio;?>">
-               <!-- <p><?php echo $name;?> is a sweet angel who loves to play with other cats. Except for the neighbours' cats, who he's ruthlessly mauled on several occasions. But don't let that put you off. He's really quite nice. Sometimes.</p> -->
+            <div class="profileInfo">
+            <input class="profileInfoEntry" placeholder="Enter a small bio about your cat" type="text" name="bio" value="<?php echo $bio;?>">
             </div>
+
             <div class="profileSubhead"><p>Personality</p></div>
             <div class="profileInfo">
                 <div class="sliders">
@@ -122,7 +124,7 @@ echo $_SESSION['id'];
             
             <input type="submit" name="upload" class="pillButton" value="Upload">
             
-        </div>
+        </form>
 
 
 

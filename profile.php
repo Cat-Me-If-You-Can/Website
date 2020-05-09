@@ -9,8 +9,8 @@ echo $_SESSION['id'];
 
  if(isset($row["name"])){
  $picture=$row["picture"];
- $bio=$row["bio"];
  $name=$row["name"];
+ $bio=$row["bio"];
  $gender=$row["gender"];
  $playful=$row["playful"];
  $angry=$row["angry"];
@@ -22,8 +22,8 @@ echo $_SESSION['id'];
  $location=$row["location"];
 } else {
  $picture=null;
- $bio=null;
  $name=null;
+ $bio=null;
  $gender=null;
  $playful=null;
  $angry=null;
@@ -89,11 +89,11 @@ echo $_SESSION['id'];
             </div>
             <div class="profileSubhead"><p>Personality</p></div>
             <div class="profileInfo">   
-                <p class="personality">Playful: <?php echo getTraitLevel($playful);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $playful;?>%"></div></div><br>
-                <p class="personality">Angry: <?php echo getTraitLevel($angry);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $angry;?>%"></div></div><br>
-                <p class="personality">Somber: <?php echo getTraitLevel($somber);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $somber;?>%"></div></div><br>
-                <p class="personality">Independent: <?php echo getTraitLevel($independent);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $independent;?>%"></div></div><br>
-                <p class="personality">Cuddly: <?php echo getTraitLevel($cuddly);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $cuddly;?>%"></div></div>
+                <p class="personality">Playful: <?php echo getTraitLevel($playful);?>&nbsp;</p><div class="barBack"><div class="barFront" style="width:<?php echo $playful;?>%"></div></div>
+                <p class="personality">Angry: <?php echo getTraitLevel($angry);?>&nbsp;</p><div class="barBack"><div class="barFront" style="width:<?php echo $angry;?>%"></div></div>
+                <p class="personality">Somber: <?php echo getTraitLevel($somber);?>&nbsp;</p><div class="barBack"><div class="barFront" style="width:<?php echo $somber;?>%"></div></div>
+                <p class="personality">Independent: <?php echo getTraitLevel($independent);?>&nbsp;</p><div class="barBack"><div class="barFront" style="width:<?php echo $independent;?>%"></div></div>
+                <p class="personality">Cuddly: <?php echo getTraitLevel($cuddly);?>&nbsp;</p><div class="barBack"><div class="barFront" style="width:<?php echo $cuddly;?>%"></div></div>
             </div>
 
             <div class="profileSubhead"><p>Likes</p></div>
