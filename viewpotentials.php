@@ -208,10 +208,10 @@ $picture2=$row2["picture"];
             </div>
             <div class="profileSubhead"><p>Personality</p></div>
             <div class="profileInfo">
-				<p class="personality">Playful: <?php echo getTraitLevel($playful2);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $playful2;?>%"></div></div><br>
-                <p class="personality">Angry: <?php echo getTraitLevel($angry2);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $angry2;?>%"></div></div><br>
-                <p class="personality">Somber: <?php echo getTraitLevel($somber2);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $somber2;?>%"></div></div><br>
-                <p class="personality">Independent: <?php echo getTraitLevel($independent2);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $independent2;?>%"></div></div><br>
+				<p class="personality">Playful: <?php echo getTraitLevel($playful2);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $playful2;?>%"></div></div>
+                <p class="personality">Angry: <?php echo getTraitLevel($angry2);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $angry2;?>%"></div></div>
+                <p class="personality">Somber: <?php echo getTraitLevel($somber2);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $somber2;?>%"></div></div>
+                <p class="personality">Independent: <?php echo getTraitLevel($independent2);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $independent2;?>%"></div></div>
                 <p class="personality">Cuddly: <?php echo getTraitLevel($cuddly2);?>&nbsp;</p><div class="barBack" style="display: inline-block; vertical-align: middle"><div class="barFront" style="width:<?php echo $cuddly2;?>%"></div></div>
             </div>
 
