@@ -2,11 +2,11 @@
 require_once 'init.php';
 global $connect;
 echo $_SESSION['id'];
-
+//selects the cat that you are logged in as and gets the data
  $sql="select * from profile where userid='".$_SESSION['id']."'";
  $query = $connect->query($sql);
  $row = $query->fetch_assoc();
-
+//sets the varibles
  if(isset($row["name"])){
  $picture=$row["picture"];
  $name=$row["name"];
@@ -20,6 +20,7 @@ echo $_SESSION['id'];
  $likes=$row["likes"];
  $dislikes=$row["dislikes"];
  $location=$row["location"];
+ //if no data
 } else {
  $picture=null;
  $name=null;
@@ -36,7 +37,6 @@ echo $_SESSION['id'];
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +46,7 @@ echo $_SESSION['id'];
     <title>Edit profile</title>
 </head>
 <body>
+<!-- Nav-->
 <div class="header">
         <p><a href="profile.php">Your Cats</a></p>
         <p><a href="viewpotentials.php">Look for dates</a></p>
@@ -53,7 +54,7 @@ echo $_SESSION['id'];
         <p><a href="matches.php">Matches</a></p>
         <p><a href="logout.php">Sign out</a></p>
 </div>
-
+<!-- Profile head -->
     <div class="container">
         <div class="profileHead">
             <img class="headerPic" src="static/images/cutecat1.jpg" alt="catpic">
@@ -64,7 +65,7 @@ echo $_SESSION['id'];
             <p>Done here? <a class="keylink" href="viewpotentials.php">Start meeting new cats!</a></p>
         </div>
     </div>
-
+<!-- edit profile-->
         <form action="createprofile.php" method="post" enctype="multipart/form-data" class="profileInfoBox">
             <div class="profileHeader">
                 <div class="profileName"><input class="profileNameEntry" placeholder="Enter cat's name" type="text" name="name" value="<?php echo $name;?>"></div>
@@ -85,7 +86,7 @@ echo $_SESSION['id'];
             <div class="profileInfo">
             <input class="profileInfoEntry" placeholder="Enter a small bio about your cat" type="text" name="bio" value="<?php echo $bio;?>">
             </div>
-
+<!-- sliders for attriblutes -->
             <div class="profileSubhead"><p>Personality</p></div>
             <div class="profileInfo">
                 <div class="sliders">
@@ -105,7 +106,7 @@ echo $_SESSION['id'];
                 <input type="range" id="cuddly" name="cuddly" min="0" max="100" value="<?php echo $cuddly;?>">
                 </div>
             </div>
-
+            
             <div class="profileSubhead"><p>Likes</p></div>
             <div class="profileInfo">
             <input class="profileInfoEntry" type="text" name="likes" value="<?php echo $likes;?>">
@@ -121,7 +122,7 @@ echo $_SESSION['id'];
             <input class="profileInfoEntry" type="text" name="location" value="<?php echo $location;?>"> 
             </div>
 			
-            
+            <!-- submits -->
             <input type="submit" name="upload" class="pillButton" value="Upload">
             
         </form>

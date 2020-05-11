@@ -35,7 +35,7 @@ function getCatName($id) {
     <p><a href="../phpMyAdmin">Manage Accounts</a></p>
     <p><a href="logout.php">Sign out</a></p>
 </div>
-
+<!-- container for displaying the reports  -->
 <div class="container">
     <div class="profileHead">
         <img class=headerPic src="static/images/cutecat1.jpg" alt="">

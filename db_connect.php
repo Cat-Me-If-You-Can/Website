@@ -1,6 +1,7 @@
 <?php 
  
-#will have to add these once i know the server 
+
+//server details
 
 $servername = "localhost";
 $email = "root";

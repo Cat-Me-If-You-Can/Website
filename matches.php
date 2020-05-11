@@ -1,9 +1,8 @@
 <?php 
-// This will need to retrieve a profile of a potential match, not the user.
 
 require_once 'init.php';
 global $connect;
-
+//gets data from current user logged in, and uses this to find current matches for this cat
  $sql="select * from profile where userid='".$_SESSION['id']."'";
  $query = $connect->query($sql);
  $row = $query->fetch_assoc();
@@ -25,9 +24,8 @@ global $connect;
 	$id = null;
  }
  
- 
  $yes = "yes";
-
+//gets specific cats that you have matched with
  $sql = "SELECT * FROM matchestable where ((likeID1 = '".$id."') OR (likeID2 = '".$id."')) AND matched = '$yes'";
  $query2 = $connect->query($sql);
 
@@ -64,6 +62,7 @@ global $connect;
             <?php 
         if ($query2->num_rows > 0) {
     // output data of each row
+    //displaying every match for this cat
     while($row2 = $query2->fetch_assoc()) {
         ?>
         <div class="match">
@@ -97,7 +96,7 @@ global $connect;
                      $location4=$row4["location"];
             
                 ?>
-                <!-- Match's profile pic -->
+                <!-- Match's profile -->
                 <?php
                 if($picture4 == true){
                 ?><div class="profilePic matchPic">
@@ -122,7 +121,6 @@ global $connect;
                 </div>
                 </form>
                 </a>
-                <!-- Match's name -->
             </div>
             <?php
     }
