@@ -17,6 +17,7 @@ if(isset($_POST['upload'])) {
      
         $name = $_POST['name'];
         $gender = $_POST['gender'];
+        $bio = $_POST['bio'];
         $playful = $_POST['playful'];
         $angry = $_POST['angry'];
         $somber = $_POST['somber'];
@@ -29,13 +30,13 @@ if(isset($_POST['upload'])) {
 
 
             if(profileExists($_SESSION["id"]) === TRUE) {
-                $sql = "UPDATE profile SET picture='$filename', name='$name', gender='$gender', playful='$playful', angry='$angry', somber='$somber', independent='$independent', cuddly='$cuddly', likes='$likes', dislikes='$dislikes', location='$location', userid='$userid' WHERE userid='".$_SESSION['id']."'";
+                $sql = "UPDATE profile SET picture='$filename', name='$name', gender='$gender', bio='$bio', playful='$playful', angry='$angry', somber='$somber', independent='$independent', cuddly='$cuddly', likes='$likes', dislikes='$dislikes', location='$location', userid='$userid' WHERE userid='".$_SESSION['id']."'";
                 $query = $connect->query($sql);
                 header('location: profile.php');
             exit();
             } else {
                 
-            $sql = "INSERT INTO profile (picture, name, gender, playful, angry, somber, independent, cuddly, likes, dislikes, location, userid) VALUES ('$filename', '$name', '$gender', '$playful', '$angry', '$somber', '$independent', '$cuddly', '$likes', '$dislikes', '$location', '$userid')";
+            $sql = "INSERT INTO profile (picture, name, gender, bio, playful, angry, somber, independent, cuddly, likes, dislikes, location, userid) VALUES ('$filename', '$name', '$gender', '$bio', '$playful', '$angry', '$somber', '$independent', '$cuddly', '$likes', '$dislikes', '$location', '$userid')";
             $query = $connect->query($sql);
 
             $sql="select * from profile where userid='".$_SESSION['id']."'";

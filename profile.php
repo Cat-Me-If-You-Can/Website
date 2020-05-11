@@ -9,8 +9,8 @@ echo $_SESSION['id'];
 
  if(isset($row["name"])){
  $picture=$row["picture"];
- $bio=$row["bio"];
  $name=$row["name"];
+ $bio=$row["bio"];
  $gender=$row["gender"];
  $playful=$row["playful"];
  $angry=$row["angry"];
@@ -22,8 +22,8 @@ echo $_SESSION['id'];
  $location=$row["location"];
 } else {
  $picture=null;
- $bio=null;
  $name=null;
+ $bio=null;
  $gender=null;
  $playful=null;
  $angry=null;
@@ -78,7 +78,9 @@ echo $_SESSION['id'];
                         <img class="profilePic" src="static/images/<?php echo $picture;?>" alt="Profile Picture">
                         </div> <?php
                     } else {
-                        ?><div id="uploadProfilePic"></div><?php
+                        ?><div id="ppcontainer">
+                        <img class="profilePic" src="images/blankprofile2.PNG">
+                        </div> <?php
                     }
                     ?>
                 </div>

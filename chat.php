@@ -139,7 +139,7 @@ $_SESSION['othercatid'] = $id4;
                         </div>
 						<p class="chatButton" id="report"><br>Report</p>
                         <div class="modal" id="reportModal">
-                            <form action="report.php" method="post">
+                            <form action="report.php" method="post" id="reportForm">
                                 <input type="hidden" name="reportingCatId" value="<?php echo $mycatid; ?>" />
                                 <input type="hidden" name="reportedCatId" value="<?php echo $matchid; ?>" />
                                     <div class="modalContent">

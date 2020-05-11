@@ -13,6 +13,7 @@
  $picture=$row["picture"];
  $name=$row["name"];
  $gender=$row["gender"];
+ $bio=$row["bio"];
  $playful=$row["playful"];
  $angry=$row["angry"];
  $somber=$row["somber"];
@@ -25,6 +26,7 @@
  $picture=null;
  $name=null;
  $gender=null;
+ $bio=null;
  $playful=null;
  $angry=null;
  $somber=null;
@@ -63,6 +65,7 @@ $id2=$row2["id"];
 $picture2=$row2["picture"];
  $name2=$row2["name"];
  $gender2=$row2["gender"];
+ $bio2=$row2["bio"];
  $playful2=$row2["playful"];
  $angry2=$row2["angry"];
  $somber2=$row2["somber"];
@@ -86,7 +89,8 @@ $picture2=$row2["picture"];
 	 $id2=$row2["id"];
 	 $picture2=$row2["picture"];
 	 $name2=$row2["name"];
-	 $gender2=$row2["gender"];
+     $gender2=$row2["gender"];
+     $bio2=$row2["bio"];
 	 $playful2=$row2["playful"];
 	 $angry2=$row2["angry"];
 	 $somber2=$row2["somber"];
@@ -196,7 +200,10 @@ $picture2=$row2["picture"];
                     }
                     ?>
             
-            
+            <div class="profileSubhead"><p>Bio</p></div>
+            <div class="profileInfo">
+                <p><?php echo $bio2;?></p>
+            </div>            
             
             </div>
             <div class="profileSubhead"><p>Personality</p></div>
