@@ -6,11 +6,11 @@ require_once 'init.php';
 if($_POST) {
  
 
-    #not sure what our data will be, here are some place holders
+    //register varibles
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
- 
+    //makes sure we have required info
     if($email == "") {
         echo " * Email is Required <br />";
     }
@@ -22,7 +22,7 @@ if($_POST) {
     if($cpassword == "") {
         echo " * Conform Password is Required <br />";
     }
- 
+    //checks if varibles already exist in database    
     if($email && $password && $cpassword) {
  
         if($password == $cpassword) {

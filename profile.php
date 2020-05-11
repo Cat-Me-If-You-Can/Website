@@ -2,7 +2,7 @@
 require_once 'init.php';
 global $connect;
 echo $_SESSION['id'];
-
+//gets data from cat which is logged in to then display profile data
  $sql="select * from profile where userid='".$_SESSION['id']."'";
  $query = $connect->query($sql);
  $row = $query->fetch_assoc();
@@ -82,6 +82,7 @@ echo $_SESSION['id'];
                         <img class="profilePic" src="images/blankprofile2.PNG">
                         </div> <?php
                     }
+                    //Gets profile info of cat logged in
                     ?>
                 </div>
             </div>
@@ -113,7 +114,7 @@ echo $_SESSION['id'];
                 <p><?php echo $location;?></p>
             </div>
 
-            
+            <!-- button to edit current profile -->
                 <input type="button" class="pillButton" value="Edit Profile" onclick="window.location.href = 'editprofile.php';">
             
         </div>

@@ -1,5 +1,5 @@
 <?php 
-// This will need to retrieve a profile of a potential match, not the user.
+// this is the view potential matches page
  require_once 'init.php';
  global $connect;
 

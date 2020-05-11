@@ -15,7 +15,7 @@ if($_POST) {
     if($password == "") {
         echo " * Password Field is Required <br />";
     }
-
+//checks if enterd email and password exist as an admin in db, this will then take then to admin dashboard
     if($email && $password) {
         if(userExists($email) == TRUE && $email === "admin"){
             $login = login($email, $password);
@@ -29,7 +29,7 @@ if($_POST) {
             } else {
                 echo "Incorrect email/password combination";
             }
-          
+//checks if enterd email and password already exist in db, 
         }elseif(userExists($email) == TRUE && $email !== "admin"){
             $login = login($email, $password);
             if($login) {
