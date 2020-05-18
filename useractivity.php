@@ -1,5 +1,10 @@
-<?php 
+/**
+useractivity - displays user activity
+Versions 1.4
+@authors Jake Cleland
+ */
 
+<?php 
 
 require_once 'init.php';
 global $connect;

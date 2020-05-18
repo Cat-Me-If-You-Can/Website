@@ -1,3 +1,9 @@
+/**
+create profile - takes contents from edit profile and submits data to the database
+Versions 1.4
+@authors Patrick Jones
+ */
+
 <?php 
 require_once 'init.php';
  
@@ -7,7 +13,6 @@ if(isset($_POST['upload'])) {
         global $connect;
     
         // prepare and bind
-    
         $filename = $_FILES['uploadfile']['name'];
         $filetmpname = $_FILES['uploadfile']['tmp_name'];
         //folder where images will be uploaded
@@ -47,9 +52,6 @@ if(isset($_POST['upload'])) {
 
             $sql = "INSERT INTO matches (catid) VALUES ('$id')";
             $query = $connect->query($sql);
-            // $stmt = $connect->prepare("INSERT INTO users (email, password, salt) VALUES ('$email', '$newPassword', '$salt')");
-            // $stmt->bind_param("sss", $email, $newPassword, $salt);
-            //$query = $connect->query($stmt);
            
             header('location: profile.php');
             exit();

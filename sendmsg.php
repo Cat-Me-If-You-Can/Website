@@ -1,3 +1,9 @@
+/**
+sendmsg - allows user to send message
+Versions 1.4
+@authors Jake Cleland, Jack Dowling
+ */
+
 <?php
 
 require_once 'init.php';

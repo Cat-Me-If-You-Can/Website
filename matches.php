@@ -1,3 +1,9 @@
+/**
+matches - shows matched users 
+Versions 1.4
+@authors Patrick Jones, Jake Cleland
+ */
+
 <?php 
 
 require_once 'init.php';
