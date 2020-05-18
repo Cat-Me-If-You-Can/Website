@@ -1,3 +1,9 @@
+/**
+styles - provides styles for the site
+Versions 1.4
+@authors Jake Cleland, Jack Dowling
+ */
+
 /* Put all colours and recurring sizes etc here */
 /* Then invoke them when designing so if we need changes, we can just alter the variables */
 :root {

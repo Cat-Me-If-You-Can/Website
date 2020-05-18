@@ -1,3 +1,9 @@
+/**
+users - checks if users exist, and provies extra user login/register functionality 
+Versions 1.4
+@authors Patrick Jones
+ */
+
 <?php 
 
 function userExists($email) {
