@@ -24,7 +24,7 @@ function getGenderBalance() {
     }
     
     for($i = 0; $i < sizeof($gender); $i++) {
-        if($gender[$i] == 'male') {
+        if($gender[$i] == 'Male') {
             $male++;
         } else {
             $female++;
