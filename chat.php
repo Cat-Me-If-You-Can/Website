@@ -150,7 +150,7 @@ $_SESSION['othercatid'] = $id4;
                                 <input type="hidden" name="reportedCatId" value="<?php echo $matchid; ?>" />
                                     <div class="modalContent">
                                         <p>Please fill out the details for your report below.</p>
-										<input type="textarea" name="reportDetails" value="" />
+										<input type="textarea" id="reportDetails" name="reportDetails" value="" />
                                         <div id="confirmReportDialogue">
                                             <input type="submit" class="pillButton" id="confirmReport" value="Submit Report" />
                             </form>

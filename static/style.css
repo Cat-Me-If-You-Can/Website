@@ -417,12 +417,14 @@ body {
 .chatBoxHeader {
     display: grid;
     grid-template-columns: auto auto;
+    
 }
 
 /* The container div for unmatch/report */
 .chatBoxLinks {
     display: grid;
     grid-template-columns: auto auto;
+   
 }
 
 .chattingTo {
@@ -432,7 +434,7 @@ body {
 }
 
 .receiveMessageBox {
-    
+    margin-top: 20px;
     height: 500px;
     border: 1px solid black;
 }
@@ -601,8 +603,10 @@ body {
 
 }
 
-.reportDetails {
-
+#reportDetails {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .activityContent {
@@ -794,5 +798,22 @@ body {
 
 #cmiyc {
 display: none;
+}
+
+.chatBoxHeader {
+    display: grid;
+    grid-template-columns: auto;
+    
+}
+
+#confirmReportDialogue {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+}
+
+#confirmReportDialogue input.pillButton {
+    width: 100%;
+    font-size: 12px;
 }
 }
