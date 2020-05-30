@@ -38,7 +38,7 @@ body {
 
 .bigText span {
     /* border-bottom: 40px solid blue; */   
-    background-color: blueviolet;
+    background-color: rgb(255, 0, 191);
     
  
 }
@@ -54,11 +54,11 @@ body {
 
 #join {
     color: white;
-    background-color: blueviolet;
+    background-color: rgb(255, 0, 191);
 }
 
 #join:hover {
-    background-color: blueviolet;
+    background-color: rgb(255, 0, 191);
 }
 
 #join a {
@@ -87,7 +87,7 @@ body {
 .header p {
     text-align: center;
     font-weight: bold;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 
 .header img {
@@ -95,18 +95,17 @@ body {
     height: 30px;
            
 }
-
+/* 
 #register {
-    background-color: blueviolet;
-    border-radius: 50px;
+    color: rgb(255, 0, 191);
     width: 120px;
-    padding: 10px;
+    margin: 10px;
     text-align: center;
 }
 
 #register a {
-    color: white;
-}
+    padding-top: 10px;
+} */
 
 .medText {
     font-size: 36px;
@@ -167,12 +166,12 @@ footer p {
 }
 
 a:link{
-    color: blueviolet;
+    color: rgb(255, 0, 191);
     text-decoration: none;
 }
 
 a:visited{
-    color: blueviolet;
+    color: rgb(255, 0, 191);
     text-decoration: none;
 }
 
@@ -182,12 +181,12 @@ a:hover{
 }
 
 a:active{
-    color: blueviolet;
+    color: rgb(255, 0, 191);
     text-decoration: none;
 }
 
 #registerNow {
-    color:blueviolet;
+    color:rgb(255, 0, 191);
     font-weight: bold;
 }
 
@@ -195,15 +194,60 @@ a:active{
 @media only screen and (max-width: 1000px) {
 
 body {
+    width: 400px;
+    margin: auto;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto;
     
+    padding: 20px;
 }
 .content {
-    width: 400px;
     display: grid;
-    grid-template-columns: 400px;
     margin: auto;
-    padding: 50px;
+    width: 100%;
+    grid-template-columns: auto;
     min-width: 0;
+    
+}
+
+.servicesContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    
+
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    box-shadow: 5px 0px 5px grey;
+    margin-bottom: 80px;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-bottom: 0px;
+}
+
+#spacer {
+    display: none;
+}
+
+footer {
+    background-color: grey;
+    height: 200px;
+    width: 100%;
+    /* margin-top: 100px;
+    margin-left: 50px; */
 }
 
 }
@@ -219,7 +263,7 @@ body {
 </head>
 <body>
 <div class="header">
-        <p><a href="#Menu">Menu</a></p>
+        <p id="spacer"></p>
         <p>Cat Me If You Can</p> 
         <p><a href="login.html">Sign in</a></p>
         <p id="register"><a href="register.html">Register</a></p>
@@ -273,10 +317,11 @@ body {
 
 </div>
             </div>
+            <footer>
+                <p>Cat Me If You Can 2020 | BY-NC-SA</p>
+            </footer>
         </div>
-        <footer>
-            <p>Made with love by some folks.</p>
-        </footer>
+        
     </div>
     
 </body>
