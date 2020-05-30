@@ -11,6 +11,7 @@ Versions 1.4
     --main-accent: rgb(255, 0, 191);
     --main-accent-dark: rgb(207, 18, 160);
     --massive-text: 100px;
+    --bigger-text: 72px;
     --big-text: 48px;
     --med-text: 24px;
     --reg-text: 16px;
@@ -454,6 +455,10 @@ body {
     
 }
 
+#matchesTitle {
+    font-size: var(--bigger-text);
+}
+
 .match {
     display: grid;
     grid-template-columns: 80px 400px;
@@ -464,6 +469,7 @@ body {
     font-size: var(--med-text);
     letter-spacing: -1px;
     padding: 20px;
+    width: 50%;
 }
 
 .match img {
