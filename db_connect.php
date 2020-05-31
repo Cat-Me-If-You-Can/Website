@@ -1,3 +1,9 @@
+<!-- /**
+db_connect - creates the connection for the database
+Versions 1.4
+@authors Patrick Jones, Jack Dowling
+ */ -->
+
 <?php 
  
 

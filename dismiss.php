@@ -1,4 +1,8 @@
-
+<!-- /**
+dismiss - remove reports from database (from report)
+Versions 1.4
+@authors Patrick Jones
+ */ -->
 <?php 
 //requre the init php which give us database information
 require_once 'init.php';

@@ -1,5 +1,5 @@
 <!-- /**
-editprofile - user can edit the profile of the cat
+get chats - service that gets chat data from the database
 Versions 1.4
 @authors Patrick Jones
  */ -->

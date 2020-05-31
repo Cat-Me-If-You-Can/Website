@@ -1,3 +1,8 @@
+<!-- /**
+editprofile - user can edit the profile of the cat
+Versions 1.4
+@authors Patrick Jones
+ */ -->
 <?php 
 require_once 'init.php';
 global $connect;
