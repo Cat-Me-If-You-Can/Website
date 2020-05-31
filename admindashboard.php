@@ -30,7 +30,7 @@ echo $_SESSION['id'];
     <p><a href="viewreports.php">View Reports</a></p>
     <p><a href="useractivity.php">User Activity</a></p>
     <p id="cmiyc">Cat Me If You Can</p>
-    <p><a href="../phpMyAdmin/">Manage Accounts</a></p>
+    <p><a href="../../phpMyAdmin/">Manage Accounts</a></p>
     <p><a href="logout.php">Sign out</a></p>
 </div>
 
