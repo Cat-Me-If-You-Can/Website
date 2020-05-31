@@ -1,8 +1,8 @@
-/**
+<!-- /**
 useractivity - displays user activity
 Versions 1.4
 @authors Jake Cleland
- */
+ */ -->
 
 <?php 
 

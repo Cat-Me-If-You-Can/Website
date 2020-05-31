@@ -1,8 +1,8 @@
-/**
+<!-- /**
 init - initializes database and users
 Versions 1.4
 @authors Patrick Jones
- */
+ */ -->
 
 <?php 
 //starts session 

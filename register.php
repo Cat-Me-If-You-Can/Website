@@ -1,8 +1,8 @@
-/**
+<!-- /**
 register php - sends register data to database 
 Versions 1.4
 @authors Patrick Jones, Jake Cleland
- */
+ */ -->
 
 <?php 
 

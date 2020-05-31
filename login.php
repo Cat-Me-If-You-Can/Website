@@ -1,8 +1,8 @@
-/**
+<!-- /**
 login - allows a user to login
 Versions 1.4
 @authors Patrick Jones, Jake Cleland
- */
+ */ -->
 
 <?php 
 session_start();

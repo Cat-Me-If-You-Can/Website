@@ -1,8 +1,8 @@
-/**
+<!-- /**
 view potentials - shows the cats that you are able to match with. shows matchable cats according to your user specifications
 Versions 1.4
 @authors Jake Cleland, Jack Dowling, Patrick Jones
- */
+ */ -->
 
 <?php 
 // this is the view potential matches page

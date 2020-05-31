@@ -1,8 +1,8 @@
-/**
+<!-- /**
 remove - remove user from database (from report)
 Versions 1.4
 @authors Patrick Jones
- */
+ */ -->
 
 <?php 
 require_once 'init.php';

@@ -1,8 +1,8 @@
-/**
+<!-- /**
 chat - Provides a chat function to matched cats
 Versions 1.4
 @authors Jake Cleland, Jack Dowling, Patrick Jones
- */
+ */ -->
 
 <?php 
 require_once 'init.php';

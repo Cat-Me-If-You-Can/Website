@@ -1,8 +1,8 @@
-/**
+<!-- /**
 viewreports - shows user reports to the admin in the dashboard
 Versions 1.4
 @authors Jake Cleland, Patrick Jones
- */
+ */ -->
 
 <?php
 

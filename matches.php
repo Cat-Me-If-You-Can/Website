@@ -1,8 +1,8 @@
-/**
+<!-- /**
 matches - shows matched users 
 Versions 1.4
 @authors Patrick Jones, Jake Cleland
- */
+ */ -->
 
 <?php 
 
@@ -56,7 +56,7 @@ global $connect;
     <div class="container">
         <div class="profileHead">
             <img class="headerPic" src="static/images/cutecat1.jpg" alt="catpic">
-            <div class="profileTitle">Your<br>Matches</div>
+            <div class="profileTitle" id="matchesTitle">Your<br>Matches</div>
         
         <div class="profileDesc">
             <p>Here you can see everyone that matched with your cat.</p>

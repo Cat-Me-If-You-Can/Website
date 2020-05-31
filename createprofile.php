@@ -1,8 +1,8 @@
-/**
+<!-- /**
 create profile - takes contents from edit profile and submits data to the database
 Versions 1.4
 @authors Patrick Jones
- */
+ */ -->
 
 <?php 
 require_once 'init.php';

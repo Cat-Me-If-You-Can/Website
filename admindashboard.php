@@ -1,8 +1,8 @@
-/**
+<!-- /**
 Admindashboard - Provides admin functionality to the admin Dashboard
 Versions 1.4
 @author Jake Cleland
- */
+ */ -->
 
 
 <?php 
