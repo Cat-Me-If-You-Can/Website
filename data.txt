@@ -1,0 +1,6 @@
+CAT ME IF YOU CAN - DATA MANAGEMENT INFORMATION
+
+Database software: MySQL 5.7.28
+Database connection address http://ec2-13-54-45-254.ap-southeast-2.compute.amazonaws.com/phpMyAdmin/
+Username: rmittest
+Password: #2DTxVhT&YRYEahzuK8Fcd
