@@ -5,290 +5,262 @@ Versions 1.4
  */ -->
 
 <style>
+    html {
+        margin: 0;
+        height: 100%;
+    }
 
-html {
-    margin: 0;
-    height: 100%;
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        height: 100%;
+    }
 
-}
+    .container {
+        width: 700px;
+        margin: auto
+    }
 
-body {
-    font-family:Arial, Helvetica, sans-serif;
-    margin: 0;
-    height: 100%;
-}
+    .content {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        grid-gap: 30px;
+        margin-top: 100px;
+    }
 
-.container {
-    width: 700px;
-    margin: auto
+    .bigText {
+        margin-top: -0px;
+        font-size: 72px;
+        color: rgb(24, 22, 31);
+        width: 300px;
+        font-weight: bold;
+        line-height: 70px;
+    }
 
-}
+    .bigText span {
+        background-color: rgb(255, 0, 191);
+    }
 
-.content {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
-    grid-gap: 30px;
-    margin-top: 100px;
-}
+    .button {
+        border-radius: 50px;
+        width: 120px;
+        padding: 15px;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+        ;
+    }
 
-.bigText {
-    margin-top: -0px;
-    font-size: 72px;
-    color: rgb(24, 22, 31);
-    /* border-bottom: 20px solid rgb(84, 148, 231); */
-    width: 300px;
-    font-weight: bold;
-    line-height: 70px;
-}
+    #join {
+        color: white;
+        background-color: rgb(255, 0, 191);
+    }
 
-.bigText span {
-    /* border-bottom: 40px solid blue; */   
-    background-color: rgb(255, 0, 191);
-    
- 
-}
+    #join:hover {
+        background-color: rgb(255, 0, 191);
+    }
 
-.button {
-    border-radius: 50px;
-    width: 120px;
-    padding: 15px;
-    text-align: center;
-    color: black;
-    font-weight: bold;;
-}
+    #join a {
+        color: white;
+    }
 
-#join {
-    color: white;
-    background-color: rgb(255, 0, 191);
-}
+    .contentItem img {
+        width: 400px;
+        height: auto;
+    }
 
-#join:hover {
-    background-color: rgb(255, 0, 191);
-}
+    .header {
+        height: 60px;
+        width: 100%;
+        box-shadow: 0px 5px 5px grey;
+        margin-bottom: 80px;
+        position: fixed;
+        top: 0;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 150px auto 100px 150px;
+        padding-top: -10px;
+    }
 
-#join a {
-    color: white;
-}
+    .header p {
+        text-align: center;
+        font-weight: bold;
+        padding-top: 0px;
+    }
 
-.contentItem img {
-    width: 400px;
-    height: auto;
-}
+    .header img {
+        width: auto;
+        height: 30px;
 
-.header {
-    height: 60px;
-    width: 100%;
-    box-shadow: 0px 5px 5px grey;
-    margin-bottom: 80px;
-    position: fixed;
-    top: 0;
-    background-color: white;
-    display: grid;
-    grid-template-columns: 150px auto 100px 150px;
-    padding-top: -10px;
-    
-}
+    }
 
-.header p {
-    text-align: center;
-    font-weight: bold;
-    padding-top: 0px;
-}
+    .medText {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+    }
 
-.header img {
-    width: auto;
-    height: 30px;
-           
-}
-/* 
-#register {
-    color: rgb(255, 0, 191);
-    width: 120px;
-    margin: 10px;
-    text-align: center;
-}
+    .textBox {
+        box-shadow: 0px 10px 10px rgb(223, 222, 222);
+        padding: 30px;
+        border-radius: 15px;
+        line-height: 34px;
+    }
 
-#register a {
-    padding-top: 10px;
-} */
+    footer {
+        background-color: grey;
+        height: 200px;
+        width: 100%;
+        margin-top: 100px;
+    }
 
-.medText {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-}
+    footer p {
+        color: white;
+        text-align: center;
+        padding-top: 50px;
+    }
 
-.textBox {
-    box-shadow: 0px 10px 10px rgb(223, 222, 222);
-    padding: 30px;
-    border-radius: 15px;
-    line-height: 34px;
-}
+    .servicesContainer {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        margin-left: 70px;
 
-footer {
-    background-color: grey;
-    height: 200px;
-    width: 100%;
-    margin-top: 100px;
-}
+    }
 
-footer p {
-    color: white;
-    text-align: center;
-    padding-top: 50px;
-}
+    .service {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        width: 50%;
+    }
 
-#services {
+    #servicesHeader {
+        text-align: center;
+        margin-top: 100px;
+    }
 
-}
+    .service img {
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+    }
 
-.servicesContainer {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    margin-left: 70px;
+    a:link {
+        color: rgb(255, 0, 191);
+        text-decoration: none;
+    }
 
-}
+    a:visited {
+        color: rgb(255, 0, 191);
+        text-decoration: none;
+    }
 
-.service {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    width: 50%;
+    a:hover {
+        color: blueviolet;
+        text-decoration: none;
+    }
 
-}
+    a:active {
+        color: rgb(255, 0, 191);
+        text-decoration: none;
+    }
 
-#servicesHeader {
-    text-align: center;
-    margin-top: 100px;
-}
+    #registerNow {
+        color: rgb(255, 0, 191);
+        font-weight: bold;
+    }
 
-.service img {
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-}
+    /* Mobile view properties */
+    @media only screen and (max-width: 1000px) {
 
-a:link{
-    color: rgb(255, 0, 191);
-    text-decoration: none;
-}
+        .container {
+            width: 400px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: auto;
+            padding: 20px;
+        }
 
-a:visited{
-    color: rgb(255, 0, 191);
-    text-decoration: none;
-}
+        .content {
+            display: grid;
+            margin: auto;
+            width: 100%;
+            grid-template-columns: auto;
+            min-width: 0;
+        }
 
-a:hover{
-    color: blueviolet;
-    text-decoration: none;
-}
+        .servicesContainer {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
 
-a:active{
-    color: rgb(255, 0, 191);
-    text-decoration: none;
-}
+        .header {
+            height: 50px;
+            width: 100%;
+            box-shadow: 5px 0px 5px grey;
+            margin-bottom: 80px;
+            position: fixed;
+            bottom: 0;
+            background-color: white;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            margin-bottom: 0px;
+        }
 
-#registerNow {
-    color:rgb(255, 0, 191);
-    font-weight: bold;
-}
+        #spacer {
+            display: none;
+        }
 
-/* Mobile view properties */
-@media only screen and (max-width: 1000px) {
+        footer {
+            background-color: grey;
+            height: 200px;
+            width: 100%;
+        }
 
-body {
-    /* width: 400px;
-    margin: auto; */
-}
-
-.container {
-    width: 400px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: auto;
-    
-    padding: 20px;
-}
-.content {
-    display: grid;
-    margin: auto;
-    width: 100%;
-    grid-template-columns: auto;
-    min-width: 0;
-    
-}
-
-.servicesContainer {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    
-
-}
-
-.header {
-    height: 50px;
-    width: 100%;
-    box-shadow: 5px 0px 5px grey;
-    margin-bottom: 80px;
-    position: fixed;
-    bottom: 0;
-    background-color: white;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    margin-bottom: 0px;
-}
-
-#spacer {
-    display: none;
-}
-
-footer {
-    background-color: grey;
-    height: 200px;
-    width: 100%;
-    /* margin-top: 100px;
-    margin-left: 50px; */
-}
-
-}
-
+    }
 </style>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat Me If You Can</title>
 </head>
+
 <body>
-<div class="header">
+    <div class="header">
         <p id="spacer"></p>
-        <p>Cat Me If You Can</p> 
+        <p>Cat Me If You Can</p>
         <p><a href="login.html">Sign in</a></p>
         <p id="register"><a href="register.html">Register</a></p>
-</div>
+    </div>
 
     <div class="container">
         <div class="content">
             <div class="contentItem">
                 <img src="static/images/cutecat1.jpg" alt="">
             </div>
-            <div class="contentItem"><p class="bigText">
-                <span>Hit paws</span> <span>on your</span> <span>singledom.</span>
-            </p>
-            <p>Welcome to Cat Me If You Can. Meow!</p>
-            <div class="button" id="join"><a href="register.html">Join Now!</a></div>
+            <div class="contentItem">
+                <p class="bigText">
+                    <span>Hit paws</span> <span>on your</span> <span>singledom.</span>
+                </p>
+                <p>Welcome to Cat Me If You Can. Meow!</p>
+                <div class="button" id="join"><a href="register.html">Join Now!</a></div>
             </div>
             <div class="contentItem textBox">
                 <p class="medText">Finding The One</p>
-                <p>There are many fish in the sea, but why catch them alone when you can catch more together. By claiming your spot on the couch, or sleeping through the day and causing havoc at night, these things make you who you are. At Cat Me If You Can, we care about these unique traits to find the best possible cat-panion for you.  </p>
+                <p>There are many fish in the sea, but why catch them alone when you can catch more together. By
+                    claiming your spot on the couch, or sleeping through the day and causing havoc at night, these
+                    things make you who you are. At Cat Me If You Can, we care about these unique traits to find the
+                    best possible cat-panion for you. </p>
                 <div id="registerNow"><a href="register.html">Register Now!</a></div>
             </div>
             <div class="contentItem">
@@ -299,36 +271,40 @@ footer {
             </div>
             <div class="contentItem textBox">
                 <p class="medText">About Us</p>
-                <p>When Cat Me If You Can first appeared, the dating scene was well known and blooming. Now that meeting new people on a dating app is the norm, we wanted to steer away from the norm and introduce the ability to make connections using our furry-friends. </p>
+                <p>When Cat Me If You Can first appeared, the dating scene was well known and blooming. Now that meeting
+                    new people on a dating app is the norm, we wanted to steer away from the norm and introduce the
+                    ability to make connections using our furry-friends. </p>
                 <div id="registerNow"><a href="register.html">Register Now!</a></div>
             </div>
-                  
+
         </div>
         <div id="services">
             <p id="servicesHeader" class="medtext">Services</p>
             <div class="servicesContainer">
                 <div class="service">
                     <p><img src="static/images/icons/paw.png" alt=""></p>
-                <p>Meet new cats</p>
-            <p>The cutest cats are joining Cat Me If You Can every day.</p>
-        </div>
-        <div class="service">
-            <p><img src="static/images/icons/catlove.PNG" alt=""></p>
-        <p>Online chat</p>
-    <p>Set up dates with your ameowzing new friend.</p>
-</div><div class="service">
-    <p><img src="static/images/icons/tunacans.PNG" alt=""></p>
-<p>Discover the perfect match</p>
-<p>Our matchmaking algorithm is the cat's pyjamas.</p>
+                    <p>Meet new cats</p>
+                    <p>The cutest cats are joining Cat Me If You Can every day.</p>
+                </div>
+                <div class="service">
+                    <p><img src="static/images/icons/catlove.PNG" alt=""></p>
+                    <p>Online chat</p>
+                    <p>Set up dates with your ameowzing new friend.</p>
+                </div>
+                <div class="service">
+                    <p><img src="static/images/icons/tunacans.PNG" alt=""></p>
+                    <p>Discover the perfect match</p>
+                    <p>Our matchmaking algorithm is the cat's pyjamas.</p>
 
-</div>
+                </div>
             </div>
             <footer>
                 <p>Cat Me If You Can 2020 | BY-NC-SA</p>
             </footer>
         </div>
-        
+
     </div>
-    
+
 </body>
+
 </html>

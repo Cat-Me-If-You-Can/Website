@@ -3,7 +3,7 @@ report - insert data into report table on the database
 Versions 1.4
 @authors Patrick Jones
  */ -->
- <?php
+<?php
 
 require_once 'init.php';
 
@@ -21,4 +21,3 @@ header('location: matches.php');
 $connect->close();
 
 ?>
-
